@@ -2,9 +2,187 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Natalia y Lucas | 13.06.2026</title>
+  <link rel="stylesheet" href="assets/styles/main.css">
 </head>
 <body>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdXU6I3s5_Z4DlskwOyluMKuD3UgOl6K_BSp1bng-AWjYIKIA/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <!-- Language Toggle -->
+  <div class="language-toggle">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="de">DE</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('assets/main.jpg')">
+    <div class="hero-content">
+      <h1 class="hero-title">Natalia & Lucas</h1>
+      <p class="hero-date" data-es="Sábado, 13 de junio de 2026" data-en="Saturday, June 13, 2026" data-de="Samstag, 13. Juni 2026">Sábado, 13 de junio de 2026</p>
+      <p class="hero-location" data-es="Lastres, Principado de Asturias" data-en="Lastres, Principality of Asturias" data-de="Lastres, Fürstentum Asturien">Lastres, Principado de Asturias</p>
+    </div>
+  </section>
+
+  <!-- Countdown Section -->
+  <section class="countdown-section fade-in">
+    <div class="countdown-container">
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">0</span>
+          <span class="countdown-label" data-es="Días" data-en="Days" data-de="Tage">Días</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">0</span>
+          <span class="countdown-label" data-es="Horas" data-en="Hours" data-de="Stunden">Horas</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">0</span>
+          <span class="countdown-label" data-es="Minutos" data-en="Minutes" data-de="Minuten">Minutos</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="seconds">0</span>
+          <span class="countdown-label" data-es="Segundos" data-en="Seconds" data-de="Sekunden">Segundos</span>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="add-to-calendar-btn" data-es="Añadir a calendario" data-en="Add to calendar" data-de="Zum Kalender hinzufügen">Añadir a calendario</button>
+    </div>
+  </section>
+
+  <!-- Calendar Modal -->
+  <div class="modal" id="calendar-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-buttons">
+        <button class="btn btn-secondary modal-btn-square" id="google-calendar-btn"><img src="assets/google.png" alt="Google Calendar" class="calendar-icon"></button>
+        <button class="btn btn-secondary modal-btn-square" id="apple-calendar-btn"><img src="assets/apple.png" alt="Apple Calendar" class="calendar-icon"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RSVP Section -->
+  <section class="rsvp-section fade-in">
+    <h2 data-es="Confirmación de asistencia" data-en="RSVP" data-de="Zusage">Confirmación de asistencia</h2>
+    <div class="form-container">
+      <iframe id="rsvp-form" src="https://docs.google.com/forms/d/e/1FAIpQLSdXU6I3s5_Z4DlskwOyluMKuD3UgOl6K_BSp1bng-AWjYIKIA/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </section>
+
+  <!-- El Gran Día Section -->
+  <section class="event-day-section fade-in">
+    <h2 data-es="El Gran Día" data-en="The Big Day" data-de="Der große Tag">El Gran Día</h2>
+    
+    <div class="event-tile no-image">
+      <div class="tile-content">
+        <h3 data-es="Ceremonia" data-en="Ceremony" data-de="Zeremonie">Ceremonia</h3>
+        <p class="event-time">
+          <span data-es="12:00" data-en="12:00" data-de="12:00">12:00</span>
+          <span data-es=" - " data-en=" - " data-de=" - "> - </span>
+          <span data-es="Parroquia de Santa María de Sábada" data-en="Parroquia de Santa María de Sábada" data-de="Parroquia de Santa María de Sábada">Parroquia de Santa María de Sábada</span>
+        </p>
+        <p class="info-text" data-es="Aparcamiento disponible" data-en="Parking available" data-de="Parkplatz vorhanden">Aparcamiento disponible</p>
+        <a href="https://maps.app.goo.gl/GMq6KfEfzPXa7sdY6" target="_blank" class="btn btn-secondary" data-es="Ver en Google Maps" data-en="View on Google Maps" data-de="Auf Google Maps anzeigen">Ver en Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transport Section -->
+  <section class="transport-section fade-in">
+    <h2 data-es="Transporte" data-en="Transportation" data-de="Transport">Transporte</h2>
+    
+    <div class="transport-tile">
+      <div class="tile-image" style="background-image: url('assets/transport-route.png')"></div>
+      <div class="tile-content">
+        <h3 data-es="A la finca" data-en="Church → Reception" data-de="Kirche → Empfang">Iglesia → Recepción</h3>
+        <p class="info-text" data-es="Habrá un servicio de autobuses desde la iglesia a la finca." data-en="Private bus available from the church to the reception venue." data-de="Privatbus vom kirchliche zum Empfangsort verfügbar.">Autobús privado disponible desde la iglesia al lugar de la recepción.</p>
+        <p class="info-text" data-es="La finca también dispone de aparcamiento para coches." data-en="Parking available at both locations." data-de="Parkplatz an beiden Orten vorhanden.">Aparcamiento disponible en ambas ubicaciones.</p>
+        <a href="https://maps.app.goo.gl/NGuxuLMFJVuXvrZ89" target="_blank" class="btn btn-secondary" data-es="Ver en Google Maps" data-en="View on Google Maps" data-de="Auf Google Maps anzeigen">Ver en Google Maps</a>
+      </div>
+    </div>
+
+    <div class="transport-tile">
+      <div class="tile-image" style="background-image: url('assets/return-route.png')"></div>
+      <div class="tile-content">
+        <h3 data-es="Regreso" data-en="Return Trip" data-de="Rückfahrt">Regreso</h3>
+        <p class="info-text" data-es="Dos autobuses disponibles:" data-en="Two buses available:" data-de="Zwei Busse verfügbar:">Dos autobuses disponibles:</p>
+        <p class="info-text">
+          <strong data-es="Salida 1:" data-en="Departure 1:" data-de="Abfahrt 1:">Salida 1:</strong>
+          <span data-es="22:00 (Luces, Lastres, Colunga, La Isla)" data-en="10:00 PM (Luces, Lastres, Colunga, La Isla)" data-de="22:00 (Luces, Lastres, Colunga, La Isla)">22:00 (Luces, Lastres, Colunga, La Isla)</span>
+        </p>
+        <p class="info-text-last">
+          <strong data-es="Salida 2:" data-en="Departure 2:" data-de="Abfahrt 2:">Salida 2:</strong>
+          <span data-es="00:30 (Luces, Lastres, Colunga, La Isla)" data-en="12:30 AM (Luces, Lastres, Colunga, La Isla)" data-de="00:30 (Luces, Lastres, Colunga, La Isla)">00:30 (Luces, Lastres, Colunga, La Isla)</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accommodation Section -->
+  <section class="accommodation-section fade-in">
+    <h2 data-es="Alojamiento" data-en="Accommodation" data-de="Unterkunft">Alojamiento</h2>
+    
+    <div class="event-tile">
+      <div class="tile-image" style="background-image: url('assets/accommodation-map.jpg')"></div>
+      <div class="tile-content">
+        <p class="info-text-last" data-es="Aquí puedes encontrar opciones de alojamiento en la zona." data-en="Here you can find accommodation options in the area." data-de="Hier finden Sie Unterkunftsmöglichkeiten in der Gegend.">Aquí puedes encontrar opciones de alojamiento en la zona.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Restaurant Section -->
+  <section class="restaurant-section fade-in">
+    <h2 data-es="Restauración" data-en="Restaurants" data-de="Restaurants">Restaurantes</h2>
+    
+    <div class="event-tile">
+      <div class="tile-image" style="background-image: url('assets/restaurant-map.jpg')"></div>
+      <div class="tile-content">
+        <p class="info-text-last" data-es="Aquí están algunos de nuestros restaurantes favoritos en la zona." data-en="Here are some of our favorite restaurants in the area." data-de="Hier sind einige unserer Lieblingsrestaurants in der Gegend.">Aquí están algunos de nuestros restaurantes favoritos en la zona.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gifts Section -->
+  <section class="gifts-section fade-in">
+    <h2 data-es="Regalos" data-en="Gifts" data-de="Geschenke">Regalos</h2>
+    
+    <div class="gifts-content">
+      <p class="gift-message" data-es="Vuestra presencia es nuestro mejor regalo." data-en="Your presence is our greatest gift." data-de="Eure Anwesenheit ist unser größtes Geschenk.">Vuestra presencia es nuestro mejor regalo.</p>
+      
+      <p class="gift-message" data-es="Si deseáis ayudarnos en nuestra nueva vida como pareja casada:" data-en="If you wish to help us in our new life as a married couple:" data-de="Wenn Sie uns in unserem neuen Leben als verheiratetes Paar helfen möchten:">Si deseáis ayudarnos en nuestra nueva vida como pareja casada:</p>
+      
+      <div class="event-tile no-image">
+        <div class="tile-content">
+          <p data-es="Número de cuenta" data-en="Account Number" data-de="Kontonummer">Número de cuenta</p>
+          <p class="account-number">ES74 0182 9060 9502 0164 0017</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Share Photos Section -->
+  <section class="photos-section fade-in">
+    <h2 data-es="Fotos" data-en="Photos" data-de="Fotos">Fotos</h2>
+    
+    <p class="photos-description" data-es="Comparte tus mejores momentos con nosotros." data-en="Share your best moments with us." data-de="Teile deine besten Momente mit uns.">Comparte tus mejores momento con nosotros.</p>
+    
+    <a href="https://drive.google.com/drive/folders/1EgDrf_RtCiKxtCBEQb1TaonmtlKZct2x?usp=sharing" target="_blank" class="btn btn-primary" data-es="Sube aquí tus fotos" data-en="Upload your photos here" data-de="Laden Sie Ihre Fotos hier hoch">Sube aquí tus fotos</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p data-es="¿Alguna pregunta? Escríbenos a" data-en="Any questions? Write to us at" data-de="Fragen? Schreib uns">¿Alguna pregunta? Escríbenos a</p>
+    
+    <div class="contact-info">
+      <p>
+        <span data-es="Natalia" data-en="Natalia" data-de="Natalia">Natalia</span>
+        <a href="tel:+34645497122">+34 645 497 122</a>
+      </p>
+      <p>
+        <span data-es="Lucas" data-en="Lucas" data-de="Lucas">Lucas</span>
+        <a href="tel:+34606873068">+34 606 873 068</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
