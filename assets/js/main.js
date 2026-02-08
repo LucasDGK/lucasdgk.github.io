@@ -34,7 +34,13 @@ function setLanguage(lang) {
   
   // Update all text elements with data-lang attributes
   document.querySelectorAll('[data-' + lang + ']').forEach(element => {
-    element.textContent = element.getAttribute('data-' + lang);
+    // For buttons with icons, only update the text span
+    const textSpan = element.querySelector('.btn-text');
+    if (textSpan) {
+      textSpan.textContent = element.getAttribute('data-' + lang);
+    } else {
+      element.textContent = element.getAttribute('data-' + lang);
+    }
   });
 }
 
@@ -87,11 +93,19 @@ function initCalendarModal() {
   function openModal() {
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.top = `-${window.scrollY}px`;
   }
   
   function closeModal() {
-    modal.style.display = 'none';
+    const scrollY = document.body.style.top;
     document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    modal.style.display = 'none';
   }
   
   // Open modal

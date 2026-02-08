@@ -36,6 +36,10 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   background-color: #F8F3E5;
+  background-image: url('../main.jpg');
+  background-size: auto 100vh;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 /* ======================
@@ -81,8 +85,7 @@ body {
    ====================== */
 .hero {
   min-height: 100vh;
-  background-size: cover;
-  background-position: center;
+  background: transparent;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -96,7 +99,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: transparent;
   z-index: 1;
 }
 
@@ -175,7 +178,10 @@ body {
    Buttons
    ====================== */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 14px 32px;
   border: none;
   border-radius: 8px;
@@ -257,6 +263,12 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
+}
+
+.modal-btn-square:hover {
+  opacity: 1;
+  transform: none;
+  box-shadow: none;
 }
 
 .calendar-icon {
@@ -404,9 +416,54 @@ section h2 {
 }
 
 .tile-content .btn {
-  display: block;
+  display: inline-flex;
   width: fit-content;
   margin: 15px auto 0;
+}
+
+.tile-content {
+  text-align: center;
+}
+
+.tile-content h3,
+.tile-content p,
+.tile-content .info-text,
+.tile-content .info-text-last,
+.tile-content .event-time {
+  text-align: left;
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.btn-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn-icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.btn-text {
+  white-space: nowrap;
+  font-weight: bold;
 }
 
 .transport-tile {
