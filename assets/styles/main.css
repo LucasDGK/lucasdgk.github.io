@@ -81,12 +81,14 @@ body {
    ====================== */
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   position: relative;
+  padding-top: env(safe-area-inset-top);
 }
 
 .hero::before {
@@ -464,6 +466,7 @@ section h2 {
   color: var(--text-light);
   text-align: center;
   padding: 60px 10px;
+  padding-bottom: calc(60px + env(safe-area-inset-bottom));
   position: relative;
   z-index: 10;
 }
