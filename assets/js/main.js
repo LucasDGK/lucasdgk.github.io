@@ -208,6 +208,43 @@ function initResponsiveIFrame() {
 }
 
 // ======================
+// Contact vCard Downloads
+// ======================
+function initContactDownloads() {
+  const nataliaBtn = document.getElementById('contact-natalia');
+  const lucasBtn = document.getElementById('contact-lucas');
+  
+  function downloadVCard(name, phone, filename) {
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:;${name};;;
+FN:${name}
+TEL;TYPE=CELL:${phone}
+END:VCARD`;
+    
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
+  
+  nataliaBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    downloadVCard('Natalia Romero Muñoz', '+34645497122', 'natalia.vcf');
+  });
+  
+  lucasBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    downloadVCard('Lucas Delgado González', '+34606873068', 'lucas.vcf');
+  });
+}
+
+// ======================
 // Initialize on Page Load
 // ======================
 document.addEventListener('DOMContentLoaded', () => {
@@ -215,6 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalendarModal();
   initScrollFadeIn();
   initResponsiveIFrame();
+  initContactDownloads();
   
   // Set initial language
   setLanguage(currentLang);
