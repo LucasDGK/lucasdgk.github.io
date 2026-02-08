@@ -84,20 +84,30 @@ function initCalendarModal() {
   const googleCalendarBtn = document.getElementById('google-calendar-btn');
   const appleCalendarBtn = document.getElementById('apple-calendar-btn');
   
+  function openModal() {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  
   // Open modal
   addCalendarBtn.addEventListener('click', () => {
-    modal.style.display = 'block';
+    openModal();
   });
   
   // Close modal
   closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+    closeModal();
   });
   
-  // Close modal when clicking outside
-  window.addEventListener('click', (event) => {
+  // Close modal when clicking outside (on the overlay)
+  modal.addEventListener('click', (event) => {
     if (event.target === modal) {
-      modal.style.display = 'none';
+      closeModal();
     }
   });
   
@@ -112,7 +122,7 @@ function initCalendarModal() {
     const googleCalendarURL = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&location=${encodeURIComponent(eventLocation)}&details=${encodeURIComponent(eventDescription)}`;
     
     window.open(googleCalendarURL, '_blank');
-    modal.style.display = 'none';
+    closeModal();
   });
   
   // Apple Calendar (iCal format)
@@ -145,7 +155,7 @@ END:VCALENDAR`;
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
-    modal.style.display = 'none';
+    closeModal();
   });
 }
 
