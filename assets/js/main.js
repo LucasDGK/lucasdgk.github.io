@@ -7,6 +7,13 @@ const translations = {
   de: {}
 };
 
+// RSVP Form URLs per language
+const formUrls = {
+  es: 'https://docs.google.com/forms/d/e/1FAIpQLSdXU6I3s5_Z4DlskwOyluMKuD3UgOl6K_BSp1bng-AWjYIKIA/viewform?embedded=true',
+  en: 'https://docs.google.com/forms/d/e/1FAIpQLSeycMmKs7WeDv7D9AmZDrPPUukBdenHfJpFVuXOmO2Z-8QopQ/viewform?embedded=true',
+  de: 'https://docs.google.com/forms/d/e/1FAIpQLSe8_IjioJiiBvUWK7NcD7j5HyBRvqQtwUzLlEELbRIU0HJFNw/viewform?embedded=true"'
+};
+
 let currentLang = localStorage.getItem('selectedLang') || 'es';
 
 // Initialize language buttons
@@ -46,6 +53,12 @@ function setLanguage(lang) {
       element.textContent = value;
     }
   });
+  
+  // Update RSVP form URL based on language
+  const iframe = document.getElementById('rsvp-form');
+  if (iframe && formUrls[lang]) {
+    iframe.src = formUrls[lang];
+  }
 }
 
 // Initialize language on page load
@@ -213,26 +226,12 @@ function initScrollFadeIn() {
 }
 
 // ======================
-// Responsive iFrame Height
+// iFrame Height
 // ======================
-function initResponsiveIFrame() {
+function initIFrame() {
   const iframe = document.getElementById('rsvp-form');
-  
   if (iframe) {
-    // Set fixed height based on device
-    function setIFrameHeight() {
-      if (window.innerWidth < 768) {
-        iframe.style.height = '1300px';
-      } else {
-        iframe.style.height = '1000px';
-      }
-    }
-    
-    // Set initial height
-    setIFrameHeight();
-    
-    // Adjust on window resize
-    window.addEventListener('resize', setIFrameHeight);
+    iframe.style.height = '820px';
   }
 }
 
@@ -280,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   initCalendarModal();
   initScrollFadeIn();
-  initResponsiveIFrame();
+  initIFrame();
   initContactDownloads();
   
   // Set initial language
