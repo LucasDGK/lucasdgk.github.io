@@ -36,10 +36,6 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   background-color: #F8F3E5;
-  background-image: url('../main.jpg');
-  background-size: auto 100vh;
-  background-position: center top;
-  background-repeat: no-repeat;
 }
 
 /* ======================
@@ -85,7 +81,8 @@ body {
    ====================== */
 .hero {
   min-height: 100vh;
-  background: transparent;
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -188,7 +185,7 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 500;
+  font-weight: bold;
   font-family: 'Palatino', 'Palatino Linotype', serif;
   text-decoration: none;
   letter-spacing: 1px;
@@ -229,6 +226,8 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   animation: fadeIn 0.3s ease;
+  overscroll-behavior: contain;
+  touch-action: none;
 }
 
 .modal-content {
@@ -426,11 +425,47 @@ section h2 {
 }
 
 .tile-content h3,
-.tile-content p,
+.tile-content p:not(.account-number),
 .tile-content .info-text,
 .tile-content .info-text-last,
 .tile-content .event-time {
   text-align: left;
+}
+
+.bus-stops-list {
+  list-style: disc;
+  margin: 0 0 0 20px;
+  padding: 0;
+  text-align: left;
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+
+.bus-stops-list li {
+  margin-bottom: 5px;
+}
+
+.town-name {
+  margin: 20px 0 5px 0;
+  color: var(--primary-color);
+}
+
+.hotel-list {
+  list-style: disc;
+  margin: 0 0 0 20px;
+  padding: 0;
+  text-align: left;
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+
+.hotel-list li {
+  margin-bottom: 5px;
+}
+
+.gifts-section .tile-content,
+.gifts-section .tile-content p {
+  text-align: center;
 }
 
 .btn-icon {
@@ -484,7 +519,7 @@ section h2 {
 
 .gifts-content {
   text-align: center;
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -628,7 +663,7 @@ section h2 {
   }
 
   .tile-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .modal-content {
@@ -697,5 +732,20 @@ section h2 {
 
   .account-number {
     font-size: 1rem;
+  }
+}
+
+/* ======================
+   Desktop Styles
+   ====================== */
+@media (min-width: 769px) {
+  .event-tile,
+  .transport-tile,
+  .form-container,
+  .gift-message,
+  .photos-description {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

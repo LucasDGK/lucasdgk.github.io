@@ -34,12 +34,16 @@ function setLanguage(lang) {
   
   // Update all text elements with data-lang attributes
   document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+    const value = element.getAttribute('data-' + lang);
     // For buttons with icons, only update the text span
     const textSpan = element.querySelector('.btn-text');
     if (textSpan) {
-      textSpan.textContent = element.getAttribute('data-' + lang);
+      textSpan.textContent = value;
+    } else if (value.includes('<br>') || value.includes('<sup>')) {
+      // Use innerHTML for elements containing HTML tags
+      element.innerHTML = value;
     } else {
-      element.textContent = element.getAttribute('data-' + lang);
+      element.textContent = value;
     }
   });
 }
@@ -92,20 +96,14 @@ function initCalendarModal() {
   
   function openModal() {
     modal.style.display = 'block';
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
-    document.body.style.top = `-${window.scrollY}px`;
   }
   
   function closeModal() {
-    const scrollY = document.body.style.top;
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
-    document.body.style.top = '';
-    window.scrollTo(0, parseInt(scrollY || '0') * -1);
     modal.style.display = 'none';
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
   }
   
   // Open modal
@@ -129,11 +127,11 @@ function initCalendarModal() {
   googleCalendarBtn.addEventListener('click', () => {
     const eventTitle = 'Boda de Natalia y Lucas';
     const eventStart = '20260613T100000Z'; // 12:00 Spain time (UTC+2) = 10:00 UTC
-    const eventEnd = '20260613T170000Z';   // 19:00 Spain time = 17:00 UTC
+    const eventEnd = '20260613T220000Z';   // 00:00 Spain time (midnight) = 22:00 UTC
     const eventLocation = 'Parroquia de Santa María de Sábada, Lastres, Asturias, Spain';
-    const eventDescription = 'Ceremonia de boda de Natalia y Lucas';
+    const mapsLink = 'https://maps.app.goo.gl/GMq6KfEfzPXa7sdY6';
     
-    const googleCalendarURL = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&location=${encodeURIComponent(eventLocation)}&details=${encodeURIComponent(eventDescription)}`;
+    const googleCalendarURL = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&location=${encodeURIComponent(eventLocation)}&details=${encodeURIComponent(mapsLink)}`;
     
     window.open(googleCalendarURL, '_blank');
     closeModal();
@@ -146,14 +144,31 @@ VERSION:2.0
 PRODID:-//Wedding//Wedding Calendar//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Madrid
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
 BEGIN:VEVENT
 UID:natalia-lucas-wedding-2026@nataliaylucas.es
-DTSTAMP:20260613T100000Z
-DTSTART:20260613T100000Z
-DTEND:20260613T170000Z
+DTSTAMP:20260613T120000
+DTSTART;TZID=Europe/Madrid:20260613T120000
+DTEND;TZID=Europe/Madrid:20260614T000000
 SUMMARY:Boda de Natalia y Lucas
 LOCATION:Parroquia de Santa María de Sábada, Lastres, Asturias, Spain
-DESCRIPTION:Ceremonia de boda de Natalia y Lucas
+URL:https://maps.app.goo.gl/GMq6KfEfzPXa7sdY6
 BEGIN:VALARM
 TRIGGER:-PT2H
 ACTION:DISPLAY
