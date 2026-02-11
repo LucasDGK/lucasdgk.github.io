@@ -295,11 +295,6 @@ body {
 /* ======================
    RSVP Section
    ====================== */
-.rsvp-section {
-  padding: 80px 10px;
-  background: #F8F3E5;
-}
-
 .rsvp-section h2 {
   margin-bottom: 5px;
   text-align: center;
@@ -336,7 +331,10 @@ section h2 {
 .event-day-section,
 .transport-section,
 .accommodation-section,
-.restaurant-section {
+.restaurant-section,
+.gifts-section,
+.photos-section,
+.rsvp-section {
   background: #F8F3E5;
 }
 
@@ -349,7 +347,6 @@ section h2 {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px var(--shadow);
-  margin-bottom: 40px;
 }
 
 .event-tile.no-image .tile-content {
@@ -507,16 +504,16 @@ section h2 {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px var(--shadow);
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+}
+
+.transport-tile:last-child {
+  margin-bottom: 0;
 }
 
 /* ======================
    Gifts Section
    ====================== */
-.gifts-section {
-  background: #F8F3E5;
-}
-
 .gifts-content {
   text-align: center;
   max-width: 100%;
@@ -534,7 +531,6 @@ section h2 {
    Photos Section
    ====================== */
 .photos-section {
-  background: #F8F3E5;
   text-align: center;
 }
 
@@ -676,11 +672,11 @@ section h2 {
   }
 
   section {
-    padding: 30px 10px;
+    padding: 60px 10px 30px;
   }
 
   .rsvp-section {
-    padding: 30px 10px;
+    padding: 60px 10px 30px;
   }
 
   .countdown-section {
