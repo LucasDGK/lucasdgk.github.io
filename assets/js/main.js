@@ -273,6 +273,49 @@ END:VCARD`;
 }
 
 // ======================
+// Navigation Menu
+// ======================
+function initNavMenu() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navList = document.getElementById('nav-list');
+  
+  if (!navToggle || !navList) return;
+  
+  // Toggle menu
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navList.classList.toggle('active');
+  });
+  
+  // Close menu when clicking a link and scroll to section
+  navList.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        // Close the menu
+        navToggle.classList.remove('active');
+        navList.classList.remove('active');
+        
+        // Use offsetTop to get position unaffected by CSS transforms
+        const scrollPosition = targetSection.offsetTop;
+        window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+      }
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !navList.contains(e.target)) {
+      navToggle.classList.remove('active');
+      navList.classList.remove('active');
+    }
+  });
+}
+
+// ======================
 // Initialize on Page Load
 // ======================
 document.addEventListener('DOMContentLoaded', () => {
@@ -281,6 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollFadeIn();
   initIFrame();
   initContactDownloads();
+  initNavMenu();
   
   // Set initial language
   setLanguage(currentLang);

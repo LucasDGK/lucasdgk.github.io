@@ -15,6 +15,22 @@
     <button class="lang-btn" data-lang="de">DE</button>
   </div>
 
+  <!-- Navigation Menu -->
+  <nav class="nav-menu">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span class="nav-icon"></span>
+    </button>
+    <ul class="nav-list" id="nav-list">
+      <li><a href="#ceremony" data-es="Ceremonia" data-en="Ceremony" data-de="Zeremonie">Ceremonia</a></li>
+      <li><a href="#transport" data-es="Transporte" data-en="Transportation" data-de="Transport">Transporte</a></li>
+      <li><a href="#accommodation" data-es="Alojamiento" data-en="Accommodation" data-de="Unterkunft">Alojamiento</a></li>
+      <li><a href="#dining" data-es="Restauración" data-en="Dining" data-de="Gastronomie">Restauración</a></li>
+      <li><a href="#gifts" data-es="Regalos" data-en="Gifts" data-de="Geschenke">Regalos</a></li>
+      <li><a href="#photos" data-es="Fotos" data-en="Photos" data-de="Fotos">Fotos</a></li>
+      <li><a href="#rsvp" data-es="Confirmación de asistencia" data-en="RSVP" data-de="Zusage">Confirmación de asistencia</a></li>
+    </ul>
+  </nav>
+
   <!-- Hero Section -->
   <section class="hero" style="background-image: url('assets/main.jpg')">
     <div class="hero-content">
@@ -61,7 +77,7 @@
   </div>
 
   <!-- El Gran Día Section -->
-  <section class="event-day-section fade-in">
+  <section id="ceremony" class="event-day-section fade-in">
     <h2 data-es="Ceremonia" data-en="Ceremony" data-de="Zeremonie">Ceremonia</h2>
     
     <div class="event-tile no-image">
@@ -77,7 +93,7 @@
   </section>
 
   <!-- Transport Section -->
-  <section class="transport-section fade-in">
+  <section id="transport" class="transport-section fade-in">
     <h2 data-es="Transporte" data-en="Transportation" data-de="Transport">Transporte</h2>
     
     <div class="transport-tile">
@@ -102,7 +118,7 @@
   </section>
 
   <!-- Accommodation Section -->
-  <section class="accommodation-section fade-in">
+  <section id="accommodation" class="accommodation-section fade-in">
     <h2 data-es="Alojamiento" data-en="Accommodation" data-de="Unterkunft">Alojamiento</h2>
     
     <div class="event-tile no-image">
@@ -139,7 +155,7 @@
   </section>
 
   <!-- Restaurant Section -->
-  <section class="restaurant-section fade-in">
+  <section id="dining" class="restaurant-section fade-in">
     <h2 data-es="Restauración" data-en="Dining" data-de="Gastronomie">Restauración</h2>
     
     <div class="event-tile no-image">
@@ -158,7 +174,7 @@
   </section>
 
   <!-- Gifts Section -->
-  <section class="gifts-section fade-in">
+  <section id="gifts" class="gifts-section fade-in">
     <h2 data-es="Regalos" data-en="Gifts" data-de="Geschenke">Regalos</h2>
     
     <div class="gifts-content">
@@ -174,7 +190,7 @@
   </section>
 
   <!-- Share Photos Section -->
-  <section class="photos-section fade-in">
+  <section id="photos" class="photos-section fade-in">
     <h2 data-es="Fotos" data-en="Photos" data-de="Fotos">Fotos</h2>
     
     <p class="photos-description" data-es="Comparte tus mejores momentos de la celebración con nosotros." data-en="Share your best moments from the celebration with us." data-de="Teilt eure besten Momente der Feier mit uns.">Comparte tus mejores momentos de la celebración con nosotros.</p>
@@ -183,7 +199,7 @@
   </section>
 
   <!-- RSVP Section -->
-  <section class="rsvp-section fade-in">
+  <section id="rsvp" class="rsvp-section fade-in">
     <h2 data-es="Confirmación de asistencia" data-en="RSVP" data-de="Zusage">Confirmación de asistencia</h2>
     <div class="form-container">
       <iframe id="rsvp-form" src="https://docs.google.com/forms/d/e/1FAIpQLSdXU6I3s5_Z4DlskwOyluMKuD3UgOl6K_BSp1bng-AWjYIKIA/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>

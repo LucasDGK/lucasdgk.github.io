@@ -77,6 +77,109 @@ body {
 }
 
 /* ======================
+   Navigation Menu
+   ====================== */
+.nav-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.nav-toggle {
+  width: 44px;
+  height: 44px;
+  background: var(--text-light);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 2px;
+  background: var(--primary-color);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-icon::before,
+.nav-icon::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: var(--primary-color);
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-icon::before {
+  top: -6px;
+}
+
+.nav-icon::after {
+  top: 6px;
+}
+
+/* Hamburger to X animation */
+.nav-toggle.active .nav-icon {
+  background: transparent;
+}
+
+.nav-toggle.active .nav-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-toggle.active .nav-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.nav-list {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  background: var(--text-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.nav-list.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-list li a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.nav-list li a:hover {
+  background: var(--accent-color);
+  color: var(--primary-color);
+}
+
+/* ======================
    Hero Section
    ====================== */
 .hero {
@@ -607,6 +710,25 @@ section h2 {
    Mobile Responsiveness
    ====================== */
 @media (max-width: 768px) {
+  .nav-menu {
+    top: 10px;
+    left: 10px;
+  }
+
+  .nav-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-list {
+    min-width: 160px;
+  }
+
+  .nav-list li a {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
   .language-toggle {
     top: 10px;
     right: 10px;
