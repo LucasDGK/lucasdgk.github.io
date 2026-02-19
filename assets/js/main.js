@@ -14,7 +14,18 @@ const formUrls = {
   de: 'https://docs.google.com/forms/d/e/1FAIpQLSe8_IjioJiiBvUWK7NcD7j5HyBRvqQtwUzLlEELbRIU0HJFNw/viewform?embedded=true"'
 };
 
-let currentLang = localStorage.getItem('selectedLang') || 'es';
+// Check URL parameter for language, then localStorage, then default to 'es'
+function getInitialLanguage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlLang = urlParams.get('lang');
+  
+  if (urlLang && ['es', 'en', 'de'].includes(urlLang)) {
+    return urlLang;
+  }
+  return localStorage.getItem('selectedLang') || 'es';
+}
+
+let currentLang = getInitialLanguage();
 
 // Initialize language buttons
 document.querySelectorAll('.lang-btn').forEach(btn => {
