@@ -1,0 +1,278 @@
+/* ── Variables ───────────────────────────────── */
+:root {
+  --bg:         #0d0d1a;
+  --surface:    #13132a;
+  --surface-2:  #1b1b35;
+  --border:     #252545;
+  --text:       #e2e8f0;
+  --muted:      #7c8db0;
+  --green:      #00ff87;
+  --purple:     #a78bfa;
+  --blue:       #60a5fa;
+  --red:        #f87171;
+  --yellow:     #fbbf24;
+  --radius:     10px;
+  --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Reset ───────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Header ──────────────────────────────────── */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1.4rem 1.25rem;
+}
+
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.fpl-badge {
+  background: var(--purple);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+}
+
+.header-title h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.season-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.last-updated {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+/* ── Main ────────────────────────────────────── */
+.site-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ── Cards ───────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* ── GW status badge ─────────────────────────── */
+.gw-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.gw-badge.live {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--yellow);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.gw-badge.final {
+  background: rgba(0, 255, 135, 0.1);
+  color: var(--green);
+  border: 1px solid rgba(0, 255, 135, 0.25);
+}
+
+/* ── Tables ──────────────────────────────────── */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.data-table thead th {
+  text-align: left;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.data-table thead th.col-num,
+.data-table thead th.col-hit,
+.data-table thead th.col-chip { text-align: center; }
+
+.data-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+
+.data-table tbody tr:last-child { border-bottom: none; }
+
+.data-table tbody tr:hover { background: var(--surface-2); }
+
+.data-table td {
+  padding: 0.75rem 1.1rem;
+  vertical-align: middle;
+}
+
+.data-table td.col-num,
+.data-table td.col-hit,
+.data-table td.col-chip { text-align: center; }
+
+.empty-row {
+  text-align: center;
+  color: var(--muted);
+  padding: 2.5rem 1rem !important;
+  font-size: 0.85rem;
+}
+
+/* ── Rank cell ───────────────────────────────── */
+.rank-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  min-width: 2.5rem;
+}
+
+.arrow {
+  font-size: 0.6rem;
+  line-height: 1;
+}
+
+.arrow.up   { color: var(--green); }
+.arrow.down { color: var(--red); }
+.arrow.same { color: var(--border); }
+
+/* ── Text helpers ────────────────────────────── */
+.team-name    { font-weight: 600; }
+.manager-name { color: var(--muted); font-size: 0.8rem; }
+
+.pts-big {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.pts-muted { color: var(--muted); }
+
+/* ── Chip badges ─────────────────────────────── */
+.chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.chip {
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 0.15rem 0.42rem;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.chip.wc { background: rgba(167, 139, 250, 0.18); color: var(--purple); }
+.chip.fh { background: rgba(96, 165, 250, 0.18);  color: var(--blue);   }
+.chip.bb { background: rgba(251, 191, 36, 0.18);  color: var(--yellow); }
+.chip.tc { background: rgba(248, 113, 113, 0.18); color: var(--red);    }
+
+/* ── Transfers ───────────────────────────────── */
+.player-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.player-in  { color: var(--green); font-size: 0.8rem; }
+.player-out { color: var(--red);   font-size: 0.8rem; }
+
+.no-move { color: var(--muted); font-size: 0.8rem; }
+
+.hit {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--red);
+}
+
+/* ── Chart ───────────────────────────────────── */
+.chart-container {
+  padding: 1.25rem 1rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  max-height: 320px;
+}
+
+#points-chart { max-height: 290px; }
+
+/* ── Footer ──────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 600px) {
+  .data-table thead th,
+  .data-table td      { padding: 0.65rem 0.7rem; }
+
+  .col-manager { display: none; }
+
+  .chart-container { max-height: 240px; }
+  #points-chart    { max-height: 215px; }
+}
