@@ -23,6 +23,16 @@ function esc(str) {
     .replace(/"/g, '&quot;');
 }
 
+function timeAgo(iso) {
+  if (!iso) return '';
+  const then = new Date(iso).getTime();
+  const diffSec = Math.floor((Date.now() - then) / 1000);
+  if (diffSec < 60) return `Last updated a few seconds ago`;
+  if (diffSec < 3600) return `Last updated ${Math.floor(diffSec / 60)} mins ago`;
+  if (diffSec < 86400) return `Last updated ${Math.floor(diffSec / 3600)} hrs ago`;
+  return `Last updated ${Math.floor(diffSec / 86400)} days ago`;
+}
+
 function chipBadge(name) {
   const m = CHIP_META[name];
   if (!m) return '';
@@ -44,6 +54,23 @@ function fmtDate(iso) {
 
 // ── Standings table ───────────────────────────────────────────────────────────
 
+let FPL_DATA = null;
+
+function fmtDelta(n) {
+  if (n == null) return `<span class="delta same">–</span>`;
+  if (n === 0) return `<span class="delta same">±0</span>`;
+  const cls = n > 0 ? 'up' : 'down';
+  const sign = n > 0 ? '+' : '';
+  return `<span class="delta ${cls}">${sign}${n}</span>`;
+}
+
+function fmtLeaderDelta(diff) {
+  if (diff == null) return `<span class="delta same">–</span>`;
+  if (diff === 0) return `<span class="delta same">—</span>`;
+  // diff > 0 means leader is ahead by `diff`
+  return `<span class="delta down">−${diff}</span>`;
+}
+
 function renderStandings(standings) {
   const tbody = document.getElementById('standings-body');
 
@@ -54,6 +81,9 @@ function renderStandings(standings) {
 
   tbody.innerHTML = '';
 
+  // compute leader total points
+  const leaderTotal = standings.length ? Math.max(...standings.map(s => s.total_points || 0)) : null;
+
   standings.forEach(entry => {
     const diff = entry.last_rank === 0 ? 0 : entry.last_rank - entry.rank;
     const arrowCls = diff > 0 ? 'up' : diff < 0 ? 'down' : 'same';
@@ -62,6 +92,8 @@ function renderStandings(standings) {
     const chipsHtml = entry.chips_remaining.length
       ? entry.chips_remaining.map(chipBadge).join('')
       : `<span style="color:var(--muted);font-size:0.75rem">None</span>`;
+
+    const leaderDiffTotal = leaderTotal != null ? Math.max(0, leaderTotal - (entry.total_points || 0)) : null;
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -74,7 +106,7 @@ function renderStandings(standings) {
       <td><span class="team-name">${esc(entry.team_name)}</span></td>
       <td><span class="manager-name">${esc(entry.player_name)}</span></td>
       <td class="col-num pts-muted">${entry.event_total}</td>
-      <td class="col-num pts-big">${entry.total_points}</td>
+      <td class="col-num pts-big">${entry.total_points}${fmtLeaderDelta(leaderDiffTotal)}</td>
       <td><div class="chips-wrap">${chipsHtml}</div></td>
     `;
     tbody.appendChild(tr);
@@ -159,7 +191,8 @@ function renderChart(standings) {
 // ── Gameweek stats table ──────────────────────────────────────────────────────
 
 function renderGwStats(gwStats, gwFinished, gwNumber) {
-  document.getElementById('gw-number').textContent = gwNumber ?? '–';
+  const gwEls = document.querySelectorAll('.gw-number');
+  gwEls.forEach(el => { el.textContent = gwNumber ?? '–'; });
 
   const badge = document.getElementById('gw-badge');
   if (gwFinished) {
@@ -170,6 +203,18 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
     badge.className = 'gw-badge live';
   }
 
+  // Also set a standings header badge to mirror live/final state
+  const standingsBadge = document.getElementById('standings-badge');
+  if (standingsBadge) {
+    if (gwFinished) {
+      standingsBadge.textContent = 'FINAL';
+      standingsBadge.className = 'gw-badge final';
+    } else {
+      standingsBadge.textContent = 'LIVE';
+      standingsBadge.className = 'gw-badge live';
+    }
+  }
+
   const tbody = document.getElementById('gw-body');
 
   if (!gwStats?.length) {
@@ -178,12 +223,15 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
   }
 
   tbody.innerHTML = '';
-  const topPts = gwStats[0].gw_points;
+  // compute GW leader points
+  const leaderGw = gwStats.length ? Math.max(...gwStats.map(s => s.gw_points || 0)) : null;
 
   gwStats.forEach(entry => {
-    const isWinner  = gwFinished && entry.gw_points === topPts;
+    const isWinner  = gwFinished && entry.gw_points === leaderGw;
     const trophy    = isWinner ? '🏆 ' : '';
     const chipHtml  = entry.chip_used ? chipBadge(entry.chip_used) : dash();
+
+    const leaderDiffGw = leaderGw != null ? Math.max(0, leaderGw - (entry.gw_points || 0)) : null;
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -192,7 +240,7 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
       </td>
       <td><span class="team-name">${trophy}${esc(entry.team_name)}</span></td>
       <td><span class="manager-name">${esc(entry.player_name)}</span></td>
-      <td class="col-num pts-big">${entry.gw_points}</td>
+      <td class="col-num pts-big">${entry.gw_points}${fmtLeaderDelta(leaderDiffGw)}</td>
       <td class="col-chip">${chipHtml}</td>
     `;
     tbody.appendChild(tr);
@@ -236,17 +284,18 @@ function renderTransfers(transfers) {
   });
 }
 
-// ── Bootstrap ─────────────────────────────────────────────────────────────────
+// ── Bootstrap + Auto-refresh ─────────────────────────────────────────────────
 
-async function init() {
+async function fetchAndRender() {
   try {
     const res = await fetch(`data.json?t=${Date.now()}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
+    FPL_DATA = data;
 
     const updatedEl = document.getElementById('last-updated');
     if (data.meta?.updated_at) {
-      updatedEl.textContent = `Last updated: ${fmtDate(data.meta.updated_at)}`;
+      updatedEl.textContent = timeAgo(data.meta.updated_at);
     }
 
     renderStandings(data.standings);
@@ -258,12 +307,25 @@ async function init() {
     );
     renderTransfers(data.transfers);
 
+    // Decide next refresh interval:
+    // - If the current gameweek is not finished (live), poll frequently (5 minutes)
+    // - Otherwise poll hourly to avoid unnecessary traffic
+    const gwFinished = Boolean(data.meta?.gameweek_finished);
+    const nextMs = gwFinished ? 60 * 60 * 1000 : 5 * 60 * 1000;
+
+    // Schedule the next fetch
+    setTimeout(fetchAndRender, nextMs);
+
   } catch (err) {
     console.error('FPL load error:', err);
     document.querySelectorAll('.empty-row').forEach(el => {
       el.textContent = 'Could not load data. Please try again later.';
     });
+
+    // On error, retry after a short backoff
+    setTimeout(fetchAndRender, 2 * 60 * 1000);
   }
 }
 
-init();
+// Start the loop
+fetchAndRender();

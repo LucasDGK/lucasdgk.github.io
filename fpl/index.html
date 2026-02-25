@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FPL · The League</title>
+  <title>FPL · The Helios League</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -12,93 +12,100 @@
     <div class="header-inner">
       <div class="header-title">
         <span class="fpl-badge">FPL</span>
-        <h1>The League</h1>
+        <h1>The Helios League</h1>
       </div>
       <p class="season-label">2025/26 Season</p>
-      <p class="last-updated" id="last-updated"></p>
     </div>
   </header>
 
   <main class="site-main">
+    <div class="layout">
+      <div class="col-left">
 
-    <!-- ── League Table ── -->
-    <section class="card" id="standings-section">
-      <h2 class="card-title">League Table</h2>
+        <!-- ── Current Gameweek ── -->
+        <section class="card" id="gw-section">
+          <h2 class="card-title">
+            Gameweek <span class="gw-number">–</span>
+            <span class="gw-badge" id="gw-badge"></span>
+          </h2>
 
-      <div class="table-wrap">
-        <table class="data-table" id="standings-table">
-          <thead>
-            <tr>
-              <th class="col-rank">#</th>
-              <th class="col-team">Team</th>
-              <th class="col-manager">Manager</th>
-              <th class="col-num">GW</th>
-              <th class="col-num">Total</th>
-              <th class="col-chips">Chips Left</th>
-            </tr>
-          </thead>
-          <tbody id="standings-body">
-            <tr><td colspan="6" class="empty-row">Loading…</td></tr>
-          </tbody>
-        </table>
+          <div class="table-wrap">
+            <table class="data-table" id="gw-table">
+              <thead>
+                <tr>
+                  <th class="col-rank">#</th>
+                  <th class="col-team">Team</th>
+                  <th class="col-manager">Manager</th>
+                  <th class="col-num">Points</th>
+                  <th class="col-chip">Chip</th>
+                </tr>
+              </thead>
+              <tbody id="gw-body">
+                <tr><td colspan="5" class="empty-row">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ── Transfers ── -->
+        <section class="card" id="transfers-section">
+          <h2 class="card-title">Gameweek <span class="gw-number">—</span> Transfers</h2>
+
+          <div class="table-wrap">
+            <table class="data-table" id="transfers-table">
+              <thead>
+                <tr>
+                  <th class="col-team">Team</th>
+                  <th class="col-manager">Manager</th>
+                  <th class="col-transfer">In ↑</th>
+                  <th class="col-transfer">Out ↓</th>
+                  <th class="col-hit">Hit</th>
+                </tr>
+              </thead>
+              <tbody id="transfers-body">
+                <tr><td colspan="5" class="empty-row">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
       </div>
 
-      <div class="chart-container">
-        <canvas id="points-chart"></canvas>
+      <div class="col-right">
+
+        <!-- ── League Table ── -->
+        <section class="card" id="standings-section">
+          <h2 class="card-title">League Table <span id="standings-badge" class="gw-badge"></span></h2>
+
+          <div class="table-wrap">
+            <table class="data-table" id="standings-table">
+              <thead>
+                <tr>
+                  <th class="col-rank">#</th>
+                  <th class="col-team">Team</th>
+                  <th class="col-manager">Manager</th>
+                  <th class="col-num">GW</th>
+                  <th class="col-num">Total</th>
+                  <th class="col-chips">Chips Left</th>
+                </tr>
+              </thead>
+              <tbody id="standings-body">
+                <tr><td colspan="6" class="empty-row">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="chart-container">
+            <canvas id="points-chart"></canvas>
+          </div>
+        </section>
+
       </div>
-    </section>
-
-    <!-- ── Current Gameweek ── -->
-    <section class="card" id="gw-section">
-      <h2 class="card-title">
-        Gameweek <span id="gw-number">–</span>
-        <span class="gw-badge" id="gw-badge"></span>
-      </h2>
-
-      <div class="table-wrap">
-        <table class="data-table" id="gw-table">
-          <thead>
-            <tr>
-              <th class="col-rank">#</th>
-              <th class="col-team">Team</th>
-              <th class="col-manager">Manager</th>
-              <th class="col-num">Points</th>
-              <th class="col-chip">Chip</th>
-            </tr>
-          </thead>
-          <tbody id="gw-body">
-            <tr><td colspan="5" class="empty-row">Loading…</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- ── Transfers ── -->
-    <section class="card" id="transfers-section">
-      <h2 class="card-title">Gameweek Transfers</h2>
-
-      <div class="table-wrap">
-        <table class="data-table" id="transfers-table">
-          <thead>
-            <tr>
-              <th class="col-team">Team</th>
-              <th class="col-manager">Manager</th>
-              <th class="col-transfer">In ↑</th>
-              <th class="col-transfer">Out ↓</th>
-              <th class="col-hit">Hit</th>
-            </tr>
-          </thead>
-          <tbody id="transfers-body">
-            <tr><td colspan="5" class="empty-row">Loading…</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
+    </div>
   </main>
 
   <footer class="site-footer">
-    <p>Data from the official FPL API · Auto-updated every 3 hours</p>
+    <p>Data from the official FPL API · <span id="last-updated">Last updated —</span></p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>

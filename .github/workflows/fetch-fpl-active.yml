@@ -1,0 +1,58 @@
+name: Fetch FPL Data (Active GW)
+
+on:
+  schedule:
+    # Runs every 5 minutes during potentially active GW windows
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch-if-active:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for active Gameweek
+        id: check
+        run: |
+          python3 - <<'PY' > /tmp/gw_check.txt
+          import json, urllib.request
+          active = False
+          try:
+            with urllib.request.urlopen('https://fantasy.premierleague.com/api/bootstrap-static/', timeout=15) as r:
+              data = json.load(r)
+            events = data.get('events', [])
+            active = any(e.get('is_current') for e in events)
+          except Exception:
+            active = False
+          print('active=' + ('true' if active else 'false'))
+          PY
+          cat /tmp/gw_check.txt >> $GITHUB_OUTPUT
+
+      - name: Set up Python
+        if: steps.check.outputs.active == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        if: steps.check.outputs.active == 'true'
+        run: python3 -m pip install requests
+
+      - name: Fetch FPL data
+        if: steps.check.outputs.active == 'true'
+        run: python3 .github/scripts/fetch_fpl.py
+
+      - name: Commit and push updated data
+        if: steps.check.outputs.active == 'true'
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name  "github-actions[bot]"
+          git add fpl/data.json
+          git diff --staged --quiet || (
+            git commit -m "chore: update FPL data [skip ci]" && git push
+          )

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-02-25T07:09:58.808036+00:00",
+    "updated_at": "2026-02-25T08:44:01.228967+00:00",
     "current_gameweek": 27,
     "gameweek_finished": true
   },
@@ -21,7 +21,9 @@
         "freehit"
       ],
       "chips_remaining": [
-        "wildcard"
+        "wildcard",
+        "bboost",
+        "3xc"
       ],
       "gw_history": [
         {
@@ -260,7 +262,9 @@
         "freehit"
       ],
       "chips_remaining": [
-        "wildcard"
+        "wildcard",
+        "bboost",
+        "3xc"
       ],
       "gw_history": [
         {
@@ -498,7 +502,10 @@
         "bboost"
       ],
       "chips_remaining": [
-        "wildcard"
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
       ],
       "gw_history": [
         {
@@ -737,6 +744,7 @@
       ],
       "chips_remaining": [
         "wildcard",
+        "freehit",
         "bboost"
       ],
       "gw_history": [
@@ -975,7 +983,8 @@
         "wildcard"
       ],
       "chips_remaining": [
-        "bboost"
+        "bboost",
+        "3xc"
       ],
       "gw_history": [
         {
@@ -1210,7 +1219,6 @@
         "3xc"
       ],
       "chips_remaining": [
-        "wildcard",
         "wildcard",
         "freehit",
         "bboost"

@@ -33,25 +33,70 @@ def fetch(url: str) -> dict:
     return r.json()
 
 
-def chips_remaining(used: list[str]) -> list[str]:
+def chips_remaining(chips_used: list[dict], current_gw: int | None) -> list[str]:
     """
-    Return chips not yet played.
-    Wildcard can be used twice (once per half-season), others once.
+    Compute chips remaining for the CURRENT half of the season.
+
+    Rules used here:
+    - Each chip (wildcard, freehit, bboost, 3xc) can be used once per half-season.
+      That is, one use in GW 1-19 and one use in GW 20-38.
+    - We count only uses that occurred within the same half as `current_gw`.
+
+    `chips_used` is the raw list from the entry history `chips` field; each
+    item typically has a `name` and `event` (GW number) that we use to place
+    the use into the correct half. If `event` is missing we conservatively
+    treat it as having been used earlier in the season (reducing availability).
     """
-    counts: dict[str, int] = {}
-    for c in used:
-        counts[c] = counts.get(c, 0) + 1
+
+    # Determine current half (1 = GWs 1-19, 2 = GWs 20+). If unknown, assume 1.
+    half = 1
+    try:
+        if current_gw and int(current_gw) >= 20:
+            half = 2
+    except Exception:
+        half = 1
+
+    # Allowed uses per chip per half
+    allowed_per_half = {
+        'wildcard': 1,
+        'freehit':  1,
+        'bboost':   1,
+        '3xc':      1,
+    }
+
+    # Count uses in the same half
+    used_counts: dict[str, int] = {}
+    for c in chips_used or []:
+        name = c.get('name') if isinstance(c, dict) else c
+        if not name:
+            continue
+        # determine which GW this use happened in
+        ev = None
+        if isinstance(c, dict):
+            ev = c.get('event') or c.get('gw') or c.get('deadline_event')
+        # If we have an event number, check which half it belongs to
+        in_same_half = True
+        try:
+            if ev is not None:
+                evn = int(ev)
+                if half == 1 and evn >= 20:
+                    in_same_half = False
+                if half == 2 and evn <= 19:
+                    in_same_half = False
+        except Exception:
+            # if parsing fails, assume it was in this half to be conservative
+            in_same_half = True
+
+        if in_same_half:
+            used_counts[name] = used_counts.get(name, 0) + 1
+        else:
+            # ignore uses from the other half
+            pass
 
     remaining: list[str] = []
-
-    # Wildcard: max 2 uses
-    wc_left = max(0, 2 - counts.get("wildcard", 0))
-    remaining.extend(["wildcard"] * wc_left)
-
-    # Single-use chips
-    for chip in ("freehit", "bboost", "3xc"):
-        if chip not in counts:
-            remaining.append(chip)
+    for chip, allowed in allowed_per_half.items():
+        left = max(0, allowed - used_counts.get(chip, 0))
+        remaining.extend([chip] * left)
 
     return remaining
 
@@ -124,8 +169,9 @@ def main() -> None:
 
         # History: chips used + GW-by-GW points breakdown
         history          = fetch(f"{BASE}/entry/{eid}/history/")
-        used_chips       = [c["name"] for c in history.get("chips", [])]
-        chips_left       = chips_remaining(used_chips)
+        used_chips_raw   = history.get("chips", [])
+        used_chips       = [c.get("name") if isinstance(c, dict) else c for c in used_chips_raw]
+        chips_left       = chips_remaining(used_chips_raw, current_gw)
         gw_transfer_cost = 0
 
         gw_history:     list[dict] = []
