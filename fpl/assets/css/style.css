@@ -28,52 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Header ──────────────────────────────────── */
-.site-header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 1.4rem 1.25rem;
-}
-
-.header-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.header-title {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-}
-
-.fpl-badge {
-  background: var(--purple);
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  padding: 0.2rem 0.55rem;
-  border-radius: 5px;
-}
-
-.header-title h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.season-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.last-updated {
-  font-size: 0.72rem;
-  color: var(--muted);
-}
+/* header styles removed — page uses main content only */
 
 /* ── Main ────────────────────────────────────── */
 .site-main {
