@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-02-27T23:14:16.394980+00:00",
+    "updated_at": "2026-02-27T23:41:12.560563+00:00",
     "current_gameweek": 28,
     "gameweek_finished": false
   },
@@ -634,7 +634,7 @@
         },
         {
           "gw": 28,
-          "points": 0
+          "points": 2
         }
       ],
       "cumulative_history": [
@@ -748,7 +748,7 @@
         },
         {
           "gw": 28,
-          "total": 1473
+          "total": 1475
         }
       ]
     },
@@ -882,7 +882,7 @@
         },
         {
           "gw": 28,
-          "points": 0
+          "points": 2
         }
       ],
       "cumulative_history": [
@@ -996,7 +996,7 @@
         },
         {
           "gw": 28,
-          "total": 1462
+          "total": 1464
         }
       ]
     },
