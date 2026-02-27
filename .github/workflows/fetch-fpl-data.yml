@@ -2,8 +2,8 @@ name: Fetch FPL Data
 
 on:
   schedule:
-    # Runs every hour when no active GW
-    - cron: '0 * * * *'
+    # Runs every 5 minutes
+    - cron: '*/5 * * * *'
   workflow_dispatch:
   push:
     branches: [main, master]
