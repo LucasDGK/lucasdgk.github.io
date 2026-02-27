@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-02-27T22:52:04.792231+00:00",
+    "updated_at": "2026-02-27T23:14:16.394980+00:00",
     "current_gameweek": 28,
     "gameweek_finished": false
   },
@@ -510,7 +510,7 @@
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
       "total_points": 1473,
-      "event_total": 0,
+      "event_total": 2,
       "chips_used": [
         "wildcard",
         "freehit",
@@ -759,7 +759,7 @@
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
       "total_points": 1462,
-      "event_total": 0,
+      "event_total": 2,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1319,26 +1319,10 @@
   ],
   "current_gw_stats": [
     {
-      "entry_id": 7499034,
-      "team_name": "Florida Man's Team",
-      "player_name": "Santiago Acevedo",
-      "gw_points": 0,
-      "chip_used": null,
-      "gw_rank": 1
-    },
-    {
-      "entry_id": 7448208,
-      "team_name": "Albiceleste",
-      "player_name": "Sawal Maskey",
-      "gw_points": 0,
-      "chip_used": null,
-      "gw_rank": 1
-    },
-    {
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "gw_points": 0,
+      "gw_points": 2,
       "chip_used": null,
       "gw_rank": 1
     },
@@ -1346,9 +1330,25 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "gw_points": 0,
+      "gw_points": 2,
       "chip_used": null,
       "gw_rank": 1
+    },
+    {
+      "entry_id": 7499034,
+      "team_name": "Florida Man's Team",
+      "player_name": "Santiago Acevedo",
+      "gw_points": 0,
+      "chip_used": null,
+      "gw_rank": 3
+    },
+    {
+      "entry_id": 7448208,
+      "team_name": "Albiceleste",
+      "player_name": "Sawal Maskey",
+      "gw_points": 0,
+      "chip_used": null,
+      "gw_rank": 3
     },
     {
       "entry_id": 9144425,
@@ -1356,7 +1356,7 @@
       "player_name": "Shikhar Singh",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 3
     },
     {
       "entry_id": 12837251,
@@ -1364,7 +1364,7 @@
       "player_name": "Rumin Shah",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 3
     }
   ],
   "transfers": [
