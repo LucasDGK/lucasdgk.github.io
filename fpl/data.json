@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-02-28T20:19:41.422639+00:00",
+    "updated_at": "2026-02-28T20:43:40.641174+00:00",
     "current_gameweek": 28,
     "gameweek_finished": false
   },
@@ -12,7 +12,7 @@
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
       "total_points": 1527,
-      "event_total": 0,
+      "event_total": 38,
       "chips_used": [
         "freehit",
         "wildcard",
@@ -136,7 +136,7 @@
         },
         {
           "gw": 28,
-          "points": 0
+          "points": 38
         }
       ],
       "cumulative_history": [
@@ -250,7 +250,7 @@
         },
         {
           "gw": 28,
-          "total": 1527
+          "total": 1565
         }
       ]
     },
@@ -261,7 +261,7 @@
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
       "total_points": 1513,
-      "event_total": 0,
+      "event_total": 30,
       "chips_used": [
         "wildcard",
         "bboost",
@@ -385,7 +385,7 @@
         },
         {
           "gw": 28,
-          "points": 0
+          "points": 30
         }
       ],
       "cumulative_history": [
@@ -499,7 +499,7 @@
         },
         {
           "gw": 28,
-          "total": 1513
+          "total": 1543
         }
       ]
     },
@@ -510,7 +510,7 @@
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
       "total_points": 1475,
-      "event_total": 2,
+      "event_total": 18,
       "chips_used": [
         "wildcard",
         "freehit",
@@ -634,7 +634,7 @@
         },
         {
           "gw": 28,
-          "points": 2
+          "points": 18
         }
       ],
       "cumulative_history": [
@@ -748,7 +748,7 @@
         },
         {
           "gw": 28,
-          "total": 1475
+          "total": 1491
         }
       ]
     },
@@ -759,7 +759,7 @@
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
       "total_points": 1464,
-      "event_total": 2,
+      "event_total": 22,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -882,7 +882,7 @@
         },
         {
           "gw": 28,
-          "points": 2
+          "points": 22
         }
       ],
       "cumulative_history": [
@@ -996,7 +996,7 @@
         },
         {
           "gw": 28,
-          "total": 1464
+          "total": 1484
         }
       ]
     },
@@ -1007,7 +1007,7 @@
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
       "total_points": 1422,
-      "event_total": 0,
+      "event_total": 21,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1129,7 +1129,7 @@
         },
         {
           "gw": 28,
-          "points": 0
+          "points": 21
         }
       ],
       "cumulative_history": [
@@ -1243,7 +1243,7 @@
         },
         {
           "gw": 28,
-          "total": 1422
+          "total": 1443
         }
       ]
     },
@@ -1254,7 +1254,7 @@
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
       "total_points": 247,
-      "event_total": 0,
+      "event_total": 28,
       "chips_used": [
         "3xc"
       ],
@@ -1286,7 +1286,7 @@
         },
         {
           "gw": 28,
-          "points": -4
+          "points": 24
         }
       ],
       "cumulative_history": [
@@ -1312,59 +1312,59 @@
         },
         {
           "gw": 28,
-          "total": 247
+          "total": 275
         }
       ]
     }
   ],
   "current_gw_stats": [
     {
-      "entry_id": 7543594,
-      "team_name": "Lucky Luke CF",
-      "player_name": "Lucas Delgado",
-      "gw_points": 2,
-      "chip_used": null,
-      "gw_rank": 1
-    },
-    {
-      "entry_id": 8040003,
-      "team_name": "ChelseaPLChampions",
-      "player_name": "Chakri N",
-      "gw_points": 2,
-      "chip_used": null,
-      "gw_rank": 1
-    },
-    {
       "entry_id": 7499034,
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
-      "gw_points": 0,
+      "gw_points": 38,
       "chip_used": null,
-      "gw_rank": 3
+      "gw_rank": 1
     },
     {
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "gw_points": 0,
+      "gw_points": 30,
       "chip_used": null,
-      "gw_rank": 3
-    },
-    {
-      "entry_id": 9144425,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "gw_points": 0,
-      "chip_used": null,
-      "gw_rank": 3
+      "gw_rank": 2
     },
     {
       "entry_id": 12837251,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "gw_points": 0,
+      "gw_points": 28,
       "chip_used": null,
       "gw_rank": 3
+    },
+    {
+      "entry_id": 8040003,
+      "team_name": "ChelseaPLChampions",
+      "player_name": "Chakri N",
+      "gw_points": 22,
+      "chip_used": null,
+      "gw_rank": 4
+    },
+    {
+      "entry_id": 9144425,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "gw_points": 21,
+      "chip_used": null,
+      "gw_rank": 5
+    },
+    {
+      "entry_id": 7543594,
+      "team_name": "Lucky Luke CF",
+      "player_name": "Lucas Delgado",
+      "gw_points": 18,
+      "chip_used": null,
+      "gw_rank": 6
     }
   ],
   "transfers": [
