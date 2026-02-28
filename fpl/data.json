@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-02-27T23:56:19.229632+00:00",
+    "updated_at": "2026-02-28T01:51:10.222918+00:00",
     "current_gameweek": 28,
     "gameweek_finished": false
   },
@@ -509,7 +509,7 @@
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "total_points": 1473,
+      "total_points": 1475,
       "event_total": 2,
       "chips_used": [
         "wildcard",
@@ -758,7 +758,7 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "total_points": 1462,
+      "total_points": 1464,
       "event_total": 2,
       "chips_used": [
         "wildcard",
@@ -1253,7 +1253,7 @@
       "entry_id": 12837251,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 251,
+      "total_points": 247,
       "event_total": 0,
       "chips_used": [
         "3xc"
