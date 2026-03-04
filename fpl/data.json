@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-03-04T02:44:55.093785+00:00",
+    "updated_at": "2026-03-04T04:23:07.937405+00:00",
     "current_gameweek": 29,
     "gameweek_finished": false
   },
@@ -11,7 +11,7 @@
       "entry_id": 7499034,
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
-      "total_points": 1620,
+      "total_points": 1621,
       "event_total": 14,
       "chips_used": [
         "freehit",
@@ -268,7 +268,7 @@
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 1594,
+      "total_points": 1597,
       "event_total": 16,
       "chips_used": [
         "wildcard",
@@ -1293,7 +1293,7 @@
       "entry_id": 12837251,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 326,
+      "total_points": 328,
       "event_total": 20,
       "chips_used": [
         "3xc"
