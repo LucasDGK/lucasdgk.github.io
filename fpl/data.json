@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-03-06T00:58:19.761686+00:00",
+    "updated_at": "2026-03-06T03:28:43.739317+00:00",
     "current_gameweek": 29,
     "gameweek_finished": false
   },
@@ -12,7 +12,7 @@
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
       "total_points": 1650,
-      "event_total": 43,
+      "event_total": 44,
       "chips_used": [
         "freehit",
         "wildcard",
@@ -140,7 +140,7 @@
         },
         {
           "gw": 29,
-          "points": 43
+          "points": 44
         }
       ],
       "cumulative_history": [
@@ -258,7 +258,7 @@
         },
         {
           "gw": 29,
-          "total": 1650
+          "total": 1651
         }
       ]
     },
@@ -269,7 +269,7 @@
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
       "total_points": 1640,
-      "event_total": 59,
+      "event_total": 62,
       "chips_used": [
         "wildcard",
         "bboost",
@@ -397,7 +397,7 @@
         },
         {
           "gw": 29,
-          "points": 59
+          "points": 62
         }
       ],
       "cumulative_history": [
@@ -515,7 +515,7 @@
         },
         {
           "gw": 29,
-          "total": 1640
+          "total": 1643
         }
       ]
     },
@@ -526,7 +526,7 @@
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
       "total_points": 1601,
-      "event_total": 75,
+      "event_total": 80,
       "chips_used": [
         "wildcard",
         "freehit",
@@ -654,7 +654,7 @@
         },
         {
           "gw": 29,
-          "points": 75
+          "points": 80
         }
       ],
       "cumulative_history": [
@@ -772,7 +772,7 @@
         },
         {
           "gw": 29,
-          "total": 1601
+          "total": 1606
         }
       ]
     },
@@ -1367,18 +1367,18 @@
   ],
   "current_gw_stats": [
     {
-      "entry_id": 9144425,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "gw_points": 78,
+      "entry_id": 7543594,
+      "team_name": "Lucky Luke CF",
+      "player_name": "Lucas Delgado",
+      "gw_points": 80,
       "chip_used": null,
       "gw_rank": 1
     },
     {
-      "entry_id": 7543594,
-      "team_name": "Lucky Luke CF",
-      "player_name": "Lucas Delgado",
-      "gw_points": 75,
+      "entry_id": 9144425,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "gw_points": 78,
       "chip_used": null,
       "gw_rank": 2
     },
@@ -1386,9 +1386,17 @@
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "gw_points": 59,
+      "gw_points": 62,
       "chip_used": null,
       "gw_rank": 3
+    },
+    {
+      "entry_id": 7499034,
+      "team_name": "Florida Man's Team",
+      "player_name": "Santiago Acevedo",
+      "gw_points": 44,
+      "chip_used": null,
+      "gw_rank": 4
     },
     {
       "entry_id": 12837251,
@@ -1397,14 +1405,6 @@
       "gw_points": 44,
       "chip_used": null,
       "gw_rank": 4
-    },
-    {
-      "entry_id": 7499034,
-      "team_name": "Florida Man's Team",
-      "player_name": "Santiago Acevedo",
-      "gw_points": 43,
-      "chip_used": null,
-      "gw_rank": 5
     },
     {
       "entry_id": 8040003,
