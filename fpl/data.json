@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-03-15T22:00:26.473749+00:00",
+    "updated_at": "2026-03-15T22:38:36.490230+00:00",
     "current_gameweek": 30,
     "gameweek_finished": false
   },
@@ -144,7 +144,7 @@
         },
         {
           "gw": 30,
-          "points": 41
+          "points": 43
         }
       ],
       "cumulative_history": [
@@ -266,7 +266,7 @@
         },
         {
           "gw": 30,
-          "total": 1692
+          "total": 1694
         }
       ]
     },
@@ -409,7 +409,7 @@
         },
         {
           "gw": 30,
-          "points": 40
+          "points": 41
         }
       ],
       "cumulative_history": [
@@ -531,7 +531,7 @@
         },
         {
           "gw": 30,
-          "total": 1683
+          "total": 1684
         }
       ]
     },
@@ -674,7 +674,7 @@
         },
         {
           "gw": 30,
-          "points": 40
+          "points": 42
         }
       ],
       "cumulative_history": [
@@ -796,7 +796,7 @@
         },
         {
           "gw": 30,
-          "total": 1646
+          "total": 1648
         }
       ]
     },
@@ -937,7 +937,7 @@
         },
         {
           "gw": 30,
-          "points": 39
+          "points": 41
         }
       ],
       "cumulative_history": [
@@ -1059,7 +1059,7 @@
         },
         {
           "gw": 30,
-          "total": 1611
+          "total": 1613
         }
       ]
     },
