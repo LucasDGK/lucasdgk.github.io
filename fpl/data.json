@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-03-15T21:45:46.240991+00:00",
+    "updated_at": "2026-03-15T22:00:26.473749+00:00",
     "current_gameweek": 30,
     "gameweek_finished": false
   },
@@ -12,7 +12,7 @@
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
       "total_points": 1692,
-      "event_total": 41,
+      "event_total": 43,
       "chips_used": [
         "freehit",
         "wildcard",
@@ -277,7 +277,7 @@
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
       "total_points": 1683,
-      "event_total": 40,
+      "event_total": 41,
       "chips_used": [
         "wildcard",
         "bboost",
@@ -542,7 +542,7 @@
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
       "total_points": 1646,
-      "event_total": 40,
+      "event_total": 42,
       "chips_used": [
         "wildcard",
         "freehit",
@@ -807,7 +807,7 @@
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
       "total_points": 1611,
-      "event_total": 39,
+      "event_total": 41,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1418,33 +1418,33 @@
       "entry_id": 7499034,
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
-      "gw_points": 41,
+      "gw_points": 43,
       "chip_used": null,
       "gw_rank": 1
-    },
-    {
-      "entry_id": 7448208,
-      "team_name": "Albiceleste",
-      "player_name": "Sawal Maskey",
-      "gw_points": 40,
-      "chip_used": null,
-      "gw_rank": 2
     },
     {
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "gw_points": 40,
+      "gw_points": 42,
       "chip_used": null,
       "gw_rank": 2
+    },
+    {
+      "entry_id": 7448208,
+      "team_name": "Albiceleste",
+      "player_name": "Sawal Maskey",
+      "gw_points": 41,
+      "chip_used": null,
+      "gw_rank": 3
     },
     {
       "entry_id": 9144425,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
-      "gw_points": 39,
+      "gw_points": 41,
       "chip_used": null,
-      "gw_rank": 4
+      "gw_rank": 3
     },
     {
       "entry_id": 12837251,
