@@ -255,9 +255,16 @@ function renderTransfers(transfers) {
     return;
   }
 
+  const active = transfers.filter(e => e.transfers_in?.length || e.transfers_out?.length);
+
+  if (!active.length) {
+    tbody.innerHTML = `<tr><td colspan="5" class="empty-row">No transfers this gameweek.</td></tr>`;
+    return;
+  }
+
   tbody.innerHTML = '';
 
-  transfers.forEach(entry => {
+  active.forEach(entry => {
     const inHtml = entry.transfers_in?.length
       ? entry.transfers_in.map(p => `<div class="player-in">↑ ${esc(p)}</div>`).join('')
       : `<span class="no-move">No transfer</span>`;
