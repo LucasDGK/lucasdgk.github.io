@@ -127,6 +127,17 @@ def main() -> None:
             gw_finished  = event["finished"]
             break
 
+    # Find next gameweek deadline — first event whose deadline is still in the future
+    next_deadline: str | None = None
+    next_gw: int | None = None
+    now = datetime.now(timezone.utc)
+    for event in bootstrap["events"]:
+        dl = event.get("deadline_time")
+        if dl and datetime.fromisoformat(dl.replace("Z", "+00:00")) > now:
+            next_deadline = dl
+            next_gw = event["id"]
+            break
+
     # Fallback: use last finished GW if no current one found
     if current_gw is None:
         for event in reversed(bootstrap["events"]):
@@ -249,6 +260,8 @@ def main() -> None:
             "updated_at":       datetime.now(timezone.utc).isoformat(),
             "current_gameweek": current_gw,
             "gameweek_finished": gw_finished,
+            "next_deadline":    next_deadline,
+            "next_gw":          next_gw,
         },
         "standings":        standings,
         "current_gw_stats": gw_stats,

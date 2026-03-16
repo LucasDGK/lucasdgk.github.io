@@ -2,7 +2,9 @@
   "meta": {
     "updated_at": "2026-03-16T21:50:40.150904+00:00",
     "current_gameweek": 30,
-    "gameweek_finished": false
+    "gameweek_finished": false,
+    "next_deadline": "2026-03-20T18:30:00Z",
+    "next_gw": 31
   },
   "standings": [
     {

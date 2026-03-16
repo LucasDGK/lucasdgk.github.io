@@ -289,6 +289,56 @@ function renderTransfers(transfers) {
   });
 }
 
+// ── Deadline countdown ────────────────────────────────────────────────────────
+
+let deadlineInterval = null;
+
+function renderDeadline(meta) {
+  const el = document.getElementById('deadline-info');
+  if (!el) return;
+
+  const dl = meta?.next_deadline;
+  const gw = meta?.next_gw;
+
+  if (!dl) {
+    el.textContent = '';
+    return;
+  }
+
+  const deadline = new Date(dl);
+  const dateStr = deadline.toLocaleDateString('en-GB', {
+    weekday: 'short', day: 'numeric', month: 'short',
+    hour: '2-digit', minute: '2-digit',
+  }).toUpperCase();
+
+  function update() {
+    const now = Date.now();
+    const diff = deadline.getTime() - now;
+
+    if (diff <= 0) {
+      el.innerHTML = `NEXT DEADLINE · ${dateStr} · <span class="deadline-countdown urgent">LOCKED</span>`;
+      if (deadlineInterval) clearInterval(deadlineInterval);
+      return;
+    }
+
+    const days = Math.floor(diff / 86400000);
+    const hrs  = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+
+    let parts = [];
+    if (days > 0) parts.push(`${days}D`);
+    if (hrs > 0) parts.push(`${hrs}H`);
+    parts.push(`${mins}M`);
+
+    const urgent = diff < 86400000 ? ' urgent' : '';
+    el.innerHTML = `NEXT DEADLINE · ${dateStr} · <span class="deadline-countdown${urgent}">${parts.join(' ')}</span>`;
+  }
+
+  update();
+  if (deadlineInterval) clearInterval(deadlineInterval);
+  deadlineInterval = setInterval(update, 60000);
+}
+
 // ── Bootstrap + Auto-refresh ─────────────────────────────────────────────────
 
 async function fetchAndRender() {
@@ -305,6 +355,7 @@ async function fetchAndRender() {
 
     renderStandings(data.standings);
     renderChart(data.standings);
+    renderDeadline(data.meta);
     renderGwStats(
       data.current_gw_stats,
       data.meta?.gameweek_finished ?? false,

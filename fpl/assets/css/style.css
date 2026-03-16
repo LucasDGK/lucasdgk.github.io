@@ -44,6 +44,32 @@ body {
   box-sizing: border-box;
 }
 
+/* ── Deadline info in GW title ────────────────── */
+.deadline-info {
+  margin-left: auto;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: var(--muted);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.deadline-info .deadline-countdown {
+  color: var(--green);
+}
+
+.deadline-info .deadline-countdown.urgent {
+  color: var(--red);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
 /* ── Landscape / TV layout ─────────────────────────────────────────────────── */
 .layout {
   display: grid;
