@@ -124,14 +124,14 @@ function renderChart(standings) {
   // Collect all GW numbers that appear in any team's history
   const gwSet = new Set();
   standings.forEach(e => e.cumulative_history?.forEach(h => gwSet.add(h.gw)));
-  const gwLabels = [...gwSet].sort((a, b) => a - b);
+  const gwLabels = [...gwSet].sort((a, b) => a - b).slice(-3);
 
-  const datasets = standings.map((entry, i) => {
+  const datasets = standings.filter(e => e.team_name !== 'GJ06_City_FC').map((entry, i) => {
     const map = Object.fromEntries(
       (entry.cumulative_history ?? []).map(h => [h.gw, h.total])
     );
     return {
-      label: entry.team_name,
+      label: (entry.player_name || entry.team_name).split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(),
       data: gwLabels.map(gw => map[gw] ?? null),
       borderColor: PALETTE[i % PALETTE.length],
       backgroundColor: 'transparent',
@@ -145,22 +145,19 @@ function renderChart(standings) {
   const ctx = document.getElementById('points-chart').getContext('2d');
   if (chart) chart.destroy();
 
+  const chartFont = { family: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", weight: 600 };
+
   chart = new Chart(ctx, {
     type: 'line',
     data: { labels: gwLabels.map(g => `GW${g}`), datasets },
     options: {
       responsive: true,
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
+      devicePixelRatio: window.devicePixelRatio || 2,
       interaction: { mode: 'index', intersect: false },
       plugins: {
         legend: {
-          position: 'bottom',
-          labels: {
-            color: '#7c8db0',
-            font: { size: 11 },
-            boxWidth: 12,
-            padding: 14,
-          },
+          display: false,
         },
         tooltip: {
           backgroundColor: '#1b1b35',
@@ -168,8 +165,9 @@ function renderChart(standings) {
           borderWidth: 1,
           titleColor: '#e2e8f0',
           bodyColor: '#7c8db0',
+          titleFont: { ...chartFont, size: 14 },
+          bodyFont: { ...chartFont, size: 13, weight: 400 },
           callbacks: {
-            // Sort tooltip items by value descending
             afterBody: () => '',
           },
         },
@@ -177,11 +175,11 @@ function renderChart(standings) {
       scales: {
         x: {
           grid:  { color: '#252545' },
-          ticks: { color: '#7c8db0', font: { size: 11 } },
+          ticks: { color: '#7c8db0', font: { ...chartFont, size: 13, letterSpacing: 0.07 } },
         },
         y: {
           grid:  { color: '#252545' },
-          ticks: { color: '#7c8db0', font: { size: 11 } },
+          ticks: { color: '#7c8db0', font: { ...chartFont, size: 13, letterSpacing: 0.07 } },
         },
       },
     },

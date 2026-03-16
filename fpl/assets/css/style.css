@@ -42,39 +42,41 @@ body {
 
 /* ── Landscape / TV layout ─────────────────────────────────────────────────── */
 .layout {
-  display: flex;
-  gap: 1.5rem;
-  align-items: stretch;
-}
-
-.col-left {
-  flex: 0 0 48%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 48%;
+  grid-template-rows: auto auto;
   gap: 1.25rem;
 }
 
-.col-right {
-  flex: 1 1 52%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
+.col-left, .col-right { display: contents; }
+
+/* Place cards into grid cells */
+#gw-section         { grid-column: 2; grid-row: 1; }
+#transfers-section   { grid-column: 2; grid-row: 2; }
+#standings-section   { grid-column: 1; grid-row: 1; }
+.media-row           { grid-column: 1; grid-row: 2; }
+
+/* Trophy + Chart row: two cards side by side */
+.media-row { display: flex; gap: 1.25rem; }
+
+/* Cards fill their grid cell */
+.layout .card { width: 100%; display: flex; flex-direction: column; }
 
 /* Increase chart and table sizes for large displays */
-.chart-container { padding: 1.25rem 1rem 1rem; border-top: 1px solid var(--border); background: var(--bg); display:flex; align-items:center; justify-content:center; max-height:520px; }
+.chart-container { display: none; }
 
-/* Chart sizing: main chart fills available space */
-#points-chart { width: 100% !important; height: 100% !important; max-height: none; }
+/* Trophy + Chart cards */
+.media-card { display: flex; flex-direction: column; align-items: stretch; overflow: hidden; }
 
-/* Make cards stretch nicely in columns */
-.col-left .card, .col-right .card { width: 100%; }
+.trophy-video-wrap { flex: 1; position: relative; overflow: hidden; min-height: 0; }
+.trophy-video-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border-radius: var(--radius); padding: 1rem; }
+.chart-wrap { width: 100%; flex: 1; padding: 1rem; position: relative; min-height: 0; }
 
-/* Ensure right column stretches to match left column height */
-.col-right { align-items: stretch; }
-#standings-section { display: flex; flex-direction: column; flex: 1 1 auto; }
-.col-right .card { height: 100%; }
-.chart-container { flex: 1 1 auto; }
+/* Chart sizing: let Chart.js handle responsive scaling */
+#points-chart { display: block; width: 100% !important; }
+
+/* Ensure standings card stretches */
+#standings-section { display: flex; flex-direction: column; }
 
 /* Slightly larger typography for TV */
 @media (min-width: 1200px) {
@@ -83,8 +85,8 @@ body {
   .site-main { max-width: 100vw; padding: 2.25rem 2.25rem; }
   .card-title { font-size: 1.2rem; }
   .data-table td { padding: 1.25rem 1.75rem; }
-  .chart-container { max-height: 720px; }
-  #points-chart { max-height: 680px; }
+  .media-card { max-height: 720px; }
+  .trophy-video-wrap video { max-height: 680px; }
 }
 
 /* ── Cards ───────────────────────────────────── */
@@ -279,6 +281,7 @@ body {
 
   .col-manager { display: none; }
 
-  .chart-container { max-height: 240px; }
-  #points-chart    { max-height: 215px; }
+  .chart-container { max-height: none; flex-direction: column; }
+  .trophy-video-wrap { flex: 0 0 auto; width: 100%; max-height: 200px; }
+  .chart-wrap { width: 100%; }
 }

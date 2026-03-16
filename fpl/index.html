@@ -20,7 +20,6 @@
             Gameweek <span class="gw-number">–</span>
             <span class="gw-badge" id="gw-badge"></span>
           </h2>
-
           <div class="table-wrap">
             <table class="data-table" id="gw-table">
               <thead>
@@ -42,7 +41,6 @@
         <!-- ── Transfers ── -->
         <section class="card" id="transfers-section">
           <h2 class="card-title">Gameweek <span class="gw-number">—</span> Transfers</h2>
-
           <div class="table-wrap">
             <table class="data-table" id="transfers-table">
               <thead>
@@ -68,7 +66,6 @@
         <!-- ── League Table ── -->
         <section class="card" id="standings-section">
           <h2 class="card-title">League Table <span id="standings-badge" class="gw-badge"></span></h2>
-
           <div class="table-wrap">
             <table class="data-table" id="standings-table">
               <thead>
@@ -86,11 +83,25 @@
               </tbody>
             </table>
           </div>
-
-          <div class="chart-container">
-            <canvas id="points-chart"></canvas>
-          </div>
         </section>
+
+        <div class="media-row">
+          <section class="card media-card">
+            <h2 class="card-title">League Trophy</h2>
+            <div class="trophy-video-wrap">
+              <video autoplay loop muted playsinline>
+                <source src="assets/trophy_animation.webm" type="video/webm">
+              </video>
+            </div>
+          </section>
+
+          <section class="card media-card">
+            <h2 class="card-title">Points Graph</h2>
+            <div class="chart-wrap">
+              <canvas id="points-chart"></canvas>
+            </div>
+          </section>
+        </div>
 
       </div>
     </div>
