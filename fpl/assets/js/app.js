@@ -124,7 +124,7 @@ function renderChart(standings) {
   // Collect all GW numbers that appear in any team's history
   const gwSet = new Set();
   standings.forEach(e => e.cumulative_history?.forEach(h => gwSet.add(h.gw)));
-  const gwLabels = [...gwSet].sort((a, b) => a - b).slice(-3);
+  const gwLabels = [...gwSet].sort((a, b) => a - b).slice(-5);
 
   const datasets = standings.filter(e => e.team_name !== 'GJ06_City_FC').map((entry, i) => {
     const map = Object.fromEntries(
