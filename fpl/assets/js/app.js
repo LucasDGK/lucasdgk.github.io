@@ -121,10 +121,14 @@ function renderChart(standings) {
   if (!standings?.length) return;
   if (typeof Chart === 'undefined') return;   // CDN not loaded
 
+  const gwFinished = Boolean(FPL_DATA?.meta?.gameweek_finished);
+
   // Collect all GW numbers that appear in any team's history
   const gwSet = new Set();
   standings.forEach(e => e.cumulative_history?.forEach(h => gwSet.add(h.gw)));
   const gwLabels = [...gwSet].sort((a, b) => a - b).slice(-5);
+
+  const lastIdx = gwLabels.length - 1;
 
   const datasets = standings.filter(e => e.team_name !== 'GJ06_City_FC').map((entry, i) => {
     const map = Object.fromEntries(
@@ -139,17 +143,54 @@ function renderChart(standings) {
       pointRadius: 3,
       tension: 0.3,
       spanGaps: true,
+      segment: {
+        borderDash: ctx => (!gwFinished && ctx.p1DataIndex === lastIdx) ? [6, 4] : [],
+      },
     };
   });
 
   const ctx = document.getElementById('points-chart').getContext('2d');
   if (chart) chart.destroy();
 
+  // Pulsing dot plugin for live GW
+  const pulsePlugin = {
+    id: 'pulseDot',
+    afterDraw(chart) {
+      if (gwFinished) return;
+      const now = Date.now();
+      const phase = (now % 1500) / 1500; // 0→1 over 1.5s
+      const scale = 1 + phase * 2;
+      const alpha = 1 - phase;
+
+      chart.data.datasets.forEach((ds, di) => {
+        const meta = chart.getDatasetMeta(di);
+        const last = meta.data[meta.data.length - 1];
+        if (!last) return;
+
+        const cx = last.x;
+        const cy = last.y;
+        const color = ds.borderColor;
+
+        chart.ctx.save();
+        chart.ctx.beginPath();
+        chart.ctx.arc(cx, cy, 3 * scale, 0, Math.PI * 2);
+        chart.ctx.strokeStyle = color;
+        chart.ctx.globalAlpha = alpha;
+        chart.ctx.lineWidth = 2;
+        chart.ctx.stroke();
+        chart.ctx.restore();
+      });
+
+      requestAnimationFrame(() => chart.draw());
+    },
+  };
+
   const chartFont = { family: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", weight: 600 };
 
   chart = new Chart(ctx, {
     type: 'line',
     data: { labels: gwLabels.map(g => `GW${g}`), datasets },
+    plugins: [pulsePlugin],
     options: {
       responsive: true,
       maintainAspectRatio: false,

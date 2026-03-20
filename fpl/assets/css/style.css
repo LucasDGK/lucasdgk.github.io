@@ -156,6 +156,7 @@ body {
   background: rgba(251, 191, 36, 0.15);
   color: var(--yellow);
   border: 1px solid rgba(251, 191, 36, 0.3);
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .gw-badge.final {
