@@ -363,14 +363,8 @@ async function fetchAndRender() {
     );
     renderTransfers(data.transfers);
 
-    // Decide next refresh interval:
-    // - If the current gameweek is not finished (live), poll frequently (5 minutes)
-    // - Otherwise poll hourly to avoid unnecessary traffic
-    const gwFinished = Boolean(data.meta?.gameweek_finished);
-    const nextMs = gwFinished ? 60 * 60 * 1000 : 5 * 60 * 1000;
-
-    // Schedule the next fetch
-    setTimeout(fetchAndRender, nextMs);
+    // Refresh every 5 minutes
+    setTimeout(fetchAndRender, 5 * 60 * 1000);
 
   } catch (err) {
     console.error('FPL load error:', err);
