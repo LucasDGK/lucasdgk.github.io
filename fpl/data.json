@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-03-21T22:44:42.405860+00:00",
+    "updated_at": "2026-03-21T23:01:03.244677+00:00",
     "current_gameweek": 31,
     "gameweek_finished": false,
     "next_deadline": "2026-04-10T17:30:00Z",
@@ -14,7 +14,7 @@
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
       "total_points": 1723,
-      "event_total": 15,
+      "event_total": 41,
       "chips_used": [
         "freehit",
         "wildcard",
@@ -287,7 +287,7 @@
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
       "total_points": 1704,
-      "event_total": 14,
+      "event_total": 41,
       "chips_used": [
         "wildcard",
         "bboost",
@@ -560,7 +560,7 @@
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
       "total_points": 1676,
-      "event_total": 26,
+      "event_total": 59,
       "chips_used": [
         "wildcard",
         "freehit",
@@ -833,7 +833,7 @@
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
       "total_points": 1644,
-      "event_total": 29,
+      "event_total": 52,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1104,7 +1104,7 @@
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
       "total_points": 1568,
-      "event_total": 0,
+      "event_total": 13,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1376,7 +1376,7 @@
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
       "total_points": 392,
-      "event_total": 2,
+      "event_total": 25,
       "chips_used": [
         "3xc",
         "wildcard"
@@ -1465,26 +1465,26 @@
   ],
   "current_gw_stats": [
     {
-      "entry_id": 9144425,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "gw_points": 29,
-      "chip_used": null,
-      "gw_rank": 1
-    },
-    {
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "gw_points": 26,
+      "gw_points": 59,
       "chip_used": "freehit",
+      "gw_rank": 1
+    },
+    {
+      "entry_id": 9144425,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "gw_points": 52,
+      "chip_used": null,
       "gw_rank": 2
     },
     {
       "entry_id": 7499034,
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
-      "gw_points": 15,
+      "gw_points": 41,
       "chip_used": null,
       "gw_rank": 3
     },
@@ -1492,15 +1492,15 @@
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "gw_points": 14,
+      "gw_points": 41,
       "chip_used": "wildcard",
-      "gw_rank": 4
+      "gw_rank": 3
     },
     {
       "entry_id": 12837251,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "gw_points": 2,
+      "gw_points": 25,
       "chip_used": null,
       "gw_rank": 5
     },
@@ -1508,7 +1508,7 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "gw_points": 0,
+      "gw_points": 13,
       "chip_used": null,
       "gw_rank": 6
     }
