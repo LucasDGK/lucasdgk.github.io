@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-10T21:04:39.587747+00:00",
+    "updated_at": "2026-04-10T21:51:49.095634+00:00",
     "current_gameweek": 32,
     "gameweek_finished": false,
     "next_deadline": "2026-04-18T10:00:00Z",
@@ -1416,7 +1416,7 @@
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
       "total_points": 424,
-      "event_total": 0,
+      "event_total": 26,
       "chips_used": [
         "3xc",
         "wildcard"
@@ -1513,12 +1513,20 @@
   ],
   "current_gw_stats": [
     {
+      "entry_id": 12837251,
+      "team_name": "GJ06_City_FC",
+      "player_name": "Rumin Shah",
+      "gw_points": 26,
+      "chip_used": null,
+      "gw_rank": 1
+    },
+    {
       "entry_id": 7499034,
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
       "gw_points": 0,
       "chip_used": "wildcard",
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 7448208,
@@ -1526,7 +1534,7 @@
       "player_name": "Sawal Maskey",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 7543594,
@@ -1534,7 +1542,7 @@
       "player_name": "Lucas Delgado",
       "gw_points": 0,
       "chip_used": "wildcard",
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 9144425,
@@ -1542,7 +1550,7 @@
       "player_name": "Shikhar Singh",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 8040003,
@@ -1550,15 +1558,7 @@
       "player_name": "Chakri N",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
-    },
-    {
-      "entry_id": 12837251,
-      "team_name": "GJ06_City_FC",
-      "player_name": "Rumin Shah",
-      "gw_points": 0,
-      "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     }
   ],
   "transfers": [
