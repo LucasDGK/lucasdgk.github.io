@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-10T23:48:28.230971+00:00",
+    "updated_at": "2026-04-11T01:01:58.021802+00:00",
     "current_gameweek": 32,
     "gameweek_finished": false,
     "next_deadline": "2026-04-18T10:00:00Z",
@@ -1416,7 +1416,7 @@
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
       "total_points": 450,
-      "event_total": 26,
+      "event_total": 28,
       "chips_used": [
         "3xc",
         "wildcard"
@@ -1516,7 +1516,7 @@
       "entry_id": 12837251,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "gw_points": 26,
+      "gw_points": 28,
       "chip_used": null,
       "gw_rank": 1
     },
