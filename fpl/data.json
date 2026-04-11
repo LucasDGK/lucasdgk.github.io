@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-11T19:01:34.094093+00:00",
+    "updated_at": "2026-04-11T19:41:27.491832+00:00",
     "current_gameweek": 32,
     "gameweek_finished": false,
     "next_deadline": "2026-04-18T10:00:00Z",
@@ -154,7 +154,7 @@
         },
         {
           "gw": 32,
-          "points": 0
+          "points": 18
         }
       ],
       "cumulative_history": [
@@ -284,7 +284,7 @@
         },
         {
           "gw": 32,
-          "total": 1752
+          "total": 1770
         }
       ]
     },
@@ -435,7 +435,7 @@
         },
         {
           "gw": 32,
-          "points": 0
+          "points": 21
         }
       ],
       "cumulative_history": [
@@ -565,7 +565,7 @@
         },
         {
           "gw": 32,
-          "total": 1747
+          "total": 1768
         }
       ]
     },
@@ -716,7 +716,7 @@
         },
         {
           "gw": 32,
-          "points": 0
+          "points": 27
         }
       ],
       "cumulative_history": [
@@ -846,7 +846,7 @@
         },
         {
           "gw": 32,
-          "total": 1721
+          "total": 1748
         }
       ]
     },
@@ -995,7 +995,7 @@
         },
         {
           "gw": 32,
-          "points": 0
+          "points": 18
         }
       ],
       "cumulative_history": [
@@ -1125,7 +1125,7 @@
         },
         {
           "gw": 32,
-          "total": 1669
+          "total": 1687
         }
       ]
     },
@@ -1275,7 +1275,7 @@
         },
         {
           "gw": 32,
-          "points": 0
+          "points": 24
         }
       ],
       "cumulative_history": [
@@ -1405,7 +1405,7 @@
         },
         {
           "gw": 32,
-          "total": 1594
+          "total": 1618
         }
       ]
     },
@@ -1464,7 +1464,7 @@
         },
         {
           "gw": 32,
-          "points": 28
+          "points": 59
         }
       ],
       "cumulative_history": [
@@ -1506,7 +1506,7 @@
         },
         {
           "gw": 32,
-          "total": 452
+          "total": 483
         }
       ]
     }
