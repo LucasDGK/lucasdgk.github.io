@@ -1,8 +1,8 @@
 {
   "meta": {
-    "updated_at": "2026-04-14T04:18:07.612644+00:00",
+    "updated_at": "2026-04-14T06:13:18.455036+00:00",
     "current_gameweek": 32,
-    "gameweek_finished": false,
+    "gameweek_finished": true,
     "next_deadline": "2026-04-18T10:00:00Z",
     "next_gw": 33
   },
