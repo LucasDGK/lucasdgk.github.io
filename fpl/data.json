@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-14T01:08:14.853614+00:00",
+    "updated_at": "2026-04-14T04:18:07.612644+00:00",
     "current_gameweek": 32,
     "gameweek_finished": false,
     "next_deadline": "2026-04-18T10:00:00Z",
@@ -13,7 +13,7 @@
       "entry_id": 7499034,
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
-      "total_points": 1810,
+      "total_points": 1822,
       "event_total": 70,
       "chips_used": [
         "freehit",
@@ -154,7 +154,7 @@
         },
         {
           "gw": 32,
-          "points": 58
+          "points": 70
         }
       ],
       "cumulative_history": [
@@ -284,7 +284,7 @@
         },
         {
           "gw": 32,
-          "total": 1810
+          "total": 1822
         }
       ]
     },
@@ -294,7 +294,7 @@
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 1780,
+      "total_points": 1790,
       "event_total": 43,
       "chips_used": [
         "wildcard",
@@ -435,7 +435,7 @@
         },
         {
           "gw": 32,
-          "points": 33
+          "points": 43
         }
       ],
       "cumulative_history": [
@@ -565,7 +565,7 @@
         },
         {
           "gw": 32,
-          "total": 1780
+          "total": 1790
         }
       ]
     },
@@ -575,7 +575,7 @@
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "total_points": 1772,
+      "total_points": 1782,
       "event_total": 61,
       "chips_used": [
         "wildcard",
@@ -716,7 +716,7 @@
         },
         {
           "gw": 32,
-          "points": 51
+          "points": 61
         }
       ],
       "cumulative_history": [
@@ -846,7 +846,7 @@
         },
         {
           "gw": 32,
-          "total": 1772
+          "total": 1782
         }
       ]
     },
@@ -856,7 +856,7 @@
       "entry_id": 9144425,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
-      "total_points": 1715,
+      "total_points": 1724,
       "event_total": 55,
       "chips_used": [
         "wildcard",
@@ -995,7 +995,7 @@
         },
         {
           "gw": 32,
-          "points": 46
+          "points": 55
         }
       ],
       "cumulative_history": [
@@ -1125,7 +1125,7 @@
         },
         {
           "gw": 32,
-          "total": 1715
+          "total": 1724
         }
       ]
     },
@@ -1135,7 +1135,7 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "total_points": 1653,
+      "total_points": 1655,
       "event_total": 61,
       "chips_used": [
         "wildcard",
@@ -1275,7 +1275,7 @@
         },
         {
           "gw": 32,
-          "points": 59
+          "points": 61
         }
       ],
       "cumulative_history": [
@@ -1405,7 +1405,7 @@
         },
         {
           "gw": 32,
-          "total": 1653
+          "total": 1655
         }
       ]
     },
