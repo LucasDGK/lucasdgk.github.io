@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-19T20:58:01.170299+00:00",
+    "updated_at": "2026-04-19T21:40:16.919614+00:00",
     "current_gameweek": 33,
     "gameweek_finished": false,
     "next_deadline": "2026-04-24T17:30:00Z",
@@ -158,7 +158,7 @@
         },
         {
           "gw": 33,
-          "points": 77
+          "points": 80
         }
       ],
       "cumulative_history": [
@@ -292,7 +292,7 @@
         },
         {
           "gw": 33,
-          "total": 1859
+          "total": 1862
         }
       ]
     },
@@ -447,7 +447,7 @@
         },
         {
           "gw": 33,
-          "points": 30
+          "points": 33
         }
       ],
       "cumulative_history": [
@@ -581,7 +581,7 @@
         },
         {
           "gw": 33,
-          "total": 1852
+          "total": 1855
         }
       ]
     },
@@ -1023,7 +1023,7 @@
         },
         {
           "gw": 33,
-          "points": 33
+          "points": 35
         }
       ],
       "cumulative_history": [
@@ -1157,7 +1157,7 @@
         },
         {
           "gw": 33,
-          "total": 1757
+          "total": 1759
         }
       ]
     },
@@ -1311,7 +1311,7 @@
         },
         {
           "gw": 33,
-          "points": 57
+          "points": 63
         }
       ],
       "cumulative_history": [
@@ -1445,7 +1445,7 @@
         },
         {
           "gw": 33,
-          "total": 1712
+          "total": 1718
         }
       ]
     },
@@ -1508,7 +1508,7 @@
         },
         {
           "gw": 33,
-          "points": 44
+          "points": 46
         }
       ],
       "cumulative_history": [
@@ -1554,7 +1554,7 @@
         },
         {
           "gw": 33,
-          "total": 555
+          "total": 557
         }
       ]
     }
