@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-20T23:01:41.288739+00:00",
+    "updated_at": "2026-04-20T23:54:39.783584+00:00",
     "current_gameweek": 33,
     "gameweek_finished": false,
     "next_deadline": "2026-04-24T17:30:00Z",
@@ -302,7 +302,7 @@
       "entry_id": 7499034,
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
-      "total_points": 1855,
+      "total_points": 1857,
       "event_total": 35,
       "chips_used": [
         "freehit",
@@ -591,7 +591,7 @@
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 1831,
+      "total_points": 1840,
       "event_total": 50,
       "chips_used": [
         "wildcard",
@@ -1167,7 +1167,7 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "total_points": 1718,
+      "total_points": 1724,
       "event_total": 69,
       "chips_used": [
         "wildcard",
