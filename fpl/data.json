@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-20T21:26:31.907336+00:00",
+    "updated_at": "2026-04-20T22:08:25.473457+00:00",
     "current_gameweek": 33,
     "gameweek_finished": false,
     "next_deadline": "2026-04-24T17:30:00Z",
@@ -303,7 +303,7 @@
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
       "total_points": 1855,
-      "event_total": 33,
+      "event_total": 35,
       "chips_used": [
         "freehit",
         "wildcard",
@@ -592,7 +592,7 @@
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
       "total_points": 1831,
-      "event_total": 41,
+      "event_total": 50,
       "chips_used": [
         "wildcard",
         "bboost",
@@ -1168,7 +1168,7 @@
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
       "total_points": 1718,
-      "event_total": 63,
+      "event_total": 69,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1572,9 +1572,17 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "gw_points": 63,
+      "gw_points": 69,
       "chip_used": "bboost",
       "gw_rank": 2
+    },
+    {
+      "entry_id": 7448208,
+      "team_name": "Albiceleste",
+      "player_name": "Sawal Maskey",
+      "gw_points": 50,
+      "chip_used": "bboost",
+      "gw_rank": 3
     },
     {
       "entry_id": 12837251,
@@ -1582,15 +1590,15 @@
       "player_name": "Rumin Shah",
       "gw_points": 46,
       "chip_used": "freehit",
-      "gw_rank": 3
+      "gw_rank": 4
     },
     {
-      "entry_id": 7448208,
-      "team_name": "Albiceleste",
-      "player_name": "Sawal Maskey",
-      "gw_points": 41,
-      "chip_used": "bboost",
-      "gw_rank": 4
+      "entry_id": 7499034,
+      "team_name": "Florida Man's Team",
+      "player_name": "Santiago Acevedo",
+      "gw_points": 35,
+      "chip_used": "3xc",
+      "gw_rank": 5
     },
     {
       "entry_id": 9144425,
@@ -1599,14 +1607,6 @@
       "gw_points": 35,
       "chip_used": "3xc",
       "gw_rank": 5
-    },
-    {
-      "entry_id": 7499034,
-      "team_name": "Florida Man's Team",
-      "player_name": "Santiago Acevedo",
-      "gw_points": 33,
-      "chip_used": "3xc",
-      "gw_rank": 6
     }
   ],
   "transfers": [
