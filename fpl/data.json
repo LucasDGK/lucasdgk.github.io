@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-20T23:54:39.783584+00:00",
+    "updated_at": "2026-04-21T02:05:11.064968+00:00",
     "current_gameweek": 33,
     "gameweek_finished": false,
     "next_deadline": "2026-04-24T17:30:00Z",
@@ -1168,7 +1168,7 @@
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
       "total_points": 1724,
-      "event_total": 69,
+      "event_total": 72,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1311,7 +1311,7 @@
         },
         {
           "gw": 33,
-          "points": 69
+          "points": 72
         }
       ],
       "cumulative_history": [
@@ -1445,7 +1445,7 @@
         },
         {
           "gw": 33,
-          "total": 1724
+          "total": 1727
         }
       ]
     },
@@ -1572,7 +1572,7 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "gw_points": 69,
+      "gw_points": 72,
       "chip_used": "bboost",
       "gw_rank": 2
     },
