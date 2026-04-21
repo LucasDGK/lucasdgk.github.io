@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-21T21:30:53.485928+00:00",
+    "updated_at": "2026-04-21T22:23:04.495382+00:00",
     "current_gameweek": 33,
     "gameweek_finished": false,
     "next_deadline": "2026-04-24T17:30:00Z",
@@ -14,7 +14,7 @@
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
       "total_points": 1862,
-      "event_total": 80,
+      "event_total": 98,
       "chips_used": [
         "wildcard",
         "freehit",
@@ -158,7 +158,7 @@
         },
         {
           "gw": 33,
-          "points": 80
+          "points": 98
         }
       ],
       "cumulative_history": [
@@ -292,7 +292,7 @@
         },
         {
           "gw": 33,
-          "total": 1862
+          "total": 1880
         }
       ]
     },
@@ -592,7 +592,7 @@
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
       "total_points": 1840,
-      "event_total": 50,
+      "event_total": 56,
       "chips_used": [
         "wildcard",
         "bboost",
@@ -736,7 +736,7 @@
         },
         {
           "gw": 33,
-          "points": 50
+          "points": 56
         }
       ],
       "cumulative_history": [
@@ -870,7 +870,7 @@
         },
         {
           "gw": 33,
-          "total": 1840
+          "total": 1846
         }
       ]
     },
@@ -1168,7 +1168,7 @@
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
       "total_points": 1727,
-      "event_total": 72,
+      "event_total": 78,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1311,7 +1311,7 @@
         },
         {
           "gw": 33,
-          "points": 72
+          "points": 78
         }
       ],
       "cumulative_history": [
@@ -1445,7 +1445,7 @@
         },
         {
           "gw": 33,
-          "total": 1727
+          "total": 1733
         }
       ]
     },
@@ -1564,7 +1564,7 @@
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "gw_points": 80,
+      "gw_points": 98,
       "chip_used": "bboost",
       "gw_rank": 1
     },
@@ -1572,7 +1572,7 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "gw_points": 72,
+      "gw_points": 78,
       "chip_used": "bboost",
       "gw_rank": 2
     },
@@ -1580,7 +1580,7 @@
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "gw_points": 50,
+      "gw_points": 56,
       "chip_used": "bboost",
       "gw_rank": 3
     },
