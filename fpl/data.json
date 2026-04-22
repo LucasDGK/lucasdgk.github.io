@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-22T01:07:32.352301+00:00",
+    "updated_at": "2026-04-22T04:15:45.117806+00:00",
     "current_gameweek": 33,
     "gameweek_finished": false,
     "next_deadline": "2026-04-24T17:30:00Z",
@@ -13,7 +13,7 @@
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "total_points": 1880,
+      "total_points": 1883,
       "event_total": 101,
       "chips_used": [
         "wildcard",
@@ -591,7 +591,7 @@
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 1846,
+      "total_points": 1847,
       "event_total": 57,
       "chips_used": [
         "wildcard",
@@ -1167,7 +1167,7 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "total_points": 1733,
+      "total_points": 1735,
       "event_total": 80,
       "chips_used": [
         "wildcard",
