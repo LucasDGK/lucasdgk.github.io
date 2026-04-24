@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-24T21:04:36.428438+00:00",
+    "updated_at": "2026-04-24T21:58:17.808138+00:00",
     "current_gameweek": 34,
     "gameweek_finished": false,
     "next_deadline": "2026-05-01T17:30:00Z",
@@ -608,7 +608,7 @@
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
       "total_points": 1865,
-      "event_total": 0,
+      "event_total": 11,
       "chips_used": [
         "wildcard",
         "bboost",
@@ -1609,12 +1609,20 @@
   ],
   "current_gw_stats": [
     {
+      "entry_id": 7448208,
+      "team_name": "Albiceleste",
+      "player_name": "Sawal Maskey",
+      "gw_points": 11,
+      "chip_used": null,
+      "gw_rank": 1
+    },
+    {
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 7499034,
@@ -1622,15 +1630,7 @@
       "player_name": "Santiago Acevedo",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
-    },
-    {
-      "entry_id": 7448208,
-      "team_name": "Albiceleste",
-      "player_name": "Sawal Maskey",
-      "gw_points": 0,
-      "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 9144425,
@@ -1638,7 +1638,7 @@
       "player_name": "Shikhar Singh",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 8040003,
@@ -1646,7 +1646,7 @@
       "player_name": "Chakri N",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 12837251,
@@ -1654,7 +1654,7 @@
       "player_name": "Rumin Shah",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     }
   ],
   "transfers": [
