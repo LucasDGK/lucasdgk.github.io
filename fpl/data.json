@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-24T18:44:30.742378+00:00",
+    "updated_at": "2026-04-24T19:28:53.953349+00:00",
     "current_gameweek": 34,
     "gameweek_finished": false,
     "next_deadline": "2026-05-01T17:30:00Z",
@@ -9,7 +9,7 @@
   "standings": [
     {
       "rank": 1,
-      "last_rank": 3,
+      "last_rank": 1,
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
@@ -306,7 +306,7 @@
     },
     {
       "rank": 2,
-      "last_rank": 1,
+      "last_rank": 2,
       "entry_id": 7499034,
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
@@ -603,7 +603,7 @@
     },
     {
       "rank": 3,
-      "last_rank": 2,
+      "last_rank": 3,
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
