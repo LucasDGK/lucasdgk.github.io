@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-04-24T21:58:17.808138+00:00",
+    "updated_at": "2026-04-24T22:44:10.672236+00:00",
     "current_gameweek": 34,
     "gameweek_finished": false,
     "next_deadline": "2026-05-01T17:30:00Z",
@@ -756,7 +756,7 @@
         },
         {
           "gw": 34,
-          "points": -4
+          "points": 7
         }
       ],
       "cumulative_history": [
@@ -894,7 +894,7 @@
         },
         {
           "gw": 34,
-          "total": 1861
+          "total": 1872
         }
       ]
     },
