@@ -57,7 +57,7 @@ function setLanguage(lang) {
     const textSpan = element.querySelector('.btn-text');
     if (textSpan) {
       textSpan.textContent = value;
-    } else if (value.includes('<br>') || value.includes('<sup>')) {
+    } else if (value.includes('<br>') || value.includes('<sup>') || value.includes('<strong>')) {
       // Use innerHTML for elements containing HTML tags
       element.innerHTML = value;
     } else {
