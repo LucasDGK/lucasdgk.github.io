@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-01T21:28:59.495035+00:00",
+    "updated_at": "2026-05-01T22:25:57.211175+00:00",
     "current_gameweek": 35,
     "gameweek_finished": false,
     "next_deadline": "2026-05-09T10:00:00Z",
@@ -14,7 +14,7 @@
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
       "total_points": 1942,
-      "event_total": 0,
+      "event_total": 6,
       "chips_used": [
         "wildcard",
         "freehit",
@@ -1232,7 +1232,7 @@
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
       "total_points": 1787,
-      "event_total": 0,
+      "event_total": 5,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1660,31 +1660,7 @@
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "gw_points": 0,
-      "chip_used": null,
-      "gw_rank": 1
-    },
-    {
-      "entry_id": 7499034,
-      "team_name": "Florida Man's Team",
-      "player_name": "Santiago Acevedo",
-      "gw_points": 0,
-      "chip_used": null,
-      "gw_rank": 1
-    },
-    {
-      "entry_id": 7448208,
-      "team_name": "Albiceleste",
-      "player_name": "Sawal Maskey",
-      "gw_points": 0,
-      "chip_used": null,
-      "gw_rank": 1
-    },
-    {
-      "entry_id": 9144425,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "gw_points": 0,
+      "gw_points": 6,
       "chip_used": null,
       "gw_rank": 1
     },
@@ -1692,9 +1668,33 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
+      "gw_points": 5,
+      "chip_used": null,
+      "gw_rank": 2
+    },
+    {
+      "entry_id": 7499034,
+      "team_name": "Florida Man's Team",
+      "player_name": "Santiago Acevedo",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 3
+    },
+    {
+      "entry_id": 7448208,
+      "team_name": "Albiceleste",
+      "player_name": "Sawal Maskey",
+      "gw_points": 0,
+      "chip_used": null,
+      "gw_rank": 3
+    },
+    {
+      "entry_id": 9144425,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "gw_points": 0,
+      "chip_used": null,
+      "gw_rank": 3
     },
     {
       "entry_id": 12837251,
@@ -1702,7 +1702,7 @@
       "player_name": "Rumin Shah",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 3
     }
   ],
   "transfers": [
