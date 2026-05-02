@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-02T20:22:11.922406+00:00",
+    "updated_at": "2026-05-02T21:04:10.693591+00:00",
     "current_gameweek": 35,
     "gameweek_finished": false,
     "next_deadline": "2026-05-09T10:00:00Z",
@@ -9,316 +9,11 @@
   "standings": [
     {
       "rank": 1,
-      "last_rank": 1,
-      "entry_id": 7543594,
-      "team_name": "Lucky Luke CF",
-      "player_name": "Lucas Delgado",
-      "total_points": 1949,
-      "event_total": 29,
-      "chips_used": [
-        "wildcard",
-        "freehit",
-        "3xc",
-        "bboost",
-        "freehit",
-        "wildcard",
-        "bboost"
-      ],
-      "chips_remaining": [
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 58
-        },
-        {
-          "gw": 2,
-          "points": 45
-        },
-        {
-          "gw": 3,
-          "points": 51
-        },
-        {
-          "gw": 4,
-          "points": 72
-        },
-        {
-          "gw": 5,
-          "points": 42
-        },
-        {
-          "gw": 6,
-          "points": 71
-        },
-        {
-          "gw": 7,
-          "points": 55
-        },
-        {
-          "gw": 8,
-          "points": 57
-        },
-        {
-          "gw": 9,
-          "points": 37
-        },
-        {
-          "gw": 10,
-          "points": 73
-        },
-        {
-          "gw": 11,
-          "points": 33
-        },
-        {
-          "gw": 12,
-          "points": 45
-        },
-        {
-          "gw": 13,
-          "points": 21
-        },
-        {
-          "gw": 14,
-          "points": 83
-        },
-        {
-          "gw": 15,
-          "points": 48
-        },
-        {
-          "gw": 16,
-          "points": 82
-        },
-        {
-          "gw": 17,
-          "points": 80
-        },
-        {
-          "gw": 18,
-          "points": 46
-        },
-        {
-          "gw": 19,
-          "points": 29
-        },
-        {
-          "gw": 20,
-          "points": 42
-        },
-        {
-          "gw": 21,
-          "points": 54
-        },
-        {
-          "gw": 22,
-          "points": 44
-        },
-        {
-          "gw": 23,
-          "points": 43
-        },
-        {
-          "gw": 24,
-          "points": 66
-        },
-        {
-          "gw": 25,
-          "points": 76
-        },
-        {
-          "gw": 26,
-          "points": 77
-        },
-        {
-          "gw": 27,
-          "points": 43
-        },
-        {
-          "gw": 28,
-          "points": 53
-        },
-        {
-          "gw": 29,
-          "points": 80
-        },
-        {
-          "gw": 30,
-          "points": 44
-        },
-        {
-          "gw": 31,
-          "points": 71
-        },
-        {
-          "gw": 32,
-          "points": 61
-        },
-        {
-          "gw": 33,
-          "points": 127
-        },
-        {
-          "gw": 34,
-          "points": 33
-        },
-        {
-          "gw": 35,
-          "points": 29
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 58
-        },
-        {
-          "gw": 2,
-          "total": 103
-        },
-        {
-          "gw": 3,
-          "total": 154
-        },
-        {
-          "gw": 4,
-          "total": 226
-        },
-        {
-          "gw": 5,
-          "total": 268
-        },
-        {
-          "gw": 6,
-          "total": 339
-        },
-        {
-          "gw": 7,
-          "total": 394
-        },
-        {
-          "gw": 8,
-          "total": 451
-        },
-        {
-          "gw": 9,
-          "total": 488
-        },
-        {
-          "gw": 10,
-          "total": 561
-        },
-        {
-          "gw": 11,
-          "total": 594
-        },
-        {
-          "gw": 12,
-          "total": 639
-        },
-        {
-          "gw": 13,
-          "total": 660
-        },
-        {
-          "gw": 14,
-          "total": 743
-        },
-        {
-          "gw": 15,
-          "total": 791
-        },
-        {
-          "gw": 16,
-          "total": 873
-        },
-        {
-          "gw": 17,
-          "total": 953
-        },
-        {
-          "gw": 18,
-          "total": 999
-        },
-        {
-          "gw": 19,
-          "total": 1028
-        },
-        {
-          "gw": 20,
-          "total": 1070
-        },
-        {
-          "gw": 21,
-          "total": 1124
-        },
-        {
-          "gw": 22,
-          "total": 1168
-        },
-        {
-          "gw": 23,
-          "total": 1211
-        },
-        {
-          "gw": 24,
-          "total": 1277
-        },
-        {
-          "gw": 25,
-          "total": 1353
-        },
-        {
-          "gw": 26,
-          "total": 1430
-        },
-        {
-          "gw": 27,
-          "total": 1473
-        },
-        {
-          "gw": 28,
-          "total": 1526
-        },
-        {
-          "gw": 29,
-          "total": 1606
-        },
-        {
-          "gw": 30,
-          "total": 1650
-        },
-        {
-          "gw": 31,
-          "total": 1721
-        },
-        {
-          "gw": 32,
-          "total": 1782
-        },
-        {
-          "gw": 33,
-          "total": 1909
-        },
-        {
-          "gw": 34,
-          "total": 1942
-        },
-        {
-          "gw": 35,
-          "total": 1971
-        }
-      ]
-    },
-    {
-      "rank": 2,
       "last_rank": 2,
       "entry_id": 7499034,
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
-      "total_points": 1939,
+      "total_points": 1974,
       "event_total": 35,
       "chips_used": [
         "freehit",
@@ -618,12 +313,317 @@
       ]
     },
     {
+      "rank": 2,
+      "last_rank": 1,
+      "entry_id": 7543594,
+      "team_name": "Lucky Luke CF",
+      "player_name": "Lucas Delgado",
+      "total_points": 1971,
+      "event_total": 29,
+      "chips_used": [
+        "wildcard",
+        "freehit",
+        "3xc",
+        "bboost",
+        "freehit",
+        "wildcard",
+        "bboost"
+      ],
+      "chips_remaining": [
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 58
+        },
+        {
+          "gw": 2,
+          "points": 45
+        },
+        {
+          "gw": 3,
+          "points": 51
+        },
+        {
+          "gw": 4,
+          "points": 72
+        },
+        {
+          "gw": 5,
+          "points": 42
+        },
+        {
+          "gw": 6,
+          "points": 71
+        },
+        {
+          "gw": 7,
+          "points": 55
+        },
+        {
+          "gw": 8,
+          "points": 57
+        },
+        {
+          "gw": 9,
+          "points": 37
+        },
+        {
+          "gw": 10,
+          "points": 73
+        },
+        {
+          "gw": 11,
+          "points": 33
+        },
+        {
+          "gw": 12,
+          "points": 45
+        },
+        {
+          "gw": 13,
+          "points": 21
+        },
+        {
+          "gw": 14,
+          "points": 83
+        },
+        {
+          "gw": 15,
+          "points": 48
+        },
+        {
+          "gw": 16,
+          "points": 82
+        },
+        {
+          "gw": 17,
+          "points": 80
+        },
+        {
+          "gw": 18,
+          "points": 46
+        },
+        {
+          "gw": 19,
+          "points": 29
+        },
+        {
+          "gw": 20,
+          "points": 42
+        },
+        {
+          "gw": 21,
+          "points": 54
+        },
+        {
+          "gw": 22,
+          "points": 44
+        },
+        {
+          "gw": 23,
+          "points": 43
+        },
+        {
+          "gw": 24,
+          "points": 66
+        },
+        {
+          "gw": 25,
+          "points": 76
+        },
+        {
+          "gw": 26,
+          "points": 77
+        },
+        {
+          "gw": 27,
+          "points": 43
+        },
+        {
+          "gw": 28,
+          "points": 53
+        },
+        {
+          "gw": 29,
+          "points": 80
+        },
+        {
+          "gw": 30,
+          "points": 44
+        },
+        {
+          "gw": 31,
+          "points": 71
+        },
+        {
+          "gw": 32,
+          "points": 61
+        },
+        {
+          "gw": 33,
+          "points": 127
+        },
+        {
+          "gw": 34,
+          "points": 33
+        },
+        {
+          "gw": 35,
+          "points": 29
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 58
+        },
+        {
+          "gw": 2,
+          "total": 103
+        },
+        {
+          "gw": 3,
+          "total": 154
+        },
+        {
+          "gw": 4,
+          "total": 226
+        },
+        {
+          "gw": 5,
+          "total": 268
+        },
+        {
+          "gw": 6,
+          "total": 339
+        },
+        {
+          "gw": 7,
+          "total": 394
+        },
+        {
+          "gw": 8,
+          "total": 451
+        },
+        {
+          "gw": 9,
+          "total": 488
+        },
+        {
+          "gw": 10,
+          "total": 561
+        },
+        {
+          "gw": 11,
+          "total": 594
+        },
+        {
+          "gw": 12,
+          "total": 639
+        },
+        {
+          "gw": 13,
+          "total": 660
+        },
+        {
+          "gw": 14,
+          "total": 743
+        },
+        {
+          "gw": 15,
+          "total": 791
+        },
+        {
+          "gw": 16,
+          "total": 873
+        },
+        {
+          "gw": 17,
+          "total": 953
+        },
+        {
+          "gw": 18,
+          "total": 999
+        },
+        {
+          "gw": 19,
+          "total": 1028
+        },
+        {
+          "gw": 20,
+          "total": 1070
+        },
+        {
+          "gw": 21,
+          "total": 1124
+        },
+        {
+          "gw": 22,
+          "total": 1168
+        },
+        {
+          "gw": 23,
+          "total": 1211
+        },
+        {
+          "gw": 24,
+          "total": 1277
+        },
+        {
+          "gw": 25,
+          "total": 1353
+        },
+        {
+          "gw": 26,
+          "total": 1430
+        },
+        {
+          "gw": 27,
+          "total": 1473
+        },
+        {
+          "gw": 28,
+          "total": 1526
+        },
+        {
+          "gw": 29,
+          "total": 1606
+        },
+        {
+          "gw": 30,
+          "total": 1650
+        },
+        {
+          "gw": 31,
+          "total": 1721
+        },
+        {
+          "gw": 32,
+          "total": 1782
+        },
+        {
+          "gw": 33,
+          "total": 1909
+        },
+        {
+          "gw": 34,
+          "total": 1942
+        },
+        {
+          "gw": 35,
+          "total": 1971
+        }
+      ]
+    },
+    {
       "rank": 3,
       "last_rank": 3,
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 1916,
+      "total_points": 1936,
       "event_total": 20,
       "chips_used": [
         "wildcard",
@@ -928,7 +928,7 @@
       "entry_id": 9144425,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
-      "total_points": 1805,
+      "total_points": 1837,
       "event_total": 32,
       "chips_used": [
         "wildcard",
@@ -1231,7 +1231,7 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "total_points": 1793,
+      "total_points": 1805,
       "event_total": 18,
       "chips_used": [
         "wildcard",
@@ -1535,7 +1535,7 @@
       "entry_id": 12837251,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 658,
+      "total_points": 687,
       "event_total": 29,
       "chips_used": [
         "3xc",
@@ -1707,17 +1707,17 @@
   ],
   "transfers": [
     {
-      "entry_id": 7543594,
-      "team_name": "Lucky Luke CF",
-      "player_name": "Lucas Delgado",
+      "entry_id": 7499034,
+      "team_name": "Florida Man's Team",
+      "player_name": "Santiago Acevedo",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 7499034,
-      "team_name": "Florida Man's Team",
-      "player_name": "Santiago Acevedo",
+      "entry_id": 7543594,
+      "team_name": "Lucky Luke CF",
+      "player_name": "Lucas Delgado",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
