@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-01T23:26:09.712293+00:00",
+    "updated_at": "2026-05-02T00:12:34.559608+00:00",
     "current_gameweek": 35,
     "gameweek_finished": false,
     "next_deadline": "2026-05-09T10:00:00Z",
@@ -13,8 +13,8 @@
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "total_points": 1942,
-      "event_total": 6,
+      "total_points": 1948,
+      "event_total": 7,
       "chips_used": [
         "wildcard",
         "freehit",
@@ -1231,8 +1231,8 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "total_points": 1787,
-      "event_total": 5,
+      "total_points": 1792,
+      "event_total": 6,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1535,7 +1535,7 @@
       "entry_id": 12837251,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 662,
+      "total_points": 658,
       "event_total": 0,
       "chips_used": [
         "3xc",
@@ -1660,7 +1660,7 @@
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "gw_points": 6,
+      "gw_points": 7,
       "chip_used": null,
       "gw_rank": 1
     },
@@ -1668,7 +1668,7 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "gw_points": 5,
+      "gw_points": 6,
       "chip_used": null,
       "gw_rank": 2
     },
