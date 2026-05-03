@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-02T23:24:22.683856+00:00",
+    "updated_at": "2026-05-03T00:06:06.905549+00:00",
     "current_gameweek": 35,
     "gameweek_finished": false,
     "next_deadline": "2026-05-09T10:00:00Z",
@@ -13,7 +13,7 @@
       "entry_id": 7499034,
       "team_name": "Florida Man's Team",
       "player_name": "Santiago Acevedo",
-      "total_points": 1974,
+      "total_points": 1975,
       "event_total": 36,
       "chips_used": [
         "freehit",
@@ -318,7 +318,7 @@
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "total_points": 1971,
+      "total_points": 1972,
       "event_total": 30,
       "chips_used": [
         "wildcard",
@@ -623,7 +623,7 @@
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 1936,
+      "total_points": 1937,
       "event_total": 21,
       "chips_used": [
         "wildcard",
@@ -928,7 +928,7 @@
       "entry_id": 9144425,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
-      "total_points": 1837,
+      "total_points": 1841,
       "event_total": 36,
       "chips_used": [
         "wildcard",
@@ -1535,7 +1535,7 @@
       "entry_id": 12837251,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 687,
+      "total_points": 689,
       "event_total": 31,
       "chips_used": [
         "3xc",
