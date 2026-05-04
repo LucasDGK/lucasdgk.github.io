@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-04T15:09:25.347965+00:00",
+    "updated_at": "2026-05-04T17:00:29.530368+00:00",
     "current_gameweek": 35,
     "gameweek_finished": false,
     "next_deadline": "2026-05-09T10:00:00Z",
@@ -624,7 +624,7 @@
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
       "total_points": 1950,
-      "event_total": 34,
+      "event_total": 38,
       "chips_used": [
         "wildcard",
         "bboost",
@@ -1536,7 +1536,7 @@
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
       "total_points": 698,
-      "event_total": 40,
+      "event_total": 52,
       "chips_used": [
         "3xc",
         "wildcard",
@@ -1665,12 +1665,20 @@
       "gw_rank": 1
     },
     {
+      "entry_id": 12837251,
+      "team_name": "GJ06_City_FC",
+      "player_name": "Rumin Shah",
+      "gw_points": 52,
+      "chip_used": null,
+      "gw_rank": 2
+    },
+    {
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
       "gw_points": 43,
       "chip_used": null,
-      "gw_rank": 2
+      "gw_rank": 3
     },
     {
       "entry_id": 7499034,
@@ -1678,29 +1686,21 @@
       "player_name": "Santiago Acevedo",
       "gw_points": 43,
       "chip_used": null,
-      "gw_rank": 2
+      "gw_rank": 3
     },
     {
-      "entry_id": 12837251,
-      "team_name": "GJ06_City_FC",
-      "player_name": "Rumin Shah",
-      "gw_points": 40,
+      "entry_id": 7448208,
+      "team_name": "Albiceleste",
+      "player_name": "Sawal Maskey",
+      "gw_points": 38,
       "chip_used": null,
-      "gw_rank": 4
+      "gw_rank": 5
     },
     {
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
       "gw_points": 37,
-      "chip_used": null,
-      "gw_rank": 5
-    },
-    {
-      "entry_id": 7448208,
-      "team_name": "Albiceleste",
-      "player_name": "Sawal Maskey",
-      "gw_points": 34,
       "chip_used": null,
       "gw_rank": 6
     }
