@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-04T18:23:25.028591+00:00",
+    "updated_at": "2026-05-04T19:59:55.123256+00:00",
     "current_gameweek": 35,
     "gameweek_finished": false,
     "next_deadline": "2026-05-09T10:00:00Z",
@@ -623,7 +623,7 @@
       "entry_id": 7448208,
       "team_name": "Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 1950,
+      "total_points": 1954,
       "event_total": 38,
       "chips_used": [
         "wildcard",
@@ -1535,7 +1535,7 @@
       "entry_id": 12837251,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 698,
+      "total_points": 710,
       "event_total": 52,
       "chips_used": [
         "3xc",
