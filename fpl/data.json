@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-12T01:23:33.684761+00:00",
+    "updated_at": "2026-05-12T04:55:33.359002+00:00",
     "current_gameweek": 36,
     "gameweek_finished": false,
     "next_deadline": "2026-05-15T17:30:00Z",
@@ -13,7 +13,7 @@
       "entry_id": 7543594,
       "team_name": "Lucky Luke CF",
       "player_name": "Lucas Delgado",
-      "total_points": 2081,
+      "total_points": 2082,
       "event_total": 80,
       "chips_used": [
         "wildcard",
@@ -1261,7 +1261,7 @@
       "entry_id": 8040003,
       "team_name": "ChelseaPLChampions",
       "player_name": "Chakri N",
-      "total_points": 1914,
+      "total_points": 1915,
       "event_total": 70,
       "chips_used": [
         "wildcard",
