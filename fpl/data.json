@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-19T01:33:12.893919+00:00",
+    "updated_at": "2026-05-19T05:47:00.043958+00:00",
     "current_gameweek": 37,
     "gameweek_finished": false,
     "next_deadline": "2026-05-24T13:30:00Z",
@@ -1612,7 +1612,7 @@
       "entry_id": 12837251,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 797,
+      "total_points": 801,
       "event_total": 53,
       "chips_used": [
         "3xc",
