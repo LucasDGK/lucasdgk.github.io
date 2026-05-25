@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-24T23:43:13.918793+00:00",
+    "updated_at": "2026-05-25T01:53:05.576558+00:00",
     "current_gameweek": 38,
     "gameweek_finished": false,
     "next_deadline": null,
@@ -998,7 +998,7 @@
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
       "total_points": 2064,
-      "event_total": 82,
+      "event_total": 83,
       "chips_used": [
         "wildcard",
         "3xc",
@@ -1159,7 +1159,7 @@
         },
         {
           "gw": 38,
-          "points": 78
+          "points": 79
         }
       ],
       "cumulative_history": [
@@ -1313,7 +1313,7 @@
         },
         {
           "gw": 38,
-          "total": 2064
+          "total": 2065
         }
       ]
     },
@@ -1799,7 +1799,7 @@
       "entry_id": 9144425,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
-      "gw_points": 82,
+      "gw_points": 83,
       "chip_used": "bboost",
       "gw_rank": 1
     },
