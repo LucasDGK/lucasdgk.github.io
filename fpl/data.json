@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-05-25T01:53:05.576558+00:00",
+    "updated_at": "2026-05-25T06:17:21.108535+00:00",
     "current_gameweek": 38,
     "gameweek_finished": false,
     "next_deadline": null,
@@ -997,7 +997,7 @@
       "entry_id": 9144425,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
-      "total_points": 2064,
+      "total_points": 2065,
       "event_total": 83,
       "chips_used": [
         "wildcard",
