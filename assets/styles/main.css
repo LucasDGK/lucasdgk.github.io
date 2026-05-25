@@ -492,7 +492,7 @@ section h2 {
   color: var(--primary-color);
   letter-spacing: 1px;
   font-family: 'JetBrains Mono', monospace;
-  margin: 10px 0;
+  margin: 2px 0 10px;
 }
 
 .event-time {
