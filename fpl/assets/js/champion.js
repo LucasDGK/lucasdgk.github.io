@@ -75,10 +75,7 @@
       ctx.beginPath();
       ctx.arc(this.x, this.y, 2.4, 0, Math.PI * 2);
       ctx.fillStyle = this.color;
-      ctx.shadowColor = this.color;
-      ctx.shadowBlur = 12;
       ctx.fill();
-      ctx.shadowBlur = 0;
     }
   }
 
@@ -106,10 +103,7 @@
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fillStyle = withAlpha(this.color, this.life);
-      ctx.shadowColor = this.color;
-      ctx.shadowBlur = 8;
       ctx.fill();
-      ctx.shadowBlur = 0;
     }
     get dead() { return this.life <= 0; }
   }
@@ -128,14 +122,14 @@
   const sparks = [];
 
   function spawnBurst(x, y, color) {
-    const count = Math.floor(Math.random() * 50) + 100;
+    const count = Math.floor(Math.random() * 20) + 35;
     // Occasionally use a different palette color for the burst
     const burstColor = Math.random() < 0.4
       ? COLORS[Math.floor(Math.random() * COLORS.length)]
       : color;
     for (let i = 0; i < count; i++) {
       const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.1;
-      const speed = Math.random() * 5 + 3.5;
+      const speed = Math.random() * 4 + 3;
       sparks.push(new Spark(x, y, burstColor, angle, speed));
     }
   }
@@ -143,8 +137,8 @@
   // ── Loop ───────────────────────────────────────────────────────────────────
 
   let lastSpawn = 0;
-  const SPAWN_INTERVAL_MIN = 350; // ms
-  const SPAWN_INTERVAL_MAX = 800;
+  const SPAWN_INTERVAL_MIN = 1100; // ms
+  const SPAWN_INTERVAL_MAX = 2000;
   let nextSpawn = SPAWN_INTERVAL_MIN;
 
   function tick(t) {
@@ -152,8 +146,6 @@
 
     if (t - lastSpawn > nextSpawn) {
       rockets.push(new Rocket());
-      // Sometimes launch two at once
-      if (Math.random() < 0.35) rockets.push(new Rocket());
       lastSpawn = t;
       nextSpawn = SPAWN_INTERVAL_MIN + Math.random() * (SPAWN_INTERVAL_MAX - SPAWN_INTERVAL_MIN);
     }

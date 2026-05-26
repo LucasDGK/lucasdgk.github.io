@@ -98,7 +98,11 @@
           <section class="card media-card">
             <h2 class="card-title">League Trophy</h2>
             <div class="trophy-video-wrap">
-              <video autoplay loop muted playsinline>
+              <!--
+                Season is over — trophy plays once and freezes on the first frame
+                so it renders as a still image. Re-enable autoplay + loop next season.
+              -->
+              <video muted playsinline preload="auto" autoplay onloadeddata="this.pause()">
                 <source src="assets/trophy_animation.webm" type="video/webm">
               </video>
             </div>
