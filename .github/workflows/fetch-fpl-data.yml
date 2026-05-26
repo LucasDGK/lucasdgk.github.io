@@ -1,15 +1,9 @@
 name: Fetch FPL Data
 
+# Season is over — automatic runs disabled.
+# Re-enable the schedule and push triggers when the new season starts.
 on:
-  schedule:
-    # Runs every 5 minutes
-    - cron: '*/5 * * * *'
   workflow_dispatch:
-  push:
-    branches: [main, master]
-    paths:
-      - '.github/workflows/fetch-fpl-data.yml'
-      - '.github/scripts/fetch_fpl.py'
 
 jobs:
   fetch:
