@@ -1,0 +1,179 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Helios World Cup — welcome page styles.
+   Mirrors the source design (Tailwind + shadcn dark theme tokens) using
+   plain CSS so the static site can render without a build step.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Fonts (Amazon Ember Display) ──────────────────────────────────────── */
+@font-face {
+  font-family: 'Amazon Ember Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../../assets/fonts/AmazonEmberDisplay_Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Amazon Ember Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../../../assets/fonts/AmazonEmberDisplay_Bold.woff2') format('woff2');
+}
+
+/* ── Theme variables (dark mode, copied from the source app) ──────────── */
+:root {
+  --background:        oklch(0.145 0 0);
+  --foreground:        oklch(0.985 0 0);
+  --secondary:         oklch(0.274 0.006 286.033);
+  --muted-foreground:  oklch(0.708 0 0);
+  --border:            oklch(1 0 0 / 10%);
+  --radius:            0.875rem;
+
+  --font-sans:
+    'Amazon Ember Display', -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ── Reset / base ──────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Page layout ───────────────────────────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Flags marquee header ──────────────────────────────────────────────── */
+.flags-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--background) 80%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.flags-track {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.flags-loop {
+  display: flex;
+  width: max-content;
+  animation: wc-marquee 60s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.flags-set {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.flags-set img {
+  height: 2.5rem;            /* h-10 */
+  width:  3.5rem;            /* w-14 */
+  margin-right: 2rem;        /* mr-8 */
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;    /* rounded */
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes wc-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* ── Welcome content ───────────────────────────────────────────────────── */
+.welcome {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.wc-logo {
+  height: 14rem;             /* was 8rem (h-32) */
+  width: auto;
+  opacity: 0;
+  transition: opacity 700ms;
+}
+.wc-logo.is-loaded { opacity: 1; }
+
+.wc-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.wc-title {
+  font-size: 3.5rem;         /* was 1.875rem */
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--foreground);
+}
+
+.wc-subtitle {
+  font-size: 1.25rem;        /* was 0.875rem */
+  color: var(--muted-foreground);
+}
+
+/* ── Countdown grid ────────────────────────────────────────────────────── */
+.wc-countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 44rem;
+  text-align: center;
+}
+
+.wc-countdown-cell {
+  background: color-mix(in oklab, var(--secondary) 60%, transparent);
+  border-radius: var(--radius);
+  padding: 1rem 0;
+}
+
+.wc-countdown-value {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--foreground);
+}
+
+.wc-countdown-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted-foreground);
+  margin-top: 0.375rem;
+}
+
+/* ── Responsive (sm breakpoint = 640px) ────────────────────────────────── */
+@media (min-width: 640px) {
+  .wc-countdown-value { font-size: 4rem; }
+}

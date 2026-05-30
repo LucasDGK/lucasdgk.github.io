@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FPL · The Helios League</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ── Champion Overlay ───────────────────────────────── -->
+  <div id="champion-overlay" class="champion-overlay" role="dialog" aria-label="Season Champion">
+    <canvas id="fireworks-canvas" aria-hidden="true"></canvas>
+    <div class="champion-content">
+      <p class="champion-title">Fantasy Premier League Champion</p>
+      <p class="champion-year">2026</p>
+      <p class="champion-name">Santiago</p>
+    </div>
+  </div>
+
+  <main class="site-main">
+    <div class="layout">
+      <div class="col-left">
+
+        <!-- ── Current Gameweek ── -->
+        <section class="card" id="gw-section">
+          <h2 class="card-title">
+            Gameweek <span class="gw-number">–</span>
+            <span class="gw-badge" id="gw-badge"></span>
+            <span class="deadline-info" id="deadline-info"></span>
+          </h2>
+          <div class="table-wrap">
+            <table class="data-table" id="gw-table">
+              <thead>
+                <tr>
+                  <th class="col-rank">#</th>
+                  <th class="col-team">Team</th>
+                  <th class="col-manager">Manager</th>
+                  <th class="col-num">Points</th>
+                  <th class="col-chip">Chip</th>
+                </tr>
+              </thead>
+              <tbody id="gw-body">
+                <tr><td colspan="5" class="empty-row">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ── Transfers ── -->
+        <section class="card" id="transfers-section">
+          <h2 class="card-title">Gameweek <span class="gw-number">—</span> Transfers</h2>
+          <div class="table-wrap">
+            <table class="data-table" id="transfers-table">
+              <thead>
+                <tr>
+                  <th class="col-team">Team</th>
+                  <th class="col-manager">Manager</th>
+                  <th class="col-transfer">In ↑</th>
+                  <th class="col-transfer">Out ↓</th>
+                  <th class="col-hit">Hit</th>
+                </tr>
+              </thead>
+              <tbody id="transfers-body">
+                <tr><td colspan="5" class="empty-row">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="col-right">
+
+        <!-- ── League Table ── -->
+        <section class="card" id="standings-section">
+          <h2 class="card-title">League Table <span id="standings-badge" class="gw-badge"></span></h2>
+          <div class="table-wrap">
+            <table class="data-table" id="standings-table">
+              <thead>
+                <tr>
+                  <th class="col-rank">#</th>
+                  <th class="col-team">Team</th>
+                  <th class="col-manager">Manager</th>
+                  <th class="col-num">GW</th>
+                  <th class="col-num">Total</th>
+                  <th class="col-chips">Chips Left</th>
+                </tr>
+              </thead>
+              <tbody id="standings-body">
+                <tr><td colspan="6" class="empty-row">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="media-row">
+          <section class="card media-card">
+            <h2 class="card-title">League Trophy</h2>
+            <div class="trophy-video-wrap">
+              <!--
+                Season is over — trophy plays once and freezes on the first frame
+                so it renders as a still image. Re-enable autoplay + loop next season.
+              -->
+              <video muted playsinline preload="auto" autoplay onloadeddata="this.pause()">
+                <source src="assets/trophy_animation.webm" type="video/webm">
+              </video>
+            </div>
+          </section>
+
+          <section class="card media-card">
+            <h2 class="card-title">Points Graph</h2>
+            <div class="chart-wrap">
+              <canvas id="points-chart"></canvas>
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Data from the official FPL API · <span id="last-updated">Last updated —</span></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/champion.js"></script>
+
+</body>
+</html>
