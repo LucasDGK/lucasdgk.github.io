@@ -1,62 +1,117 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Helios World Cup League</title>
-  <meta name="theme-color" content="#000000">
-  <link rel="preload" href="../assets/fonts/AmazonEmberDisplay_Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../assets/fonts/AmazonEmberDisplay_Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/welcome.css?v=wc-welcome">
+  <title>FPL · The Helios League</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <div class="page">
+  <main class="site-main">
+    <div class="layout">
+      <div class="col-left">
 
-    <!-- Flags marquee header -->
-    <header class="flags-header">
-      <div class="flags-track" id="flags-track" style="opacity:0; transition: opacity 700ms;">
-        <div class="flags-loop">
-          <div class="flags-set" id="flags-set-1"></div>
-          <div class="flags-set" id="flags-set-2" aria-hidden="true"></div>
-        </div>
+        <!-- ── Current Gameweek ── -->
+        <section class="card" id="gw-section">
+          <h2 class="card-title">
+            Gameweek <span class="gw-number">–</span>
+            <span class="gw-badge" id="gw-badge"></span>
+            <span class="deadline-info" id="deadline-info"></span>
+          </h2>
+          <div class="table-wrap">
+            <table class="data-table" id="gw-table">
+              <thead>
+                <tr>
+                  <th class="col-rank">#</th>
+                  <th class="col-team">Team</th>
+                  <th class="col-manager">Manager</th>
+                  <th class="col-num">Points</th>
+                  <th class="col-chip">Chip</th>
+                </tr>
+              </thead>
+              <tbody id="gw-body">
+                <tr><td colspan="5" class="empty-row">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ── Transfers ── -->
+        <section class="card" id="transfers-section">
+          <h2 class="card-title">Gameweek <span class="gw-number">—</span> Transfers</h2>
+          <div class="table-wrap">
+            <table class="data-table" id="transfers-table">
+              <thead>
+                <tr>
+                  <th class="col-team">Team</th>
+                  <th class="col-manager">Manager</th>
+                  <th class="col-transfer">In ↑</th>
+                  <th class="col-transfer">Out ↓</th>
+                  <th class="col-hit">Hit</th>
+                </tr>
+              </thead>
+              <tbody id="transfers-body">
+                <tr><td colspan="5" class="empty-row">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
       </div>
-    </header>
 
-    <!-- Welcome screen -->
-    <main class="welcome">
-      <img class="wc-logo" id="wc-logo"
-           src="../assets/fifa-world-cup-2026-fire-tv-logo-white-h300.png"
-           alt="FIFA World Cup 2026">
+      <div class="col-right">
 
-      <div class="wc-heading">
-        <h1 class="wc-title">Helios World Cup League</h1>
-        <p class="wc-subtitle">Tournament starts June 11, 2026</p>
+        <!-- ── League Table ── -->
+        <section class="card" id="standings-section">
+          <h2 class="card-title">League Table <span id="standings-badge" class="gw-badge"></span></h2>
+          <div class="table-wrap">
+            <table class="data-table" id="standings-table">
+              <thead>
+                <tr>
+                  <th class="col-rank">#</th>
+                  <th class="col-team">Team</th>
+                  <th class="col-manager">Manager</th>
+                  <th class="col-num">GW</th>
+                  <th class="col-num">Total</th>
+                  <th class="col-chips">Chips Left</th>
+                </tr>
+              </thead>
+              <tbody id="standings-body">
+                <tr><td colspan="6" class="empty-row">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="media-row">
+          <section class="card media-card">
+            <h2 class="card-title">League Trophy</h2>
+            <div class="trophy-video-wrap">
+              <video autoplay loop muted playsinline preload="auto">
+                <source src="assets/trophy_animation.webm" type="video/webm">
+              </video>
+            </div>
+          </section>
+
+          <section class="card media-card">
+            <h2 class="card-title">Points Graph</h2>
+            <div class="chart-wrap">
+              <canvas id="points-chart"></canvas>
+            </div>
+          </section>
+        </div>
+
       </div>
+    </div>
+  </main>
 
-      <div class="wc-countdown" aria-label="Countdown until the tournament starts">
-        <div class="wc-countdown-cell">
-          <div class="wc-countdown-value" id="cd-days">--</div>
-          <div class="wc-countdown-label">days</div>
-        </div>
-        <div class="wc-countdown-cell">
-          <div class="wc-countdown-value" id="cd-hours">--</div>
-          <div class="wc-countdown-label">hours</div>
-        </div>
-        <div class="wc-countdown-cell">
-          <div class="wc-countdown-value" id="cd-minutes">--</div>
-          <div class="wc-countdown-label">min</div>
-        </div>
-        <div class="wc-countdown-cell">
-          <div class="wc-countdown-value" id="cd-seconds">--</div>
-          <div class="wc-countdown-label">sec</div>
-        </div>
-      </div>
-    </main>
+  <footer class="site-footer">
+    <p>Data from the official FPL API · <span id="last-updated">Last updated —</span></p>
+  </footer>
 
-  </div>
-
-  <script src="assets/js/welcome.js?v=wc-welcome"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script src="assets/js/app.js"></script>
 
 </body>
 </html>
