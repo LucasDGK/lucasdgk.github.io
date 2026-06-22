@@ -75,7 +75,7 @@ function renderStandings(standings) {
   const tbody = document.getElementById('standings-body');
 
   if (!standings?.length) {
-    tbody.innerHTML = `<tr><td colspan="6" class="empty-row">No data yet — the first sync will run shortly.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="5" class="empty-row">No data yet — the first sync will run shortly.</td></tr>`;
     return;
   }
 
@@ -103,8 +103,7 @@ function renderStandings(standings) {
           <span>${entry.rank}</span>
         </div>
       </td>
-      <td><span class="team-name">${esc(entry.team_name)}</span></td>
-      <td><span class="manager-name">${esc(entry.player_name)}</span></td>
+      <td><span class="team-name">${esc(entry.player_name)}</span></td>
       <td class="col-num pts-muted">${entry.event_total}</td>
       <td class="col-num pts-big">${entry.total_points}${fmtLeaderDelta(leaderDiffTotal)}</td>
       <td><div class="chips-wrap">${chipsHtml}</div></td>
@@ -257,7 +256,7 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
   const tbody = document.getElementById('gw-body');
 
   if (!gwStats?.length) {
-    tbody.innerHTML = `<tr><td colspan="5" class="empty-row">No data yet.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="4" class="empty-row">No data yet.</td></tr>`;
     return;
   }
 
@@ -277,8 +276,7 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
       <td>
         <div class="rank-cell"><span>${entry.gw_rank}</span></div>
       </td>
-      <td><span class="team-name">${trophy}${esc(entry.team_name)}</span></td>
-      <td><span class="manager-name">${esc(entry.player_name)}</span></td>
+      <td><span class="team-name">${trophy}${esc(entry.player_name)}</span></td>
       <td class="col-num pts-big">${entry.gw_points}${fmtLeaderDelta(leaderDiffGw)}</td>
       <td class="col-chip">${chipHtml}</td>
     `;
@@ -292,14 +290,14 @@ function renderTransfers(transfers) {
   const tbody = document.getElementById('transfers-body');
 
   if (!transfers?.length) {
-    tbody.innerHTML = `<tr><td colspan="5" class="empty-row">No data yet.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="4" class="empty-row">No data yet.</td></tr>`;
     return;
   }
 
   const active = transfers.filter(e => e.transfers_in?.length || e.transfers_out?.length);
 
   if (!active.length) {
-    tbody.innerHTML = `<tr><td colspan="5" class="empty-row">No transfers this gameweek.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="4" class="empty-row">No transfers this gameweek.</td></tr>`;
     return;
   }
 
@@ -320,8 +318,7 @@ function renderTransfers(transfers) {
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td><span class="team-name">${esc(entry.team_name)}</span></td>
-      <td><span class="manager-name">${esc(entry.player_name)}</span></td>
+      <td><span class="team-name">${esc(entry.player_name)}</span></td>
       <td><div class="player-list">${inHtml}</div></td>
       <td><div class="player-list">${outHtml}</div></td>
       <td class="col-hit">${hitHtml}</td>

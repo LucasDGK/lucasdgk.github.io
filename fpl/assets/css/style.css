@@ -294,8 +294,8 @@ body {
   gap: 0.18rem;
 }
 
-.player-in  { color: var(--green); font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px; }
-.player-out { color: var(--red);   font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px; }
+.player-in  { color: var(--green); font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 250px; }
+.player-out { color: var(--red);   font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 250px; }
 
 .no-move { color: var(--muted); font-size: 0.8rem; }
 
