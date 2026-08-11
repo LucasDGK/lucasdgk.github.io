@@ -39,6 +39,11 @@ function chipBadge(name) {
   return `<span class="chip ${m.cls}">${m.label}</span>`;
 }
 
+// Managers are shown by first name only, to keep the tables narrow.
+function firstName(name) {
+  return String(name ?? '').trim().split(/\s+/)[0] ?? '';
+}
+
 function dash() {
   return `<span style="color:var(--muted)">–</span>`;
 }
@@ -103,7 +108,7 @@ function renderStandings(standings) {
           <span>${entry.rank}</span>
         </div>
       </td>
-      <td><span class="team-name">${esc(entry.player_name)}</span></td>
+      <td><span class="team-name">${esc(firstName(entry.player_name))}</span></td>
       <td class="col-num pts-muted">${entry.event_total}</td>
       <td class="col-num pts-big">${entry.total_points}${fmtLeaderDelta(leaderDiffTotal)}</td>
       <td><div class="chips-wrap">${chipsHtml}</div></td>
@@ -129,12 +134,12 @@ function renderChart(standings) {
 
   const lastIdx = gwLabels.length - 1;
 
-  const datasets = standings.filter(e => e.team_name !== 'GJ06_City_FC').map((entry, i) => {
+  const datasets = standings.map((entry, i) => {
     const map = Object.fromEntries(
       (entry.cumulative_history ?? []).map(h => [h.gw, h.total])
     );
     return {
-      label: (entry.player_name || entry.team_name).split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(),
+      label: firstName(entry.player_name || entry.team_name),
       data: gwLabels.map(gw => map[gw] ?? null),
       borderColor: PALETTE[i % PALETTE.length],
       backgroundColor: 'transparent',
@@ -232,28 +237,29 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
   const gwEls = document.querySelectorAll('.gw-number');
   gwEls.forEach(el => { el.textContent = gwNumber ?? '–'; });
 
-  const badge = document.getElementById('gw-badge');
-  if (gwFinished) {
-    badge.textContent = 'FINAL';
-    badge.className = 'gw-badge final';
-  } else {
-    badge.textContent = 'LIVE';
-    badge.className = 'gw-badge live';
-  }
+  // Before GW1 there is no live or final gameweek to report on.
+  const preseason = Boolean(FPL_DATA?.meta?.preseason);
 
-  // Also set a standings header badge to mirror live/final state
+  const badgeText = preseason ? 'PRE-SEASON' : gwFinished ? 'FINAL' : 'LIVE';
+  const badgeCls  = preseason ? 'gw-badge' : gwFinished ? 'gw-badge final' : 'gw-badge live';
+
+  const badge = document.getElementById('gw-badge');
+  badge.textContent = badgeText;
+  badge.className = badgeCls;
+
+  // Also set a standings header badge to mirror pre-season/live/final state
   const standingsBadge = document.getElementById('standings-badge');
   if (standingsBadge) {
-    if (gwFinished) {
-      standingsBadge.textContent = 'FINAL';
-      standingsBadge.className = 'gw-badge final';
-    } else {
-      standingsBadge.textContent = 'LIVE';
-      standingsBadge.className = 'gw-badge live';
-    }
+    standingsBadge.textContent = badgeText;
+    standingsBadge.className = badgeCls;
   }
 
   const tbody = document.getElementById('gw-body');
+
+  if (preseason) {
+    tbody.innerHTML = `<tr><td colspan="4" class="empty-row">Season hasn’t started — points appear after the GW1 deadline.</td></tr>`;
+    return;
+  }
 
   if (!gwStats?.length) {
     tbody.innerHTML = `<tr><td colspan="4" class="empty-row">No data yet.</td></tr>`;
@@ -276,7 +282,7 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
       <td>
         <div class="rank-cell"><span>${entry.gw_rank}</span></div>
       </td>
-      <td><span class="team-name">${trophy}${esc(entry.player_name)}</span></td>
+      <td><span class="team-name">${trophy}${esc(firstName(entry.player_name))}</span></td>
       <td class="col-num pts-big">${entry.gw_points}${fmtLeaderDelta(leaderDiffGw)}</td>
       <td class="col-chip">${chipHtml}</td>
     `;
@@ -288,6 +294,11 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
 
 function renderTransfers(transfers) {
   const tbody = document.getElementById('transfers-body');
+
+  if (FPL_DATA?.meta?.preseason) {
+    tbody.innerHTML = `<tr><td colspan="4" class="empty-row">Season hasn’t started — no transfers yet.</td></tr>`;
+    return;
+  }
 
   if (!transfers?.length) {
     tbody.innerHTML = `<tr><td colspan="4" class="empty-row">No data yet.</td></tr>`;
@@ -318,7 +329,7 @@ function renderTransfers(transfers) {
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td><span class="team-name">${esc(entry.player_name)}</span></td>
+      <td><span class="team-name">${esc(firstName(entry.player_name))}</span></td>
       <td><div class="player-list">${inHtml}</div></td>
       <td><div class="player-list">${outHtml}</div></td>
       <td class="col-hit">${hitHtml}</td>

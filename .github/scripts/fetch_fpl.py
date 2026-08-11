@@ -1,6 +1,6 @@
 """
 fetch_fpl.py
-Fetches data for FPL league 2409531 and writes fpl/data.json.
+Fetches data for FPL league 53413 (FTV Helios) and writes fpl/data.json.
 Run locally or via GitHub Actions.
 """
 
@@ -12,8 +12,11 @@ import requests
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-LEAGUE_ID = 2409531
+LEAGUE_ID = 53413          # FTV Helios (2026/27)
 BASE      = "https://fantasy.premierleague.com/api"
+
+# Display order for the "chips left" badges.
+CHIP_ORDER = ["wildcard", "freehit", "bboost", "3xc"]
 HEADERS   = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -33,70 +36,98 @@ def fetch(url: str) -> dict:
     return r.json()
 
 
-def chips_remaining(chips_used: list[dict], current_gw: int | None) -> list[str]:
+def chip_windows(chip_defs: list[dict], current_gw: int | None) -> dict[str, tuple[int, int, int]]:
     """
-    Compute chips remaining for the CURRENT half of the season.
+    Build, per chip name, the availability window that covers `current_gw`.
 
-    Rules used here:
-    - Each chip (wildcard, freehit, bboost, 3xc) can be used once per half-season.
-      That is, one use in GW 1-19 and one use in GW 20-38.
-    - We count only uses that occurred within the same half as `current_gw`.
+    `chip_defs` is the `chips` array from bootstrap-static. Each entry has a
+    `name`, `start_event` and `stop_event`, and the API lists one entry per
+    allowed use — e.g. in 2026/27 there are two `wildcard` entries, one for
+    GWs 2-19 and one for GWs 20-38. Reading the windows from the API means a
+    future rule change (extra chip, different split) needs no code change.
 
-    `chips_used` is the raw list from the entry history `chips` field; each
-    item typically has a `name` and `event` (GW number) that we use to place
-    the use into the correct half. If `event` is missing we conservatively
-    treat it as having been used earlier in the season (reducing availability).
+    Returns  {chip_name: (allowed_uses, window_start, window_stop)}  for the
+    windows containing `current_gw`. A chip with no window open right now but
+    one opening later (the wildcard cannot be played in GW1, for instance) is
+    reported against its next window, since the manager still holds it. Falls
+    back to the historical "once per half-season" rule if the API gives us
+    nothing usable.
     """
+    ref_gw = int(current_gw) if current_gw else 1
 
-    # Determine current half (1 = GWs 1-19, 2 = GWs 20+). If unknown, assume 1.
-    half = 1
-    try:
-        if current_gw and int(current_gw) >= 20:
-            half = 2
-    except Exception:
-        half = 1
-
-    # Allowed uses per chip per half
-    allowed_per_half = {
-        'wildcard': 1,
-        'freehit':  1,
-        'bboost':   1,
-        '3xc':      1,
-    }
-
-    # Count uses in the same half
-    used_counts: dict[str, int] = {}
-    for c in chips_used or []:
-        name = c.get('name') if isinstance(c, dict) else c
+    windows: dict[str, tuple[int, int, int]] = {}
+    upcoming: dict[str, tuple[int, int, int]] = {}
+    for c in chip_defs or []:
+        name = c.get("name")
         if not name:
             continue
-        # determine which GW this use happened in
+        start = c.get("start_event") or 1
+        stop  = c.get("stop_event") or 38
+
+        if start <= ref_gw <= stop:
+            allowed, w_start, w_stop = windows.get(name, (0, start, stop))
+            windows[name] = (allowed + 1, min(w_start, start), max(w_stop, stop))
+        elif start > ref_gw:
+            # Keep only the earliest future window for this chip.
+            known = upcoming.get(name)
+            if known is None or start < known[1]:
+                upcoming[name] = (1, start, stop)
+
+    for name, window in upcoming.items():
+        windows.setdefault(name, window)
+
+    if not windows:
+        # Fallback: one use of each chip per half-season (GWs 1-19, 20-38).
+        half = (1, 19) if ref_gw <= 19 else (20, 38)
+        windows = {chip: (1, *half) for chip in CHIP_ORDER}
+
+    return windows
+
+
+def chips_remaining(
+    chips_used: list[dict],
+    current_gw: int | None,
+    chip_defs: list[dict],
+) -> list[str]:
+    """
+    Compute the chips a manager still has available in the current window.
+
+    `chips_used` is the raw list from the entry history `chips` field; each
+    item has a `name` and `event` (GW number) used to place the use inside a
+    window. A use with no event is counted against the current window, which
+    conservatively reduces availability.
+    """
+    windows = chip_windows(chip_defs, current_gw)
+
+    used_counts: dict[str, int] = {}
+    for c in chips_used or []:
+        name = c.get("name") if isinstance(c, dict) else c
+        if not name or name not in windows:
+            continue
+
         ev = None
         if isinstance(c, dict):
-            ev = c.get('event') or c.get('gw') or c.get('deadline_event')
-        # If we have an event number, check which half it belongs to
-        in_same_half = True
-        try:
-            if ev is not None:
-                evn = int(ev)
-                if half == 1 and evn >= 20:
-                    in_same_half = False
-                if half == 2 and evn <= 19:
-                    in_same_half = False
-        except Exception:
-            # if parsing fails, assume it was in this half to be conservative
-            in_same_half = True
+            ev = c.get("event") or c.get("gw") or c.get("deadline_event")
 
-        if in_same_half:
+        _, w_start, w_stop = windows[name]
+        in_window = True
+        if ev is not None:
+            try:
+                in_window = w_start <= int(ev) <= w_stop
+            except (TypeError, ValueError):
+                in_window = True
+
+        if in_window:
             used_counts[name] = used_counts.get(name, 0) + 1
-        else:
-            # ignore uses from the other half
-            pass
+
+    # Known chips first, in display order; anything new the API adds follows.
+    ordered = [c for c in CHIP_ORDER if c in windows]
+    ordered += [c for c in windows if c not in CHIP_ORDER]
 
     remaining: list[str] = []
-    for chip, allowed in allowed_per_half.items():
-        left = max(0, allowed - used_counts.get(chip, 0))
-        remaining.extend([chip] * left)
+    for chip in ordered:
+        allowed = windows[chip][0]
+        remaining.extend([chip] * max(0, allowed - used_counts.get(chip, 0)))
 
     return remaining
 
@@ -146,7 +177,11 @@ def main() -> None:
                 gw_finished = True
                 break
 
-    print(f"  → GW {current_gw}  (finished={gw_finished})")
+    # Pre-season: no event is current and none has finished yet.
+    preseason = current_gw is None
+    print(f"  → GW {current_gw}  (finished={gw_finished}, preseason={preseason})")
+
+    chip_defs: list[dict] = bootstrap.get("chips", [])
 
     players: dict[int, str] = {
         p["id"]: f"{p['first_name']} {p['second_name']}"
@@ -156,14 +191,38 @@ def main() -> None:
     # 2. League standings (handle pagination for large leagues)
     print(f"Fetching league {LEAGUE_ID} standings …")
     entries: list[dict] = []
+    new_entries: list[dict] = []
     page = 1
     while True:
         data    = fetch(f"{BASE}/leagues-classic/{LEAGUE_ID}/standings/?page_standings={page}")
         results = data["standings"]["results"]
         entries.extend(results)
+        if page == 1:
+            new_entries.extend(data.get("new_entries", {}).get("results", []))
         if not data["standings"]["has_next"]:
             break
         page += 1
+
+    # Before the first gameweek is scored, `standings.results` is empty and the
+    # league members are only listed under `new_entries`. Synthesise zeroed
+    # standings rows from them so the dashboard shows the league right away.
+    if not entries and new_entries:
+        print(f"  → standings empty, using {len(new_entries)} new entries")
+        entries = [
+            {
+                "entry":        ne["entry"],
+                "entry_name":   ne.get("entry_name") or "Unknown",
+                "player_name":  f"{ne.get('player_first_name', '')} "
+                                f"{ne.get('player_last_name', '')}".strip() or "Unknown",
+                "rank":         i + 1,
+                "last_rank":    0,
+                "total":        0,
+                "event_total":  0,
+            }
+            for i, ne in enumerate(
+                sorted(new_entries, key=lambda e: e.get("joined_time") or "")
+            )
+        ]
 
     print(f"  → {len(entries)} teams")
 
@@ -182,7 +241,7 @@ def main() -> None:
         history          = fetch(f"{BASE}/entry/{eid}/history/")
         used_chips_raw   = history.get("chips", [])
         used_chips       = [c.get("name") if isinstance(c, dict) else c for c in used_chips_raw]
-        chips_left       = chips_remaining(used_chips_raw, current_gw)
+        chips_left       = chips_remaining(used_chips_raw, current_gw, chip_defs)
         gw_transfer_cost = 0
 
         gw_history:     list[dict] = []
@@ -260,6 +319,7 @@ def main() -> None:
             "updated_at":       datetime.now(timezone.utc).isoformat(),
             "current_gameweek": current_gw,
             "gameweek_finished": gw_finished,
+            "preseason":        preseason,
             "next_deadline":    next_deadline,
             "next_gw":          next_gw,
         },
