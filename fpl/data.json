@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-17T20:48:32.078078+00:00",
+    "updated_at": "2026-08-17T21:08:46.152233+00:00",
     "current_gameweek": null,
     "gameweek_finished": false,
     "preseason": true,
@@ -61,6 +61,24 @@
       ],
       "gw_history": [],
       "cumulative_history": []
+    },
+    {
+      "rank": 4,
+      "last_rank": 0,
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
+      "total_points": 0,
+      "event_total": 0,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [],
+      "cumulative_history": []
     }
   ],
   "current_gw_stats": [
@@ -87,6 +105,14 @@
       "gw_points": 0,
       "chip_used": null,
       "gw_rank": 1
+    },
+    {
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
+      "gw_points": 0,
+      "chip_used": null,
+      "gw_rank": 1
     }
   ],
   "transfers": [
@@ -110,6 +136,14 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
+      "transfers_in": [],
+      "transfers_out": [],
+      "transfer_cost": 0
+    },
+    {
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
