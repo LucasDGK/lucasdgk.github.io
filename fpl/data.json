@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-18T18:22:40.989787+00:00",
+    "updated_at": "2026-08-18T19:02:33.812859+00:00",
     "current_gameweek": null,
     "gameweek_finished": false,
     "preseason": true,
@@ -79,6 +79,24 @@
       ],
       "gw_history": [],
       "cumulative_history": []
+    },
+    {
+      "rank": 5,
+      "last_rank": 0,
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "total_points": 0,
+      "event_total": 0,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [],
+      "cumulative_history": []
     }
   ],
   "current_gw_stats": [
@@ -113,6 +131,14 @@
       "gw_points": 0,
       "chip_used": null,
       "gw_rank": 1
+    },
+    {
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "gw_points": 0,
+      "chip_used": null,
+      "gw_rank": 1
     }
   ],
   "transfers": [
@@ -144,6 +170,14 @@
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
+      "transfers_in": [],
+      "transfers_out": [],
+      "transfer_cost": 0
+    },
+    {
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
