@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-19T15:20:14.711269+00:00",
+    "updated_at": "2026-08-19T15:50:03.878569+00:00",
     "current_gameweek": null,
     "gameweek_finished": false,
     "preseason": true,
@@ -12,7 +12,7 @@
       "rank": 1,
       "last_rank": 0,
       "entry_id": 258566,
-      "team_name": "Sawal's Team",
+      "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
       "total_points": 0,
       "event_total": 0,
@@ -102,7 +102,7 @@
   "current_gw_stats": [
     {
       "entry_id": 258566,
-      "team_name": "Sawal's Team",
+      "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
       "gw_points": 0,
       "chip_used": null,
@@ -144,7 +144,7 @@
   "transfers": [
     {
       "entry_id": 258566,
-      "team_name": "Sawal's Team",
+      "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
       "transfers_in": [],
       "transfers_out": [],
