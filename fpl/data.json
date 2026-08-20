@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-20T01:40:06.740783+00:00",
+    "updated_at": "2026-08-20T02:42:22.633434+00:00",
     "current_gameweek": null,
     "gameweek_finished": false,
     "preseason": true,
@@ -97,6 +97,24 @@
       ],
       "gw_history": [],
       "cumulative_history": []
+    },
+    {
+      "rank": 6,
+      "last_rank": 0,
+      "entry_id": 6511012,
+      "team_name": "GJ06_City_FC",
+      "player_name": "Rumin Shah",
+      "total_points": 0,
+      "event_total": 0,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [],
+      "cumulative_history": []
     }
   ],
   "current_gw_stats": [
@@ -139,6 +157,14 @@
       "gw_points": 0,
       "chip_used": null,
       "gw_rank": 1
+    },
+    {
+      "entry_id": 6511012,
+      "team_name": "GJ06_City_FC",
+      "player_name": "Rumin Shah",
+      "gw_points": 0,
+      "chip_used": null,
+      "gw_rank": 1
     }
   ],
   "transfers": [
@@ -178,6 +204,14 @@
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
+      "transfers_in": [],
+      "transfers_out": [],
+      "transfer_cost": 0
+    },
+    {
+      "entry_id": 6511012,
+      "team_name": "GJ06_City_FC",
+      "player_name": "Rumin Shah",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
