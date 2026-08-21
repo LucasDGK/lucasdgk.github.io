@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-21T14:27:29.369452+00:00",
+    "updated_at": "2026-08-21T15:01:51.944178+00:00",
     "current_gameweek": null,
     "gameweek_finished": false,
     "preseason": true,
@@ -115,6 +115,24 @@
       ],
       "gw_history": [],
       "cumulative_history": []
+    },
+    {
+      "rank": 7,
+      "last_rank": 0,
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
+      "total_points": 0,
+      "event_total": 0,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [],
+      "cumulative_history": []
     }
   ],
   "current_gw_stats": [
@@ -165,6 +183,14 @@
       "gw_points": 0,
       "chip_used": null,
       "gw_rank": 1
+    },
+    {
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
+      "gw_points": 0,
+      "chip_used": null,
+      "gw_rank": 1
     }
   ],
   "transfers": [
@@ -212,6 +238,14 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
+      "transfers_in": [],
+      "transfers_out": [],
+      "transfer_cost": 0
+    },
+    {
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
