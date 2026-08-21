@@ -1,11 +1,11 @@
 {
   "meta": {
-    "updated_at": "2026-08-21T17:04:49.864672+00:00",
+    "updated_at": "2026-08-21T17:37:30.586553+00:00",
     "current_gameweek": null,
     "gameweek_finished": false,
     "preseason": true,
-    "next_deadline": "2026-08-21T17:30:00Z",
-    "next_gw": 1
+    "next_deadline": "2026-08-28T17:30:00Z",
+    "next_gw": 2
   },
   "standings": [
     {
