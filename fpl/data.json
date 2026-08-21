@@ -1,9 +1,9 @@
 {
   "meta": {
-    "updated_at": "2026-08-21T17:37:30.586553+00:00",
-    "current_gameweek": null,
+    "updated_at": "2026-08-21T18:00:20.821510+00:00",
+    "current_gameweek": 1,
     "gameweek_finished": false,
-    "preseason": true,
+    "preseason": false,
     "next_deadline": "2026-08-28T17:30:00Z",
     "next_gw": 2
   },
