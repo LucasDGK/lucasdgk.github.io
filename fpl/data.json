@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-21T22:09:00.952089+00:00",
+    "updated_at": "2026-08-21T22:36:59.768299+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -23,8 +23,18 @@
         "bboost",
         "3xc"
       ],
-      "gw_history": [],
-      "cumulative_history": []
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 20
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 20
+        }
+      ]
     },
     {
       "rank": 1,
@@ -41,8 +51,18 @@
         "bboost",
         "3xc"
       ],
-      "gw_history": [],
-      "cumulative_history": []
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 20
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 20
+        }
+      ]
     },
     {
       "rank": 3,
@@ -59,8 +79,18 @@
         "bboost",
         "3xc"
       ],
-      "gw_history": [],
-      "cumulative_history": []
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 15
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 15
+        }
+      ]
     },
     {
       "rank": 4,
@@ -77,8 +107,18 @@
         "bboost",
         "3xc"
       ],
-      "gw_history": [],
-      "cumulative_history": []
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 14
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 14
+        }
+      ]
     },
     {
       "rank": 5,
@@ -95,8 +135,18 @@
         "bboost",
         "3xc"
       ],
-      "gw_history": [],
-      "cumulative_history": []
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 12
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 12
+        }
+      ]
     },
     {
       "rank": 6,
@@ -113,8 +163,18 @@
         "bboost",
         "3xc"
       ],
-      "gw_history": [],
-      "cumulative_history": []
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 5
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 5
+        }
+      ]
     },
     {
       "rank": 7,
@@ -131,8 +191,18 @@
         "bboost",
         "3xc"
       ],
-      "gw_history": [],
-      "cumulative_history": []
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 0
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 0
+        }
+      ]
     }
   ],
   "current_gw_stats": [
