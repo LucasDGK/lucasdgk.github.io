@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-22T15:12:20.794906+00:00",
+    "updated_at": "2026-08-22T15:33:52.739382+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -39,39 +39,11 @@
     {
       "rank": 2,
       "last_rank": 0,
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
-      "total_points": 23,
-      "event_total": 23,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 20
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 20
-        }
-      ]
-    },
-    {
-      "rank": 3,
-      "last_rank": 0,
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 18,
-      "event_total": 18,
+      "total_points": 25,
+      "event_total": 25,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -93,13 +65,41 @@
       ]
     },
     {
+      "rank": 3,
+      "last_rank": 0,
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
+      "total_points": 24,
+      "event_total": 24,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 20
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 20
+        }
+      ]
+    },
+    {
       "rank": 4,
       "last_rank": 0,
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 17,
-      "event_total": 17,
+      "total_points": 18,
+      "event_total": 18,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -154,8 +154,8 @@
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
-      "total_points": 15,
-      "event_total": 15,
+      "total_points": 14,
+      "event_total": 14,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -182,8 +182,8 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "total_points": 2,
-      "event_total": 2,
+      "total_points": 13,
+      "event_total": 13,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -215,18 +215,18 @@
       "gw_rank": 1
     },
     {
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
-      "gw_points": 23,
+      "entry_id": 6511012,
+      "team_name": "GJ06_City_FC",
+      "player_name": "Rumin Shah",
+      "gw_points": 25,
       "chip_used": null,
       "gw_rank": 2
     },
     {
-      "entry_id": 6511012,
-      "team_name": "GJ06_City_FC",
-      "player_name": "Rumin Shah",
-      "gw_points": 18,
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
+      "gw_points": 24,
       "chip_used": null,
       "gw_rank": 3
     },
@@ -234,7 +234,7 @@
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "gw_points": 17,
+      "gw_points": 18,
       "chip_used": null,
       "gw_rank": 4
     },
@@ -250,7 +250,7 @@
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
-      "gw_points": 15,
+      "gw_points": 14,
       "chip_used": null,
       "gw_rank": 6
     },
@@ -258,7 +258,7 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "gw_points": 2,
+      "gw_points": 13,
       "chip_used": null,
       "gw_rank": 7
     }
@@ -273,17 +273,17 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
+      "entry_id": 6511012,
+      "team_name": "GJ06_City_FC",
+      "player_name": "Rumin Shah",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 6511012,
-      "team_name": "GJ06_City_FC",
-      "player_name": "Rumin Shah",
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
