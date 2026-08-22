@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-22T14:41:45.881612+00:00",
+    "updated_at": "2026-08-22T14:56:53.463445+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -70,8 +70,8 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 19,
-      "event_total": 19,
+      "total_points": 18,
+      "event_total": 18,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -94,6 +94,34 @@
     },
     {
       "rank": 4,
+      "last_rank": 0,
+      "entry_id": 258566,
+      "team_name": "La Albiceleste",
+      "player_name": "Sawal Maskey",
+      "total_points": 17,
+      "event_total": 17,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 5
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "rank": 5,
       "last_rank": 0,
       "entry_id": 8380691,
       "team_name": "CBlues",
@@ -121,7 +149,7 @@
       ]
     },
     {
-      "rank": 5,
+      "rank": 6,
       "last_rank": 0,
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
@@ -149,41 +177,13 @@
       ]
     },
     {
-      "rank": 6,
-      "last_rank": 0,
-      "entry_id": 258566,
-      "team_name": "La Albiceleste",
-      "player_name": "Sawal Maskey",
-      "total_points": 9,
-      "event_total": 9,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 5
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 5
-        }
-      ]
-    },
-    {
       "rank": 7,
       "last_rank": 0,
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "total_points": 5,
-      "event_total": 5,
+      "total_points": 2,
+      "event_total": 2,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -226,9 +226,17 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "gw_points": 19,
+      "gw_points": 18,
       "chip_used": null,
       "gw_rank": 3
+    },
+    {
+      "entry_id": 258566,
+      "team_name": "La Albiceleste",
+      "player_name": "Sawal Maskey",
+      "gw_points": 17,
+      "chip_used": null,
+      "gw_rank": 4
     },
     {
       "entry_id": 8380691,
@@ -236,7 +244,7 @@
       "player_name": "Chakri N",
       "gw_points": 16,
       "chip_used": null,
-      "gw_rank": 4
+      "gw_rank": 5
     },
     {
       "entry_id": 5413878,
@@ -244,21 +252,13 @@
       "player_name": "Santiago Acevedo",
       "gw_points": 15,
       "chip_used": null,
-      "gw_rank": 5
-    },
-    {
-      "entry_id": 258566,
-      "team_name": "La Albiceleste",
-      "player_name": "Sawal Maskey",
-      "gw_points": 9,
-      "chip_used": null,
       "gw_rank": 6
     },
     {
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "gw_points": 5,
+      "gw_points": 2,
       "chip_used": null,
       "gw_rank": 7
     }
@@ -289,6 +289,14 @@
       "transfer_cost": 0
     },
     {
+      "entry_id": 258566,
+      "team_name": "La Albiceleste",
+      "player_name": "Sawal Maskey",
+      "transfers_in": [],
+      "transfers_out": [],
+      "transfer_cost": 0
+    },
+    {
       "entry_id": 8380691,
       "team_name": "CBlues",
       "player_name": "Chakri N",
@@ -300,14 +308,6 @@
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
-      "transfers_in": [],
-      "transfers_out": [],
-      "transfer_cost": 0
-    },
-    {
-      "entry_id": 258566,
-      "team_name": "La Albiceleste",
-      "player_name": "Sawal Maskey",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
