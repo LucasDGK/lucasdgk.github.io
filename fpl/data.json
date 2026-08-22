@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-22T17:56:05.015490+00:00",
+    "updated_at": "2026-08-22T18:13:36.167060+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -67,6 +67,34 @@
     {
       "rank": 3,
       "last_rank": 0,
+      "entry_id": 258566,
+      "team_name": "La Albiceleste",
+      "player_name": "Sawal Maskey",
+      "total_points": 25,
+      "event_total": 25,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 5
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 5
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "last_rank": 0,
       "entry_id": 404805,
       "team_name": "Lucas",
       "player_name": "Lucas Delgado",
@@ -89,34 +117,6 @@
         {
           "gw": 1,
           "total": 20
-        }
-      ]
-    },
-    {
-      "rank": 3,
-      "last_rank": 0,
-      "entry_id": 258566,
-      "team_name": "La Albiceleste",
-      "player_name": "Sawal Maskey",
-      "total_points": 24,
-      "event_total": 24,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 5
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 5
         }
       ]
     },
@@ -223,20 +223,20 @@
       "gw_rank": 2
     },
     {
+      "entry_id": 258566,
+      "team_name": "La Albiceleste",
+      "player_name": "Sawal Maskey",
+      "gw_points": 25,
+      "chip_used": null,
+      "gw_rank": 3
+    },
+    {
       "entry_id": 404805,
       "team_name": "Lucas",
       "player_name": "Lucas Delgado",
       "gw_points": 24,
       "chip_used": null,
-      "gw_rank": 3
-    },
-    {
-      "entry_id": 258566,
-      "team_name": "La Albiceleste",
-      "player_name": "Sawal Maskey",
-      "gw_points": 24,
-      "chip_used": null,
-      "gw_rank": 3
+      "gw_rank": 4
     },
     {
       "entry_id": 1831052,
@@ -281,17 +281,17 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
+      "entry_id": 258566,
+      "team_name": "La Albiceleste",
+      "player_name": "Sawal Maskey",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 258566,
-      "team_name": "La Albiceleste",
-      "player_name": "Sawal Maskey",
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
