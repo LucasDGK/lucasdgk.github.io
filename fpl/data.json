@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-22T17:20:26.645950+00:00",
+    "updated_at": "2026-08-22T17:40:40.843343+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -151,34 +151,6 @@
     {
       "rank": 6,
       "last_rank": 0,
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
-      "total_points": 14,
-      "event_total": 14,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 0
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 0
-        }
-      ]
-    },
-    {
-      "rank": 6,
-      "last_rank": 0,
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
@@ -201,6 +173,34 @@
         {
           "gw": 1,
           "total": 14
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "last_rank": 0,
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "total_points": 14,
+      "event_total": 14,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 0
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 0
         }
       ]
     }
@@ -247,17 +247,17 @@
       "gw_rank": 5
     },
     {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
       "gw_points": 14,
       "chip_used": null,
       "gw_rank": 6
     },
     {
-      "entry_id": 5413878,
-      "team_name": "Florida Man FC",
-      "player_name": "Santiago Acevedo",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "gw_points": 14,
       "chip_used": null,
       "gw_rank": 6
@@ -305,17 +305,17 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 5413878,
-      "team_name": "Florida Man FC",
-      "player_name": "Santiago Acevedo",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
