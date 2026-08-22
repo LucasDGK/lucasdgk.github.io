@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-22T15:33:52.739382+00:00",
+    "updated_at": "2026-08-22T15:49:56.517004+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -42,8 +42,8 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 25,
-      "event_total": 25,
+      "total_points": 24,
+      "event_total": 24,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 2,
       "last_rank": 0,
       "entry_id": 404805,
       "team_name": "Lucas",
@@ -98,8 +98,8 @@
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 18,
-      "event_total": 18,
+      "total_points": 20,
+      "event_total": 20,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -218,7 +218,7 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "gw_points": 25,
+      "gw_points": 24,
       "chip_used": null,
       "gw_rank": 2
     },
@@ -228,13 +228,13 @@
       "player_name": "Lucas Delgado",
       "gw_points": 24,
       "chip_used": null,
-      "gw_rank": 3
+      "gw_rank": 2
     },
     {
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "gw_points": 18,
+      "gw_points": 20,
       "chip_used": null,
       "gw_rank": 4
     },
