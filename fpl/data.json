@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-22T19:58:50.009368+00:00",
+    "updated_at": "2026-08-22T20:18:21.137932+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -26,13 +26,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 20
+          "points": 29
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 20
+          "total": 29
         }
       ]
     },
@@ -54,13 +54,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 15
+          "points": 26
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 15
+          "total": 26
         }
       ]
     },
@@ -82,13 +82,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 5
+          "points": 25
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 5
+          "total": 25
         }
       ]
     },
@@ -110,41 +110,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 20
+          "points": 24
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 20
-        }
-      ]
-    },
-    {
-      "rank": 5,
-      "last_rank": 0,
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
-      "total_points": 16,
-      "event_total": 16,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 0
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 0
+          "total": 24
         }
       ]
     },
@@ -166,13 +138,41 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 12
+          "points": 16
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 12
+          "total": 16
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "last_rank": 0,
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "total_points": 16,
+      "event_total": 16,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 16
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 16
         }
       ]
     },
@@ -239,17 +239,17 @@
       "gw_rank": 4
     },
     {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
       "gw_points": 16,
       "chip_used": null,
       "gw_rank": 5
     },
     {
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "gw_points": 16,
       "chip_used": null,
       "gw_rank": 5
@@ -297,17 +297,17 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
