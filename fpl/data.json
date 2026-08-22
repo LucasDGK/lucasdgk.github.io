@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-22T17:40:40.843343+00:00",
+    "updated_at": "2026-08-22T17:56:05.015490+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -14,8 +14,8 @@
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
-      "total_points": 27,
-      "event_total": 27,
+      "total_points": 29,
+      "event_total": 29,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -93,13 +93,13 @@
       ]
     },
     {
-      "rank": 4,
+      "rank": 3,
       "last_rank": 0,
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 21,
-      "event_total": 21,
+      "total_points": 24,
+      "event_total": 24,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -117,6 +117,34 @@
         {
           "gw": 1,
           "total": 5
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "last_rank": 0,
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "total_points": 16,
+      "event_total": 16,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 0
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 0
         }
       ]
     },
@@ -149,7 +177,7 @@
       ]
     },
     {
-      "rank": 6,
+      "rank": 7,
       "last_rank": 0,
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
@@ -175,34 +203,6 @@
           "total": 14
         }
       ]
-    },
-    {
-      "rank": 6,
-      "last_rank": 0,
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
-      "total_points": 14,
-      "event_total": 14,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 0
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 0
-        }
-      ]
     }
   ],
   "current_gw_stats": [
@@ -210,7 +210,7 @@
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
-      "gw_points": 27,
+      "gw_points": 29,
       "chip_used": null,
       "gw_rank": 1
     },
@@ -234,9 +234,17 @@
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "gw_points": 21,
+      "gw_points": 24,
       "chip_used": null,
-      "gw_rank": 4
+      "gw_rank": 3
+    },
+    {
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "gw_points": 16,
+      "chip_used": null,
+      "gw_rank": 5
     },
     {
       "entry_id": 8380691,
@@ -252,15 +260,7 @@
       "player_name": "Santiago Acevedo",
       "gw_points": 14,
       "chip_used": null,
-      "gw_rank": 6
-    },
-    {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
-      "gw_points": 14,
-      "chip_used": null,
-      "gw_rank": 6
+      "gw_rank": 7
     }
   ],
   "transfers": [
@@ -297,6 +297,14 @@
       "transfer_cost": 0
     },
     {
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "transfers_in": [],
+      "transfers_out": [],
+      "transfer_cost": 0
+    },
+    {
       "entry_id": 8380691,
       "team_name": "CBlues",
       "player_name": "Chakri N",
@@ -308,14 +316,6 @@
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
-      "transfers_in": [],
-      "transfers_out": [],
-      "transfer_cost": 0
-    },
-    {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
