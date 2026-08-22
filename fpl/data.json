@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-22T16:00:16.141976+00:00",
+    "updated_at": "2026-08-22T16:23:54.756888+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -8,34 +8,6 @@
     "next_gw": 2
   },
   "standings": [
-    {
-      "rank": 1,
-      "last_rank": 0,
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "total_points": 26,
-      "event_total": 26,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 20
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 20
-        }
-      ]
-    },
     {
       "rank": 1,
       "last_rank": 0,
@@ -61,6 +33,34 @@
         {
           "gw": 1,
           "total": 15
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "last_rank": 0,
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "total_points": 26,
+      "event_total": 26,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 20
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 20
         }
       ]
     },
@@ -207,17 +207,17 @@
   ],
   "current_gw_stats": [
     {
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
+      "entry_id": 6511012,
+      "team_name": "GJ06_City_FC",
+      "player_name": "Rumin Shah",
       "gw_points": 26,
       "chip_used": null,
       "gw_rank": 1
     },
     {
-      "entry_id": 6511012,
-      "team_name": "GJ06_City_FC",
-      "player_name": "Rumin Shah",
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
       "gw_points": 26,
       "chip_used": null,
       "gw_rank": 1
@@ -265,17 +265,17 @@
   ],
   "transfers": [
     {
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
+      "entry_id": 6511012,
+      "team_name": "GJ06_City_FC",
+      "player_name": "Rumin Shah",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 6511012,
-      "team_name": "GJ06_City_FC",
-      "player_name": "Rumin Shah",
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
