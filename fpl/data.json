@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-23T18:47:47.885514+00:00",
+    "updated_at": "2026-08-23T19:06:00.462185+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -26,13 +26,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 24
+          "points": 42
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 24
+          "total": 42
         }
       ]
     },
@@ -54,13 +54,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 29
+          "points": 41
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 29
+          "total": 41
         }
       ]
     },
@@ -82,13 +82,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 26
+          "points": 37
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 26
+          "total": 37
         }
       ]
     },
@@ -110,13 +110,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 16
+          "points": 34
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 16
+          "total": 34
         }
       ]
     },
@@ -138,13 +138,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 25
+          "points": 29
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 25
+          "total": 29
         }
       ]
     },
@@ -166,13 +166,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 16
+          "points": 27
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 16
+          "total": 27
         }
       ]
     },
@@ -194,13 +194,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 14
+          "points": 25
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 14
+          "total": 25
         }
       ]
     }
