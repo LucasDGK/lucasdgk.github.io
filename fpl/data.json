@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-23T14:02:45.219509+00:00",
+    "updated_at": "2026-08-23T14:30:41.689006+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -10,6 +10,34 @@
   "standings": [
     {
       "rank": 1,
+      "last_rank": 0,
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
+      "total_points": 34,
+      "event_total": 34,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 24
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 24
+        }
+      ]
+    },
+    {
+      "rank": 2,
       "last_rank": 0,
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
@@ -37,13 +65,13 @@
       ]
     },
     {
-      "rank": 2,
+      "rank": 3,
       "last_rank": 0,
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 28,
-      "event_total": 28,
+      "total_points": 30,
+      "event_total": 30,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -65,13 +93,13 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 4,
       "last_rank": 0,
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 27,
-      "event_total": 27,
+      "total_points": 29,
+      "event_total": 29,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -93,41 +121,13 @@
       ]
     },
     {
-      "rank": 4,
-      "last_rank": 0,
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
-      "total_points": 26,
-      "event_total": 26,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 24
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 24
-        }
-      ]
-    },
-    {
       "rank": 5,
       "last_rank": 0,
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
-      "total_points": 20,
-      "event_total": 20,
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "total_points": 21,
+      "event_total": 21,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -149,11 +149,11 @@
       ]
     },
     {
-      "rank": 5,
+      "rank": 6,
       "last_rank": 0,
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
       "total_points": 20,
       "event_total": 20,
       "chips_used": [],
@@ -182,8 +182,8 @@
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
-      "total_points": 16,
-      "event_total": 16,
+      "total_points": 18,
+      "event_total": 18,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -207,36 +207,44 @@
   ],
   "current_gw_stats": [
     {
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
+      "gw_points": 34,
+      "chip_used": null,
+      "gw_rank": 1
+    },
+    {
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
       "gw_points": 33,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "gw_points": 28,
+      "gw_points": 30,
       "chip_used": null,
-      "gw_rank": 2
+      "gw_rank": 3
     },
     {
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "gw_points": 27,
-      "chip_used": null,
-      "gw_rank": 3
-    },
-    {
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
-      "gw_points": 26,
+      "gw_points": 29,
       "chip_used": null,
       "gw_rank": 4
+    },
+    {
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "gw_points": 21,
+      "chip_used": null,
+      "gw_rank": 5
     },
     {
       "entry_id": 8380691,
@@ -244,27 +252,27 @@
       "player_name": "Chakri N",
       "gw_points": 20,
       "chip_used": null,
-      "gw_rank": 5
-    },
-    {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
-      "gw_points": 20,
-      "chip_used": null,
-      "gw_rank": 5
+      "gw_rank": 6
     },
     {
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
-      "gw_points": 16,
+      "gw_points": 18,
       "chip_used": null,
       "gw_rank": 7
     }
   ],
   "transfers": [
     {
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
+      "transfers_in": [],
+      "transfers_out": [],
+      "transfer_cost": 0
+    },
+    {
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
@@ -289,9 +297,9 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
@@ -300,14 +308,6 @@
       "entry_id": 8380691,
       "team_name": "CBlues",
       "player_name": "Chakri N",
-      "transfers_in": [],
-      "transfers_out": [],
-      "transfer_cost": 0
-    },
-    {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
