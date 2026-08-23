@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-23T19:57:07.132405+00:00",
+    "updated_at": "2026-08-23T20:13:27.678002+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -98,8 +98,8 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "total_points": 34,
-      "event_total": 34,
+      "total_points": 36,
+      "event_total": 36,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -234,7 +234,7 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "gw_points": 34,
+      "gw_points": 36,
       "chip_used": null,
       "gw_rank": 4
     },
