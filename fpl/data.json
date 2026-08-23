@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-23T14:30:41.689006+00:00",
+    "updated_at": "2026-08-23T14:50:40.918547+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -10,6 +10,34 @@
   "standings": [
     {
       "rank": 1,
+      "last_rank": 0,
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "total_points": 41,
+      "event_total": 41,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 29
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 29
+        }
+      ]
+    },
+    {
+      "rank": 2,
       "last_rank": 0,
       "entry_id": 404805,
       "team_name": "Lucas",
@@ -37,41 +65,13 @@
       ]
     },
     {
-      "rank": 2,
-      "last_rank": 0,
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "total_points": 33,
-      "event_total": 33,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 29
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 29
-        }
-      ]
-    },
-    {
       "rank": 3,
       "last_rank": 0,
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 30,
-      "event_total": 30,
+      "total_points": 31,
+      "event_total": 31,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -207,18 +207,18 @@
   ],
   "current_gw_stats": [
     {
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
-      "gw_points": 34,
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "gw_points": 41,
       "chip_used": null,
       "gw_rank": 1
     },
     {
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "gw_points": 33,
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
+      "gw_points": 34,
       "chip_used": null,
       "gw_rank": 2
     },
@@ -226,7 +226,7 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "gw_points": 30,
+      "gw_points": 31,
       "chip_used": null,
       "gw_rank": 3
     },
@@ -265,17 +265,17 @@
   ],
   "transfers": [
     {
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
