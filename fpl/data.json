@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-23T17:27:03.076271+00:00",
+    "updated_at": "2026-08-23T17:42:44.373809+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -10,6 +10,34 @@
   "standings": [
     {
       "rank": 1,
+      "last_rank": 0,
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
+      "total_points": 42,
+      "event_total": 42,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 24
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 24
+        }
+      ]
+    },
+    {
+      "rank": 2,
       "last_rank": 0,
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
@@ -37,7 +65,7 @@
       ]
     },
     {
-      "rank": 2,
+      "rank": 3,
       "last_rank": 0,
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
@@ -61,34 +89,6 @@
         {
           "gw": 1,
           "total": 26
-        }
-      ]
-    },
-    {
-      "rank": 3,
-      "last_rank": 0,
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
-      "total_points": 36,
-      "event_total": 36,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 24
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 24
         }
       ]
     },
@@ -151,6 +151,34 @@
     {
       "rank": 6,
       "last_rank": 0,
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
+      "total_points": 27,
+      "event_total": 27,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 16
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 16
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "last_rank": 0,
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
@@ -175,58 +203,30 @@
           "total": 14
         }
       ]
-    },
-    {
-      "rank": 7,
-      "last_rank": 0,
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
-      "total_points": 21,
-      "event_total": 21,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 16
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 16
-        }
-      ]
     }
   ],
   "current_gw_stats": [
+    {
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
+      "gw_points": 42,
+      "chip_used": null,
+      "gw_rank": 1
+    },
     {
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
       "gw_points": 41,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
       "gw_points": 37,
-      "chip_used": null,
-      "gw_rank": 2
-    },
-    {
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
-      "gw_points": 36,
       "chip_used": null,
       "gw_rank": 3
     },
@@ -247,23 +247,31 @@
       "gw_rank": 5
     },
     {
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
+      "gw_points": 27,
+      "chip_used": null,
+      "gw_rank": 6
+    },
+    {
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
       "gw_points": 25,
       "chip_used": null,
-      "gw_rank": 6
-    },
-    {
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
-      "gw_points": 21,
-      "chip_used": null,
       "gw_rank": 7
     }
   ],
   "transfers": [
+    {
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
+      "transfers_in": [],
+      "transfers_out": [],
+      "transfer_cost": 0
+    },
     {
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
@@ -276,14 +284,6 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "transfers_in": [],
-      "transfers_out": [],
-      "transfer_cost": 0
-    },
-    {
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
@@ -305,17 +305,17 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 5413878,
-      "team_name": "Florida Man FC",
-      "player_name": "Santiago Acevedo",
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
