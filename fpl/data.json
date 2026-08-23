@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-23T15:47:19.354914+00:00",
+    "updated_at": "2026-08-23T15:59:55.678890+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -126,8 +126,36 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "total_points": 23,
-      "event_total": 23,
+      "total_points": 24,
+      "event_total": 24,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 16
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 16
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "last_rank": 0,
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
+      "total_points": 20,
+      "event_total": 20,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -175,34 +203,6 @@
           "total": 14
         }
       ]
-    },
-    {
-      "rank": 6,
-      "last_rank": 0,
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
-      "total_points": 20,
-      "event_total": 20,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 16
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 16
-        }
-      ]
     }
   ],
   "current_gw_stats": [
@@ -242,22 +242,22 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "gw_points": 23,
+      "gw_points": 24,
       "chip_used": null,
       "gw_rank": 5
-    },
-    {
-      "entry_id": 5413878,
-      "team_name": "Florida Man FC",
-      "player_name": "Santiago Acevedo",
-      "gw_points": 20,
-      "chip_used": null,
-      "gw_rank": 6
     },
     {
       "entry_id": 8380691,
       "team_name": "CBlues",
       "player_name": "Chakri N",
+      "gw_points": 20,
+      "chip_used": null,
+      "gw_rank": 6
+    },
+    {
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
       "gw_points": 20,
       "chip_used": null,
       "gw_rank": 6
@@ -305,17 +305,17 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 5413878,
-      "team_name": "Florida Man FC",
-      "player_name": "Santiago Acevedo",
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
