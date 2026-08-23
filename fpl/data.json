@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-23T09:53:15.265380+00:00",
+    "updated_at": "2026-08-23T10:09:24.718504+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -123,9 +123,9 @@
     {
       "rank": 5,
       "last_rank": 0,
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "total_points": 16,
       "event_total": 16,
       "chips_used": [],
@@ -151,9 +151,9 @@
     {
       "rank": 5,
       "last_rank": 0,
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
       "total_points": 16,
       "event_total": 16,
       "chips_used": [],
@@ -239,17 +239,17 @@
       "gw_rank": 4
     },
     {
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "gw_points": 16,
       "chip_used": null,
       "gw_rank": 5
     },
     {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
       "gw_points": 16,
       "chip_used": null,
       "gw_rank": 5
@@ -297,17 +297,17 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 8380691,
-      "team_name": "CBlues",
-      "player_name": "Chakri N",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 8380691,
+      "team_name": "CBlues",
+      "player_name": "Chakri N",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
