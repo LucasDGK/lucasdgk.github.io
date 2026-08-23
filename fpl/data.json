@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-23T14:50:40.918547+00:00",
+    "updated_at": "2026-08-23T15:02:53.919400+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -126,8 +126,8 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "total_points": 21,
-      "event_total": 21,
+      "total_points": 20,
+      "event_total": 20,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -154,8 +154,8 @@
       "entry_id": 8380691,
       "team_name": "CBlues",
       "player_name": "Chakri N",
-      "total_points": 20,
-      "event_total": 20,
+      "total_points": 19,
+      "event_total": 19,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -242,7 +242,7 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "gw_points": 21,
+      "gw_points": 20,
       "chip_used": null,
       "gw_rank": 5
     },
@@ -250,7 +250,7 @@
       "entry_id": 8380691,
       "team_name": "CBlues",
       "player_name": "Chakri N",
-      "gw_points": 20,
+      "gw_points": 19,
       "chip_used": null,
       "gw_rank": 6
     },
