@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-25T09:08:21.228748+00:00",
+    "updated_at": "2026-08-25T09:47:53.928633+00:00",
     "current_gameweek": 1,
     "gameweek_finished": false,
     "preseason": false,
@@ -54,13 +54,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 53
+          "points": 64
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 53
+          "total": 64
         }
       ]
     },
@@ -110,13 +110,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 45
+          "points": 48
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 45
+          "total": 48
         }
       ]
     },
@@ -138,13 +138,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 44
+          "points": 50
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 44
+          "total": 50
         }
       ]
     },
@@ -166,13 +166,13 @@
       "gw_history": [
         {
           "gw": 1,
-          "points": 37
+          "points": 39
         }
       ],
       "cumulative_history": [
         {
           "gw": 1,
-          "total": 37
+          "total": 39
         }
       ]
     },
