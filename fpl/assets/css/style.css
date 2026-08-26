@@ -107,8 +107,8 @@ body {
 /* Trophy + Chart cards */
 .media-card { flex: 1; display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
 
-.trophy-video-wrap { flex: 1; position: relative; overflow: hidden; min-height: 0; }
-.trophy-video-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border-radius: var(--radius); padding: 1rem; }
+.trophy-image-wrap { flex: 1; position: relative; overflow: hidden; min-height: 0; }
+.trophy-image-wrap img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border-radius: var(--radius); padding: 1rem; }
 .chart-wrap { width: 100%; flex: 1; padding: 1rem; position: relative; min-height: 0; }
 
 /* Chart sizing: let Chart.js handle responsive scaling */
@@ -125,7 +125,7 @@ body {
   .card-title { font-size: 1.2rem; }
   .data-table td { padding: 1.25rem 1.75rem; }
   .media-card { }
-  .trophy-video-wrap video { }
+  .trophy-image-wrap img { }
 }
 
 /* ── Cards ───────────────────────────────────── */
@@ -319,7 +319,7 @@ body {
   .col-manager { display: none; }
 
   .chart-container { max-height: none; flex-direction: column; }
-  .trophy-video-wrap { flex: 0 0 auto; width: 100%; max-height: 200px; }
+  .trophy-image-wrap { flex: 0 0 auto; width: 100%; max-height: 200px; }
   .chart-wrap { width: 100%; }
 }
 
