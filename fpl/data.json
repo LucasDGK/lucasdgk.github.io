@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-26T14:48:03.800629+00:00",
+    "updated_at": "2026-08-26T16:06:01.414155+00:00",
     "current_gameweek": 1,
     "gameweek_finished": true,
     "preseason": false,
@@ -67,9 +67,9 @@
     {
       "rank": 3,
       "last_rank": 0,
-      "entry_id": 5413878,
-      "team_name": "Florida Man FC",
-      "player_name": "Santiago Acevedo",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "total_points": 50,
       "event_total": 50,
       "chips_used": [],
@@ -95,9 +95,9 @@
     {
       "rank": 3,
       "last_rank": 0,
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
       "total_points": 50,
       "event_total": 50,
       "chips_used": [],
@@ -223,17 +223,17 @@
       "gw_rank": 2
     },
     {
-      "entry_id": 5413878,
-      "team_name": "Florida Man FC",
-      "player_name": "Santiago Acevedo",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "gw_points": 50,
       "chip_used": null,
       "gw_rank": 3
     },
     {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
       "gw_points": 50,
       "chip_used": null,
       "gw_rank": 3
@@ -281,17 +281,17 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 5413878,
-      "team_name": "Florida Man FC",
-      "player_name": "Santiago Acevedo",
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
     },
     {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
+      "entry_id": 5413878,
+      "team_name": "Florida Man FC",
+      "player_name": "Santiago Acevedo",
       "transfers_in": [],
       "transfers_out": [],
       "transfer_cost": 0
