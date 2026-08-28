@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-28T20:09:37.027776+00:00",
+    "updated_at": "2026-08-28T20:24:05.040047+00:00",
     "current_gameweek": 2,
     "gameweek_finished": false,
     "preseason": false,
@@ -30,7 +30,7 @@
         },
         {
           "gw": 2,
-          "points": 0
+          "points": 8
         }
       ],
       "cumulative_history": [
@@ -40,7 +40,7 @@
         },
         {
           "gw": 2,
-          "total": 64
+          "total": 72
         }
       ]
     },
@@ -66,7 +66,7 @@
         },
         {
           "gw": 2,
-          "points": 0
+          "points": 16
         }
       ],
       "cumulative_history": [
@@ -76,7 +76,7 @@
         },
         {
           "gw": 2,
-          "total": 50
+          "total": 66
         }
       ]
     },
@@ -86,8 +86,8 @@
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
-      "total_points": 61,
-      "event_total": 1,
+      "total_points": 62,
+      "event_total": 2,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -102,7 +102,7 @@
         },
         {
           "gw": 2,
-          "points": 0
+          "points": 2
         }
       ],
       "cumulative_history": [
@@ -112,43 +112,7 @@
         },
         {
           "gw": 2,
-          "total": 60
-        }
-      ]
-    },
-    {
-      "rank": 4,
-      "last_rank": 3,
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
-      "total_points": 56,
-      "event_total": 6,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 50
-        },
-        {
-          "gw": 2,
-          "points": 0
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 50
-        },
-        {
-          "gw": 2,
-          "total": 50
+          "total": 62
         }
       ]
     },
@@ -174,7 +138,7 @@
         },
         {
           "gw": 2,
-          "points": 0
+          "points": 17
         }
       ],
       "cumulative_history": [
@@ -184,7 +148,43 @@
         },
         {
           "gw": 2,
-          "total": 39
+          "total": 56
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "last_rank": 3,
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "total_points": 56,
+      "event_total": 6,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 50
+        },
+        {
+          "gw": 2,
+          "points": 6
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 50
+        },
+        {
+          "gw": 2,
+          "total": 56
         }
       ]
     },
@@ -210,7 +210,7 @@
         },
         {
           "gw": 2,
-          "points": 0
+          "points": 2
         }
       ],
       "cumulative_history": [
@@ -220,7 +220,7 @@
         },
         {
           "gw": 2,
-          "total": 48
+          "total": 50
         }
       ]
     },
@@ -230,8 +230,8 @@
       "entry_id": 8380691,
       "team_name": "CBlues",
       "player_name": "Chakri N",
-      "total_points": 45,
-      "event_total": 9,
+      "total_points": 49,
+      "event_total": 13,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -246,7 +246,7 @@
         },
         {
           "gw": 2,
-          "points": 0
+          "points": 13
         }
       ],
       "cumulative_history": [
@@ -256,7 +256,7 @@
         },
         {
           "gw": 2,
-          "total": 36
+          "total": 49
         }
       ]
     },
@@ -266,8 +266,8 @@
       "entry_id": 9513802,
       "team_name": "Nitish",
       "player_name": "Nitish Malluru",
-      "total_points": 16,
-      "event_total": 16,
+      "total_points": 30,
+      "event_total": 30,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -278,25 +278,33 @@
       "gw_history": [
         {
           "gw": 2,
-          "points": 0
+          "points": 30
         }
       ],
       "cumulative_history": [
         {
           "gw": 2,
-          "total": 0
+          "total": 30
         }
       ]
     }
   ],
   "current_gw_stats": [
     {
+      "entry_id": 9513802,
+      "team_name": "Nitish",
+      "player_name": "Nitish Malluru",
+      "gw_points": 30,
+      "chip_used": null,
+      "gw_rank": 1
+    },
+    {
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
       "gw_points": 17,
       "chip_used": null,
-      "gw_rank": 1
+      "gw_rank": 2
     },
     {
       "entry_id": 5413878,
@@ -304,21 +312,13 @@
       "player_name": "Santiago Acevedo",
       "gw_points": 16,
       "chip_used": null,
-      "gw_rank": 2
-    },
-    {
-      "entry_id": 9513802,
-      "team_name": "Nitish",
-      "player_name": "Nitish Malluru",
-      "gw_points": 16,
-      "chip_used": null,
-      "gw_rank": 2
+      "gw_rank": 3
     },
     {
       "entry_id": 8380691,
       "team_name": "CBlues",
       "player_name": "Chakri N",
-      "gw_points": 9,
+      "gw_points": 13,
       "chip_used": null,
       "gw_rank": 4
     },
@@ -339,20 +339,20 @@
       "gw_rank": 6
     },
     {
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "gw_points": 2,
+      "chip_used": null,
+      "gw_rank": 7
+    },
+    {
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
       "gw_points": 2,
       "chip_used": null,
       "gw_rank": 7
-    },
-    {
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "gw_points": 1,
-      "chip_used": null,
-      "gw_rank": 8
     }
   ],
   "transfers": [
@@ -389,18 +389,6 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
-      "transfers_in": [
-        "Marcus Rashford"
-      ],
-      "transfers_out": [
-        "Phil Foden"
-      ],
-      "transfer_cost": 0
-    },
-    {
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
@@ -409,6 +397,18 @@
       ],
       "transfers_out": [
         "Viktor Gyökeres"
+      ],
+      "transfer_cost": 0
+    },
+    {
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "transfers_in": [
+        "Marcus Rashford"
+      ],
+      "transfers_out": [
+        "Phil Foden"
       ],
       "transfer_cost": 0
     },
