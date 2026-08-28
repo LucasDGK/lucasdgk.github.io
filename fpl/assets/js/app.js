@@ -120,16 +120,20 @@ function renderStandings(standings) {
 // ── Points-over-time chart ────────────────────────────────────────────────────
 
 let chart = null;
+let pulseFrame = null;
 
 function renderChart(standings) {
   if (!standings?.length) return;
   if (typeof Chart === 'undefined') return;   // CDN not loaded
 
   const gwFinished = Boolean(FPL_DATA?.meta?.gameweek_finished);
+  const currentGw = FPL_DATA?.meta?.current_gameweek ?? null;
 
   // Collect all GW numbers that appear in any team's history
   const gwSet = new Set();
   standings.forEach(e => e.cumulative_history?.forEach(h => gwSet.add(h.gw)));
+  // The live GW may be missing from every history until the API creates the row.
+  if (currentGw != null) gwSet.add(currentGw);
   const gwLabels = [...gwSet].sort((a, b) => a - b).slice(-5);
 
   const lastIdx = gwLabels.length - 1;
@@ -138,6 +142,13 @@ function renderChart(standings) {
     const map = Object.fromEntries(
       (entry.cumulative_history ?? []).map(h => [h.gw, h.total])
     );
+    // `cumulative_history` comes from the entry-history endpoint, which reports 0
+    // points for a gameweek that has not been scored yet, while the standings
+    // total updates live. Trust the standings for the current GW so the chart
+    // always agrees with the league table.
+    if (currentGw != null && entry.total_points != null) {
+      map[currentGw] = entry.total_points;
+    }
     return {
       label: firstName(entry.player_name || entry.team_name),
       data: gwLabels.map(gw => map[gw] ?? null),
@@ -154,20 +165,26 @@ function renderChart(standings) {
   });
 
   const ctx = document.getElementById('points-chart').getContext('2d');
+  // Tear down the previous chart *and* its pending pulse frame — otherwise the old
+  // instance keeps redrawing stale data over the new chart on the shared canvas.
+  if (pulseFrame !== null) {
+    cancelAnimationFrame(pulseFrame);
+    pulseFrame = null;
+  }
   if (chart) chart.destroy();
 
   // Pulsing dot plugin for live GW
   const pulsePlugin = {
     id: 'pulseDot',
-    afterDraw(chart) {
+    afterDraw(instance) {
       if (gwFinished) return;
       const now = Date.now();
       const phase = (now % 1500) / 1500; // 0→1 over 1.5s
       const scale = 1 + phase * 2;
       const alpha = 1 - phase;
 
-      chart.data.datasets.forEach((ds, di) => {
-        const meta = chart.getDatasetMeta(di);
+      instance.data.datasets.forEach((ds, di) => {
+        const meta = instance.getDatasetMeta(di);
         const last = meta.data[meta.data.length - 1];
         if (!last) return;
 
@@ -175,17 +192,22 @@ function renderChart(standings) {
         const cy = last.y;
         const color = ds.borderColor;
 
-        chart.ctx.save();
-        chart.ctx.beginPath();
-        chart.ctx.arc(cx, cy, 3 * scale, 0, Math.PI * 2);
-        chart.ctx.strokeStyle = color;
-        chart.ctx.globalAlpha = alpha;
-        chart.ctx.lineWidth = 2;
-        chart.ctx.stroke();
-        chart.ctx.restore();
+        instance.ctx.save();
+        instance.ctx.beginPath();
+        instance.ctx.arc(cx, cy, 3 * scale, 0, Math.PI * 2);
+        instance.ctx.strokeStyle = color;
+        instance.ctx.globalAlpha = alpha;
+        instance.ctx.lineWidth = 2;
+        instance.ctx.stroke();
+        instance.ctx.restore();
       });
 
-      requestAnimationFrame(() => chart.draw());
+      // Keep the pulse animating, but only for the chart that is still live.
+      // A replaced instance must not redraw its stale data onto the shared canvas.
+      pulseFrame = requestAnimationFrame(() => {
+        pulseFrame = null;
+        if (instance === chart) instance.draw();
+      });
     },
   };
 

@@ -259,6 +259,29 @@ def main() -> None:
             if gw_data["event"] == current_gw:
                 gw_transfer_cost = hit
 
+        # The entry history endpoint only settles a gameweek once it is scored:
+        # while a GW is live its `points` stay 0, whereas the league standings
+        # (`event_total` / `total`, both net of hits) update in near real time.
+        # Overwrite the live GW from the standings so the chart cannot lag the
+        # tables. Assigning rather than accumulating keeps this idempotent.
+        if current_gw:
+            live_net   = entry["event_total"]
+            live_total = entry["total"]
+
+            for row in gw_history:
+                if row["gw"] == current_gw:
+                    row["points"] = live_net
+                    break
+            else:
+                gw_history.append({"gw": current_gw, "points": live_net})
+
+            for row in cumulative_hist:
+                if row["gw"] == current_gw:
+                    row["total"] = live_total
+                    break
+            else:
+                cumulative_hist.append({"gw": current_gw, "total": live_total})
+
         # Active chip this GW (from picks)
         chip_this_gw: str | None = None
         if current_gw:
