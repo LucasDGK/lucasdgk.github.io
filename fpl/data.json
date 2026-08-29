@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-29T16:53:55.059877+00:00",
+    "updated_at": "2026-08-29T19:32:16.651732+00:00",
     "current_gameweek": 2,
     "gameweek_finished": false,
     "preseason": false,
@@ -122,8 +122,8 @@
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 70,
-      "event_total": 31,
+      "total_points": 71,
+      "event_total": 32,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -138,7 +138,7 @@
         },
         {
           "gw": 2,
-          "points": 31
+          "points": 32
         }
       ],
       "cumulative_history": [
@@ -148,7 +148,7 @@
         },
         {
           "gw": 2,
-          "total": 70
+          "total": 71
         }
       ]
     },
@@ -318,9 +318,9 @@
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "gw_points": 31,
+      "gw_points": 32,
       "chip_used": null,
-      "gw_rank": 4
+      "gw_rank": 3
     },
     {
       "entry_id": 8380691,
