@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-30T19:48:40.844711+00:00",
+    "updated_at": "2026-08-30T22:06:48.895485+00:00",
     "current_gameweek": 2,
     "gameweek_finished": false,
     "preseason": false,
@@ -82,42 +82,6 @@
     },
     {
       "rank": 3,
-      "last_rank": 2,
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "total_points": 116,
-      "event_total": 56,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 60
-        },
-        {
-          "gw": 2,
-          "points": 56
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 60
-        },
-        {
-          "gw": 2,
-          "total": 116
-        }
-      ]
-    },
-    {
-      "rank": 3,
       "last_rank": 6,
       "entry_id": 258566,
       "team_name": "La Albiceleste",
@@ -145,6 +109,42 @@
         {
           "gw": 1,
           "total": 39
+        },
+        {
+          "gw": 2,
+          "total": 116
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "last_rank": 2,
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "total_points": 116,
+      "event_total": 56,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 60
+        },
+        {
+          "gw": 2,
+          "points": 56
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 60
         },
         {
           "gw": 2,
@@ -377,18 +377,6 @@
       "transfer_cost": 0
     },
     {
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "transfers_in": [
-        "Mamadou Sangaré"
-      ],
-      "transfers_out": [
-        "Antoine Semenyo"
-      ],
-      "transfer_cost": 0
-    },
-    {
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
@@ -397,6 +385,18 @@
       ],
       "transfers_out": [
         "Viktor Gyökeres"
+      ],
+      "transfer_cost": 0
+    },
+    {
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "transfers_in": [
+        "Mamadou Sangaré"
+      ],
+      "transfers_out": [
+        "Antoine Semenyo"
       ],
       "transfer_cost": 0
     },
