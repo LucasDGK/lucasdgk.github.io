@@ -511,8 +511,10 @@ async function fetchAndRender() {
     );
     renderTransfers(data.transfers);
 
-    // Refresh every 5 minutes
-    setTimeout(fetchAndRender, 5 * 60 * 1000);
+    // data.json is only rewritten when the workflow finds new numbers, so polling
+    // faster than that is just a cheap static request. Check often while a match
+    // is in play so the TV picks the new points up promptly.
+    setTimeout(fetchAndRender, data.meta?.matches_live ? 60_000 : 5 * 60_000);
 
   } catch (err) {
     console.error('FPL load error:', err);

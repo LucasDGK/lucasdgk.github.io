@@ -36,6 +36,37 @@ def fetch(url: str) -> dict:
     return r.json()
 
 
+def match_state(current_gw: int | None) -> tuple[bool, str | None]:
+    """
+    Return (matches_live, next_kickoff) for the current gameweek.
+
+    A fixture counts as live from kick-off until the API marks it
+    `finished_provisional`, which is when its points stop moving. Both callers
+    of this data (the refresh loop and the dashboard) use it to poll hard only
+    while points can actually change.
+    """
+    if current_gw is None:
+        return False, None
+
+    try:
+        fixtures = fetch(f"{BASE}/fixtures/?event={current_gw}")
+    except Exception as exc:
+        print(f"  ⚠ fixtures unavailable: {exc}")
+        return False, None
+
+    live = any(f.get("started") and not f.get("finished_provisional") for f in fixtures)
+
+    now = datetime.now(timezone.utc)
+    upcoming = sorted(
+        f["kickoff_time"] for f in fixtures
+        if f.get("kickoff_time") and not f.get("started")
+        and datetime.fromisoformat(f["kickoff_time"].replace("Z", "+00:00")) > now
+    )
+
+    print(f"  → matches_live={live}, next_kickoff={upcoming[0] if upcoming else None}")
+    return live, (upcoming[0] if upcoming else None)
+
+
 def chip_windows(chip_defs: list[dict], current_gw: int | None) -> dict[str, tuple[int, int, int]]:
     """
     Build, per chip name, the availability window that covers `current_gw`.
@@ -180,6 +211,8 @@ def main() -> None:
     # Pre-season: no event is current and none has finished yet.
     preseason = current_gw is None
     print(f"  → GW {current_gw}  (finished={gw_finished}, preseason={preseason})")
+
+    matches_live, next_kickoff = match_state(current_gw)
 
     chip_defs: list[dict] = bootstrap.get("chips", [])
 
@@ -345,6 +378,8 @@ def main() -> None:
             "preseason":        preseason,
             "next_deadline":    next_deadline,
             "next_gw":          next_gw,
+            "matches_live":     matches_live,
+            "next_kickoff":     next_kickoff,
         },
         "standings":        standings,
         "current_gw_stats": gw_stats,
