@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-31T20:56:27.988029+00:00",
+    "updated_at": "2026-08-31T20:59:44.692033+00:00",
     "current_gameweek": 2,
     "gameweek_finished": false,
     "preseason": false,
@@ -12,6 +12,42 @@
   "standings": [
     {
       "rank": 1,
+      "last_rank": 2,
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "total_points": 149,
+      "event_total": 89,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 60
+        },
+        {
+          "gw": 2,
+          "points": 89
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 60
+        },
+        {
+          "gw": 2,
+          "total": 149
+        }
+      ]
+    },
+    {
+      "rank": 2,
       "last_rank": 1,
       "entry_id": 404805,
       "team_name": "Lucas",
@@ -43,42 +79,6 @@
         {
           "gw": 2,
           "total": 148
-        }
-      ]
-    },
-    {
-      "rank": 2,
-      "last_rank": 2,
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "total_points": 145,
-      "event_total": 85,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 60
-        },
-        {
-          "gw": 2,
-          "points": 85
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 60
-        },
-        {
-          "gw": 2,
-          "total": 145
         }
       ]
     },
@@ -124,8 +124,8 @@
       "entry_id": 258566,
       "team_name": "La Albiceleste",
       "player_name": "Sawal Maskey",
-      "total_points": 122,
-      "event_total": 83,
+      "total_points": 124,
+      "event_total": 85,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -140,7 +140,7 @@
         },
         {
           "gw": 2,
-          "points": 83
+          "points": 85
         }
       ],
       "cumulative_history": [
@@ -150,7 +150,7 @@
         },
         {
           "gw": 2,
-          "total": 122
+          "total": 124
         }
       ]
     },
@@ -160,8 +160,8 @@
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
-      "total_points": 101,
-      "event_total": 51,
+      "total_points": 103,
+      "event_total": 53,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -176,7 +176,7 @@
         },
         {
           "gw": 2,
-          "points": 51
+          "points": 53
         }
       ],
       "cumulative_history": [
@@ -186,7 +186,7 @@
         },
         {
           "gw": 2,
-          "total": 101
+          "total": 103
         }
       ]
     },
@@ -304,23 +304,23 @@
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
-      "gw_points": 85,
+      "gw_points": 89,
       "chip_used": null,
       "gw_rank": 2
+    },
+    {
+      "entry_id": 258566,
+      "team_name": "La Albiceleste",
+      "player_name": "Sawal Maskey",
+      "gw_points": 85,
+      "chip_used": null,
+      "gw_rank": 3
     },
     {
       "entry_id": 404805,
       "team_name": "Lucas",
       "player_name": "Lucas Delgado",
       "gw_points": 84,
-      "chip_used": null,
-      "gw_rank": 3
-    },
-    {
-      "entry_id": 258566,
-      "team_name": "La Albiceleste",
-      "player_name": "Sawal Maskey",
-      "gw_points": 83,
       "chip_used": null,
       "gw_rank": 4
     },
@@ -336,7 +336,7 @@
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
-      "gw_points": 51,
+      "gw_points": 53,
       "chip_used": null,
       "gw_rank": 6
     },
@@ -359,14 +359,6 @@
   ],
   "transfers": [
     {
-      "entry_id": 404805,
-      "team_name": "Lucas",
-      "player_name": "Lucas Delgado",
-      "transfers_in": [],
-      "transfers_out": [],
-      "transfer_cost": 0
-    },
-    {
       "entry_id": 5803966,
       "team_name": "SSRedDevils",
       "player_name": "Shikhar Singh",
@@ -376,6 +368,14 @@
       "transfers_out": [
         "Antoine Semenyo"
       ],
+      "transfer_cost": 0
+    },
+    {
+      "entry_id": 404805,
+      "team_name": "Lucas",
+      "player_name": "Lucas Delgado",
+      "transfers_in": [],
+      "transfers_out": [],
       "transfer_cost": 0
     },
     {
