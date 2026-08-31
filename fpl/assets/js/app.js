@@ -7,6 +7,10 @@ const CHIP_META = {
   '3xc':    { label: 'TC', cls: 'tc' },
 };
 
+// Auto-scroll can be turned off for debugging with ?autoscroll=off (also 0 / false).
+const AUTOSCROLL_ENABLED = !['off', '0', 'false']
+  .includes((new URLSearchParams(location.search).get('autoscroll') ?? '').toLowerCase());
+
 const PALETTE = [
   '#00ff87', '#a78bfa', '#f87171', '#60a5fa', '#fbbf24',
   '#34d399', '#f472b6', '#38bdf8', '#fb923c', '#c084fc',
@@ -96,7 +100,7 @@ function renderStandings(standings) {
 
     const chipsHtml = entry.chips_remaining.length
       ? entry.chips_remaining.map(chipBadge).join('')
-      : `<span style="color:var(--muted);font-size:0.75rem">None</span>`;
+      : `<span class="chip-none">None</span>`;
 
     const leaderDiffTotal = leaderTotal != null ? Math.max(0, leaderTotal - (entry.total_points || 0)) : null;
 
@@ -294,7 +298,9 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
 
   gwStats.forEach(entry => {
     const isWinner  = gwFinished && entry.gw_points === leaderGw;
-    const trophy    = isWinner ? '🏆 ' : '';
+    const trophy    = isWinner
+      ? `<img class="gw-trophy" src="assets/trophy_2027_gw.png" alt="Gameweek winner">`
+      : '';
     const chipHtml  = entry.chip_used ? chipBadge(entry.chip_used) : dash();
 
     const leaderDiffGw = leaderGw != null ? Math.max(0, leaderGw - (entry.gw_points || 0)) : null;
@@ -304,7 +310,12 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
       <td>
         <div class="rank-cell"><span>${entry.gw_rank}</span></div>
       </td>
-      <td><span class="team-name">${trophy}${esc(firstName(entry.player_name))}</span></td>
+      <td>
+        <div class="manager-cell">
+          <span class="gw-trophy-slot">${trophy}</span>
+          <span class="team-name">${esc(firstName(entry.player_name))}</span>
+        </div>
+      </td>
       <td class="col-num pts-big">${entry.gw_points}${fmtLeaderDelta(leaderDiffGw)}</td>
       <td class="col-chip">${chipHtml}</td>
     `;
@@ -312,10 +323,74 @@ function renderGwStats(gwStats, gwFinished, gwNumber) {
   });
 }
 
+// ── Transfers auto-scroll ─────────────────────────────────────────────────────
+// The transfers card is the only one that can outgrow its box, so when it does we
+// walk it down slowly, hold at the bottom, walk back up and rest at the top.
+
+const SCROLL_SPEED_PX_S = 25;
+const PAUSE_AT_TOP_MS = 60_000;
+const PAUSE_AT_BOTTOM_MS = 5_000;
+
+let scrollRaf = null;
+let scrollTimer = null;
+
+function stopAutoScroll() {
+  if (scrollRaf !== null) cancelAnimationFrame(scrollRaf);
+  if (scrollTimer !== null) clearTimeout(scrollTimer);
+  scrollRaf = null;
+  scrollTimer = null;
+}
+
+function startAutoScroll(el) {
+  stopAutoScroll();
+  if (!AUTOSCROLL_ENABLED || !el) return;
+
+  const overflow = () => el.scrollHeight - el.clientHeight;
+
+  // Animate in `dir` (+1 down, -1 up) at a constant px/s until the end is reached.
+  function glide(dir, onArrive) {
+    let last = performance.now();
+    const step = now => {
+      const max = overflow();
+      // A refresh may have shortened the table mid-glide.
+      if (max <= 0) { stopAutoScroll(); return; }
+
+      el.scrollTop += dir * SCROLL_SPEED_PX_S * ((now - last) / 1000);
+      last = now;
+
+      if (dir > 0 ? el.scrollTop >= max - 0.5 : el.scrollTop <= 0.5) {
+        el.scrollTop = dir > 0 ? max : 0;
+        scrollRaf = null;
+        onArrive();
+        return;
+      }
+      scrollRaf = requestAnimationFrame(step);
+    };
+    scrollRaf = requestAnimationFrame(step);
+  }
+
+  function restAtTop() {
+    scrollTimer = setTimeout(() => glide(1, restAtBottom), PAUSE_AT_TOP_MS);
+  }
+
+  function restAtBottom() {
+    scrollTimer = setTimeout(() => glide(-1, restAtTop), PAUSE_AT_BOTTOM_MS);
+  }
+
+  // Wait a frame so the freshly built rows have been laid out before measuring.
+  scrollRaf = requestAnimationFrame(() => {
+    scrollRaf = null;
+    if (overflow() <= 0) return;
+    el.scrollTop = 0;
+    restAtTop();
+  });
+}
+
 // ── Transfers table ───────────────────────────────────────────────────────────
 
 function renderTransfers(transfers) {
   const tbody = document.getElementById('transfers-body');
+  stopAutoScroll();
 
   if (FPL_DATA?.meta?.preseason) {
     tbody.innerHTML = `<tr><td colspan="4" class="empty-row">Season hasn’t started — no transfers yet.</td></tr>`;
@@ -358,6 +433,8 @@ function renderTransfers(transfers) {
     `;
     tbody.appendChild(tr);
   });
+
+  startAutoScroll(document.querySelector('#transfers-section .table-wrap'));
 }
 
 // ── Deadline countdown ────────────────────────────────────────────────────────
