@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-08-31T21:03:01.300190+00:00",
+    "updated_at": "2026-09-01T00:33:26.925988+00:00",
     "current_gameweek": 2,
     "gameweek_finished": false,
     "preseason": false,
@@ -160,8 +160,8 @@
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
-      "total_points": 103,
-      "event_total": 53,
+      "total_points": 105,
+      "event_total": 55,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -176,7 +176,7 @@
         },
         {
           "gw": 2,
-          "points": 53
+          "points": 55
         }
       ],
       "cumulative_history": [
@@ -186,7 +186,7 @@
         },
         {
           "gw": 2,
-          "total": 103
+          "total": 105
         }
       ]
     },
@@ -336,7 +336,7 @@
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
-      "gw_points": 53,
+      "gw_points": 55,
       "chip_used": null,
       "gw_rank": 6
     },
