@@ -36,14 +36,25 @@ def fetch(url: str) -> dict:
     return r.json()
 
 
-def match_state(current_gw: int | None) -> tuple[bool, str | None]:
+def kickoffs_after_now(fixtures: list[dict]) -> list[str]:
+    """Kick-off times of fixtures that have not started yet, earliest first."""
+    now = datetime.now(timezone.utc)
+    return sorted(
+        f["kickoff_time"] for f in fixtures
+        if f.get("kickoff_time") and not f.get("started")
+        and datetime.fromisoformat(f["kickoff_time"].replace("Z", "+00:00")) > now
+    )
+
+
+def match_state(current_gw: int | None, next_gw: int | None) -> tuple[bool, str | None]:
     """
-    Return (matches_live, next_kickoff) for the current gameweek.
+    Return (matches_live, next_kickoff).
 
     A fixture counts as live from kick-off until the API marks it
-    `finished_provisional`, which is when its points stop moving. Both callers
-    of this data (the refresh loop and the dashboard) use it to poll hard only
-    while points can actually change.
+    `finished_provisional`, which is when its points stop moving. The lookahead
+    spills into the next gameweek on purpose: between the last match of one GW
+    and the next GW's first kick-off, the current GW has no unstarted fixtures,
+    so without this the dashboard would never see a match coming.
     """
     if current_gw is None:
         return False, None
@@ -54,14 +65,14 @@ def match_state(current_gw: int | None) -> tuple[bool, str | None]:
         print(f"  ⚠ fixtures unavailable: {exc}")
         return False, None
 
-    live = any(f.get("started") and not f.get("finished_provisional") for f in fixtures)
+    live     = any(f.get("started") and not f.get("finished_provisional") for f in fixtures)
+    upcoming = kickoffs_after_now(fixtures)
 
-    now = datetime.now(timezone.utc)
-    upcoming = sorted(
-        f["kickoff_time"] for f in fixtures
-        if f.get("kickoff_time") and not f.get("started")
-        and datetime.fromisoformat(f["kickoff_time"].replace("Z", "+00:00")) > now
-    )
+    if not upcoming and next_gw and next_gw != current_gw:
+        try:
+            upcoming = kickoffs_after_now(fetch(f"{BASE}/fixtures/?event={next_gw}"))
+        except Exception as exc:
+            print(f"  ⚠ next-gw fixtures unavailable: {exc}")
 
     print(f"  → matches_live={live}, next_kickoff={upcoming[0] if upcoming else None}")
     return live, (upcoming[0] if upcoming else None)
@@ -212,7 +223,7 @@ def main() -> None:
     preseason = current_gw is None
     print(f"  → GW {current_gw}  (finished={gw_finished}, preseason={preseason})")
 
-    matches_live, next_kickoff = match_state(current_gw)
+    matches_live, next_kickoff = match_state(current_gw, next_gw)
 
     chip_defs: list[dict] = bootstrap.get("chips", [])
 
@@ -275,7 +286,8 @@ def main() -> None:
         used_chips_raw   = history.get("chips", [])
         used_chips       = [c.get("name") if isinstance(c, dict) else c for c in used_chips_raw]
         chips_left       = chips_remaining(used_chips_raw, current_gw, chip_defs)
-        gw_transfer_cost = 0
+        gw_transfer_cost  = 0
+        gw_transfer_count = 0
 
         gw_history:     list[dict] = []
         cumulative_hist: list[dict] = []
@@ -290,7 +302,8 @@ def main() -> None:
             cumulative_hist.append({"gw": gw_data["event"], "total": running})
 
             if gw_data["event"] == current_gw:
-                gw_transfer_cost = hit
+                gw_transfer_cost  = hit
+                gw_transfer_count = gw_data.get("event_transfers", 0)
 
         # The entry history endpoint only settles a gameweek once it is scored:
         # while a GW is live its `points` stay 0, whereas the league standings
@@ -315,19 +328,22 @@ def main() -> None:
             else:
                 cumulative_hist.append({"gw": current_gw, "total": live_total})
 
-        # Active chip this GW (from picks)
+        # Active chip this GW. The history `chips` list records each chip against
+        # the gameweek it was played in and agrees with the picks endpoint's
+        # `active_chip` for the live gameweek, so picks need not be fetched.
         chip_this_gw: str | None = None
         if current_gw:
-            try:
-                picks        = fetch(f"{BASE}/entry/{eid}/event/{current_gw}/picks/")
-                chip_this_gw = picks.get("active_chip")
-            except Exception as exc:
-                print(f"    ⚠ picks unavailable: {exc}")
+            chip_this_gw = next(
+                (c.get("name") for c in used_chips_raw
+                 if isinstance(c, dict) and c.get("event") == current_gw),
+                None,
+            )
 
-        # Transfers for the current GW
+        # Transfers for the current GW. History says how many were made, so a
+        # manager who sat the gameweek out costs no request.
         t_in:  list[str] = []
         t_out: list[str] = []
-        if current_gw:
+        if current_gw and gw_transfer_count > 0:
             try:
                 all_t  = fetch(f"{BASE}/entry/{eid}/transfers/")
                 gw_t   = [t for t in all_t if t["event"] == current_gw]

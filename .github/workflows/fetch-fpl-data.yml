@@ -1,41 +1,26 @@
 name: Fetch FPL Data
 
-# GitHub does not honour a */5 schedule: in practice the runs arrived every two
-# to six hours. So we ask for a slow schedule, which is delivered reliably, and
-# each run then refreshes on a loop of its own until the next one is due.
+# This is the *fallback* source for the dashboard. Freshness comes from the
+# Cloudflare Worker in worker/, because GitHub delivers scheduled runs every two
+# to five hours no matter what interval you ask for, which is useless during a
+# match. The committed data.json only exists so the TV shows something if the
+# worker is unreachable, so an hourly attempt is plenty.
 on:
   schedule:
-    # Every half hour, off the hour to avoid the busiest scheduling slots.
-    - cron: '7,37 * * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
   push:
     branches: [main, master]
     paths:
       - '.github/workflows/fetch-fpl-data.yml'
       - '.github/scripts/fetch_fpl.py'
-      - '.github/scripts/should_keep_polling.py'
-
-# If a run is still looping when the next schedule fires, the newcomer wins:
-# two loops committing at once would just fight over the push.
-concurrency:
-  group: fetch-fpl-data
-  cancel-in-progress: true
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    # The loop below stops itself; this is only a backstop against a hung run.
-    timeout-minutes: 35
-
-    env:
-      # How long a run keeps refreshing before it hands over to the next one.
-      LOOP_MINUTES: 29
-      # Refresh cadence while a match is in play.
-      INTERVAL_LIVE_S: 180
-      # Start looping this early so the first goals of a match are not missed.
-      KICKOFF_LOOKAHEAD_MIN: 20
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repository
@@ -49,39 +34,14 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Refresh data on a loop
-        run: |
-          set -uo pipefail
+      - name: Fetch FPL data
+        run: python .github/scripts/fetch_fpl.py
 
+      - name: Commit and push updated data
+        run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name  "github-actions[bot]"
-
-          deadline=$(( $(date +%s) + LOOP_MINUTES * 60 ))
-
-          while :; do
-            python .github/scripts/fetch_fpl.py || echo "::warning::fetch failed, will retry"
-
-            git add fpl/data.json
-            if git diff --staged --quiet; then
-              echo "no change"
-            else
-              git commit -m "chore: update FPL data [skip ci]"
-              # A previous push may have landed meanwhile (or a cancelled run
-              # left the branch ahead), so rebase before retrying.
-              git push || (git pull --rebase --autostash && git push)
-            fi
-
-            # Only keep the runner busy while points can actually move; outside a
-            # match window one fetch per scheduled run is plenty.
-            if ! python .github/scripts/should_keep_polling.py; then
-              echo "nothing in play, leaving the rest to the next scheduled run"
-              break
-            fi
-
-            now=$(date +%s)
-            remaining=$(( deadline - now ))
-            # Stop rather than start a cycle that would outlive this run.
-            [ "$remaining" -le "$INTERVAL_LIVE_S" ] && { echo "handing over to next run"; break; }
-
-            sleep "$INTERVAL_LIVE_S"
-          done
+          git add fpl/data.json
+          git diff --staged --quiet || (
+            git commit -m "chore: update FPL data [skip ci]" && git push
+          )
