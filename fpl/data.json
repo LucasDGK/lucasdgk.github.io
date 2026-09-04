@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-04T21:24:35.798023+00:00",
+    "updated_at": "2026-09-04T23:14:34.184001+00:00",
     "current_gameweek": 3,
     "gameweek_finished": false,
     "preseason": false,
@@ -10,50 +10,6 @@
     "next_kickoff": "2026-09-05T11:30:00Z"
   },
   "standings": [
-    {
-      "rank": 1,
-      "last_rank": 1,
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "total_points": 151,
-      "event_total": 0,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 60
-        },
-        {
-          "gw": 2,
-          "points": 91
-        },
-        {
-          "gw": 3,
-          "points": 0
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 60
-        },
-        {
-          "gw": 2,
-          "total": 151
-        },
-        {
-          "gw": 3,
-          "total": 151
-        }
-      ]
-    },
     {
       "rank": 1,
       "last_rank": 2,
@@ -92,6 +48,50 @@
         {
           "gw": 2,
           "total": 148
+        },
+        {
+          "gw": 3,
+          "total": 151
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "last_rank": 1,
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "total_points": 151,
+      "event_total": 0,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 60
+        },
+        {
+          "gw": 2,
+          "points": 91
+        },
+        {
+          "gw": 3,
+          "points": 0
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 60
+        },
+        {
+          "gw": 2,
+          "total": 151
         },
         {
           "gw": 3,
@@ -424,18 +424,6 @@
   ],
   "transfers": [
     {
-      "entry_id": 5803966,
-      "team_name": "SSRedDevils",
-      "player_name": "Shikhar Singh",
-      "transfers_in": [
-        "Nico O'Reilly"
-      ],
-      "transfers_out": [
-        "Marcos Senesi Barón"
-      ],
-      "transfer_cost": 0
-    },
-    {
       "entry_id": 404805,
       "team_name": "Lucas",
       "player_name": "Lucas Delgado",
@@ -446,6 +434,18 @@
       "transfers_out": [
         "Bruno Guimarães Rodriguez Moura",
         "Bryan Mbeumo"
+      ],
+      "transfer_cost": 0
+    },
+    {
+      "entry_id": 5803966,
+      "team_name": "SSRedDevils",
+      "player_name": "Shikhar Singh",
+      "transfers_in": [
+        "Nico O'Reilly"
+      ],
+      "transfers_out": [
+        "Marcos Senesi Barón"
       ],
       "transfer_cost": 0
     },
