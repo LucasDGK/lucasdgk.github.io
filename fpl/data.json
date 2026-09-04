@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-04T19:12:58.032258+00:00",
+    "updated_at": "2026-09-04T19:16:15.381822+00:00",
     "current_gameweek": 3,
     "gameweek_finished": false,
     "preseason": false,
@@ -105,8 +105,8 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 140,
-      "event_total": 6,
+      "total_points": 144,
+      "event_total": 10,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -125,7 +125,7 @@
         },
         {
           "gw": 3,
-          "points": 6
+          "points": 10
         }
       ],
       "cumulative_history": [
@@ -139,7 +139,7 @@
         },
         {
           "gw": 3,
-          "total": 140
+          "total": 144
         }
       ]
     },
@@ -189,6 +189,50 @@
     },
     {
       "rank": 5,
+      "last_rank": 6,
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "total_points": 117,
+      "event_total": 22,
+      "chips_used": [],
+      "chips_remaining": [
+        "wildcard",
+        "freehit",
+        "bboost",
+        "3xc"
+      ],
+      "gw_history": [
+        {
+          "gw": 1,
+          "points": 50
+        },
+        {
+          "gw": 2,
+          "points": 45
+        },
+        {
+          "gw": 3,
+          "points": 22
+        }
+      ],
+      "cumulative_history": [
+        {
+          "gw": 1,
+          "total": 50
+        },
+        {
+          "gw": 2,
+          "total": 95
+        },
+        {
+          "gw": 3,
+          "total": 117
+        }
+      ]
+    },
+    {
+      "rank": 6,
       "last_rank": 5,
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
@@ -232,57 +276,13 @@
       ]
     },
     {
-      "rank": 6,
-      "last_rank": 6,
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
-      "total_points": 106,
-      "event_total": 11,
-      "chips_used": [],
-      "chips_remaining": [
-        "wildcard",
-        "freehit",
-        "bboost",
-        "3xc"
-      ],
-      "gw_history": [
-        {
-          "gw": 1,
-          "points": 50
-        },
-        {
-          "gw": 2,
-          "points": 45
-        },
-        {
-          "gw": 3,
-          "points": 11
-        }
-      ],
-      "cumulative_history": [
-        {
-          "gw": 1,
-          "total": 50
-        },
-        {
-          "gw": 2,
-          "total": 95
-        },
-        {
-          "gw": 3,
-          "total": 106
-        }
-      ]
-    },
-    {
       "rank": 7,
       "last_rank": 7,
       "entry_id": 9513802,
       "team_name": "Nitish",
       "player_name": "Nitish Malluru",
-      "total_points": 92,
-      "event_total": 1,
+      "total_points": 91,
+      "event_total": 0,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -297,7 +297,7 @@
         },
         {
           "gw": 3,
-          "points": 1
+          "points": 0
         }
       ],
       "cumulative_history": [
@@ -307,7 +307,7 @@
         },
         {
           "gw": 3,
-          "total": 92
+          "total": 91
         }
       ]
     },
@@ -361,7 +361,7 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "gw_points": 11,
+      "gw_points": 22,
       "chip_used": null,
       "gw_rank": 1
     },
@@ -369,7 +369,7 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "gw_points": 6,
+      "gw_points": 10,
       "chip_used": null,
       "gw_rank": 2
     },
@@ -390,14 +390,6 @@
       "gw_rank": 3
     },
     {
-      "entry_id": 9513802,
-      "team_name": "Nitish",
-      "player_name": "Nitish Malluru",
-      "gw_points": 1,
-      "chip_used": null,
-      "gw_rank": 3
-    },
-    {
       "entry_id": 8380691,
       "team_name": "CBlues",
       "player_name": "Chakri N",
@@ -411,7 +403,7 @@
       "player_name": "Shikhar Singh",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 7
+      "gw_rank": 6
     },
     {
       "entry_id": 258566,
@@ -419,7 +411,15 @@
       "player_name": "Sawal Maskey",
       "gw_points": 0,
       "chip_used": null,
-      "gw_rank": 7
+      "gw_rank": 6
+    },
+    {
+      "entry_id": 9513802,
+      "team_name": "Nitish",
+      "player_name": "Nitish Malluru",
+      "gw_points": 0,
+      "chip_used": null,
+      "gw_rank": 6
     }
   ],
   "transfers": [
@@ -476,6 +476,14 @@
       "transfer_cost": 0
     },
     {
+      "entry_id": 1831052,
+      "team_name": "zuhair",
+      "player_name": "Zuhair M",
+      "transfers_in": [],
+      "transfers_out": [],
+      "transfer_cost": 0
+    },
+    {
       "entry_id": 5413878,
       "team_name": "Florida Man FC",
       "player_name": "Santiago Acevedo",
@@ -485,14 +493,6 @@
       "transfers_out": [
         "Tyrone Mings"
       ],
-      "transfer_cost": 0
-    },
-    {
-      "entry_id": 1831052,
-      "team_name": "zuhair",
-      "player_name": "Zuhair M",
-      "transfers_in": [],
-      "transfers_out": [],
       "transfer_cost": 0
     },
     {
