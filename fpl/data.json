@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-09-04T19:09:37.313403+00:00",
+    "updated_at": "2026-09-04T19:12:58.032258+00:00",
     "current_gameweek": 3,
     "gameweek_finished": false,
     "preseason": false,
@@ -105,8 +105,8 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "total_points": 136,
-      "event_total": 2,
+      "total_points": 140,
+      "event_total": 6,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -125,7 +125,7 @@
         },
         {
           "gw": 3,
-          "points": 2
+          "points": 6
         }
       ],
       "cumulative_history": [
@@ -139,7 +139,7 @@
         },
         {
           "gw": 3,
-          "total": 136
+          "total": 140
         }
       ]
     },
@@ -237,8 +237,8 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "total_points": 98,
-      "event_total": 3,
+      "total_points": 106,
+      "event_total": 11,
       "chips_used": [],
       "chips_remaining": [
         "wildcard",
@@ -257,7 +257,7 @@
         },
         {
           "gw": 3,
-          "points": 3
+          "points": 11
         }
       ],
       "cumulative_history": [
@@ -271,7 +271,7 @@
         },
         {
           "gw": 3,
-          "total": 98
+          "total": 106
         }
       ]
     },
@@ -361,7 +361,7 @@
       "entry_id": 1831052,
       "team_name": "zuhair",
       "player_name": "Zuhair M",
-      "gw_points": 3,
+      "gw_points": 11,
       "chip_used": null,
       "gw_rank": 1
     },
@@ -369,7 +369,7 @@
       "entry_id": 6511012,
       "team_name": "GJ06_City_FC",
       "player_name": "Rumin Shah",
-      "gw_points": 2,
+      "gw_points": 6,
       "chip_used": null,
       "gw_rank": 2
     },
