@@ -2,11 +2,11 @@
  * Runs the worker against the live FPL API with an in-memory stand-in for KV, so
  * the logic can be checked without deploying.
  *
- *   node worker/test-local.mjs            # exercise cron + HTTP paths
- *   node worker/test-local.mjs --compare  # also diff against fetch_fpl.py output
+ *   node worker/test-local.mjs            # exercise the build + HTTP paths
+ *   node worker/test-local.mjs --compare  # diff against an fpl/data.json on disk
  *
- * With --compare, run the Python script first so its output exists:
- *   python .github/scripts/fetch_fpl.py
+ * --compare dates from when a GitHub Actions script produced fpl/data.json as a
+ * second source; it is only useful if you restore that script from git history.
  */
 
 import worker from './fpl-worker.js';

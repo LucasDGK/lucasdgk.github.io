@@ -17,8 +17,12 @@ interval you request (measured over a week: 5 to 6 runs a day against 48
 requested), so during a match the numbers were hours old. A Worker cron trigger
 fires on time.
 
-The output is byte-identical to `.github/scripts/fetch_fpl.py`, so both sources
-are interchangeable. The Actions workflow still runs hourly as a fallback.
+This worker is now the dashboard's only data source. The workflow, its
+`fetch_fpl.py` script and the committed `data.json` were removed once the worker
+was verified to produce identical output, because that fallback shared the same
+logic against the same API (so anything FPL-side would have broken both) and the
+worker already keeps serving its last good payload from KV when a rebuild fails.
+Look in the history before this commit if you need the Python version.
 
 ## Setup, entirely in the browser
 
@@ -85,7 +89,10 @@ the next poll retries.
 deploy and no dependencies:
 
 ```sh
-node worker/test-local.mjs                     # cron build + HTTP endpoints
-python .github/scripts/fetch_fpl.py            # then, to compare sources:
-node worker/test-local.mjs --compare           # asserts output matches the script
+node worker/test-local.mjs      # builds the payload, then exercises the endpoints
 ```
+
+It reports the build's wall time, the payload's `meta`, and the responses from
+`/data.json`, `/health` and an OPTIONS preflight. There is also a `--compare`
+flag that diffs the output against a `fpl/data.json` produced by the old Python
+script; it is only useful if you restore that script from history.

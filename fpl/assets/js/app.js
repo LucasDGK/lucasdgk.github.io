@@ -7,12 +7,10 @@ const CHIP_META = {
   '3xc':    { label: 'TC', cls: 'tc' },
 };
 
-// Primary data source: the Cloudflare Worker in worker/, which refreshes on a
-// cron that actually fires on time. Leave empty to read only the committed
-// data.json. The local file stays as a fallback for when the worker is
-// unreachable, though it is refreshed far less often.
+// The only data source: the Cloudflare Worker in worker/, which fetches the FPL
+// API and rebuilds its payload whenever a request finds it stale. It serves its
+// last good payload from KV if a rebuild fails, so it degrades on its own.
 const WORKER_URL = 'https://fpl-helios-api.lucasdelgadogonz.workers.dev/data.json';
-const FALLBACK_URL = 'data.json';
 
 // Auto-scroll can be turned off for debugging with ?autoscroll=off (also 0 / false).
 const AUTOSCROLL_ENABLED = !['off', '0', 'false']
@@ -505,29 +503,14 @@ function renderDeadline(meta) {
 
 // ── Bootstrap + Auto-refresh ─────────────────────────────────────────────────
 
-// Try the worker, then the committed file. Whichever answers first with usable
-// JSON wins, so a worker outage degrades to slightly older data rather than an
-// error screen on a TV nobody is watching.
 async function loadData() {
-  const sources = [WORKER_URL, FALLBACK_URL].filter(Boolean);
-  let lastErr;
+  const url = `${WORKER_URL}${WORKER_URL.includes('?') ? '&' : '?'}t=${Date.now()}`;
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-  for (const src of sources) {
-    try {
-      const url = `${src}${src.includes('?') ? '&' : '?'}t=${Date.now()}`;
-      const res = await fetch(url, { cache: 'no-store' });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      if (!data?.meta) throw new Error('missing meta');
-      if (src !== sources[0]) console.warn(`FPL: fell back to ${src}`);
-      return data;
-    } catch (err) {
-      lastErr = err;
-      console.warn(`FPL: ${src} failed (${err.message})`);
-    }
-  }
-
-  throw lastErr ?? new Error('no data source configured');
+  const data = await res.json();
+  if (!data?.meta) throw new Error('missing meta');
+  return data;
 }
 
 async function fetchAndRender() {
