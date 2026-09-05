@@ -503,6 +503,20 @@ function renderDeadline(meta) {
 
 // ── Bootstrap + Auto-refresh ─────────────────────────────────────────────────
 
+// How long to wait before the next poll. Mirrors the worker's own rule: the
+// payload's `matches_live` was decided when it was built, so kick-off time is
+// used as well, otherwise polling would still be slow for the opening minutes.
+function pollDelay(meta) {
+  const LIVE_MS = 60_000;
+  const IDLE_MS = 5 * 60_000;
+  if (!meta) return IDLE_MS;
+  if (meta.matches_live) return LIVE_MS;
+
+  const kickoff = meta.next_kickoff ? Date.parse(meta.next_kickoff) : NaN;
+  const imminent = Number.isFinite(kickoff) && Date.now() >= kickoff - 60_000;
+  return imminent ? LIVE_MS : IDLE_MS;
+}
+
 async function loadData() {
   const url = `${WORKER_URL}${WORKER_URL.includes('?') ? '&' : '?'}t=${Date.now()}`;
   const res = await fetch(url, { cache: 'no-store' });
@@ -540,9 +554,7 @@ async function fetchAndRender() {
     );
     renderTransfers(data.transfers);
 
-    // The worker rebuilds every few minutes, so poll near that rate while a match
-    // is in play and back off when nothing can change.
-    setTimeout(fetchAndRender, data.meta?.matches_live ? 60_000 : 5 * 60_000);
+    setTimeout(fetchAndRender, pollDelay(data.meta));
 
   } catch (err) {
     console.error('FPL load error:', err);

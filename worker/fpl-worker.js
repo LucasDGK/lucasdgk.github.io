@@ -1,20 +1,36 @@
 /**
  * fpl-worker.js
  *
- * Cloudflare Worker that produces the dashboard's data.json.
+ * Cloudflare Worker that builds the FPL dashboard's payload and serves it with
+ * CORS headers. It is the dashboard's only data source.
  *
- * Why this exists: GitHub Actions' cron is delivered every two to five hours in
- * practice, however often you ask for it, so the committed data.json went stale
- * during matches. A Worker cron trigger fires on time, so this does the same job
- * as .github/scripts/fetch_fpl.py and serves the result over HTTP with CORS.
+ * Why it exists: the FPL API sends no CORS headers, so the page cannot call it
+ * directly, and the GitHub Actions job that used to commit a data.json only ran
+ * every two to five hours however often its cron asked, which left the numbers
+ * hours stale during matches.
  *
- * Shape of the response is identical to fpl/data.json, so the dashboard can read
- * either source.
+ * No cron trigger: a request for a payload older than the freshness window
+ * rebuilds it first (60s while a match is in play, 10 min otherwise). Adding a
+ * cron trigger is optional and only keeps the payload warm while nobody is
+ * watching; scheduled() below handles it.
+ *
+ * Deployment (all in the Cloudflare dashboard, no CLI):
+ *   Compute (Workers) -> Create application -> Start with Hello World!, deploy,
+ *   then Edit code and paste this file. Add a KV namespace under Settings ->
+ *   Bindings with the variable name FPL_KV. The URL is
+ *   https://<worker>.<account-subdomain>.workers.dev, which the dashboard shows
+ *   in full; set it as WORKER_URL in fpl/assets/js/app.js.
+ *
+ * Endpoints:
+ *   /data.json          the payload (any path other than /health serves it)
+ *   /data.json?refresh=1  force a rebuild
+ *   /health             whether a payload exists and when it was built
  *
  * Bindings expected:
  *   FPL_KV   KV namespace, holds the last built payload and the bootstrap cache
- * Cron trigger:
- *   the schedule you set in the dashboard, e.g. every 3 minutes
+ *
+ * worker/test-local.mjs runs all of this in node against the live API with a fake
+ * KV, no deploy needed.
  */
 
 const LEAGUE_ID = 53413;                                  // FTV Helios (2026/27)
@@ -33,12 +49,16 @@ const BOOTSTRAP_TTL_MS = 10 * 60 * 1000;
 
 // Freshness is driven by the dashboard's own polling rather than a cron trigger:
 // a request for a payload older than these windows rebuilds it first. The TV
-// polls every 60s during a match, so a 90s window puts the numbers within about
+// polls every 60s during a match, so a 60s window keeps the numbers within about
 // two minutes of the FPL app; when nothing is in play there is nothing to chase.
 // A cron trigger is optional and simply keeps the payload warm when nobody is
 // watching (see scheduled() below).
-const STALE_LIVE_MS = 90 * 1000;
+const STALE_LIVE_MS = 60 * 1000;
 const STALE_IDLE_MS = 10 * 60 * 1000;
+
+// Switch to the live cadence slightly before kick-off, so the first rebuild lands
+// on the opening minutes rather than after them.
+const KICKOFF_LEAD_MS = 60 * 1000;
 
 // FPL is fine with a burst from one client, but there is no reason to open 24
 // sockets at once either.
@@ -444,6 +464,22 @@ const CORS = {
   'Access-Control-Max-Age': '86400',
 };
 
+/**
+ * Whether points can be moving right now, judged from an already-built payload.
+ *
+ * `matches_live` was true or false when the payload was built, so on its own it
+ * cannot notice a match starting afterwards: the tight window would only begin at
+ * the first rebuild after kick-off, up to STALE_IDLE_MS late. Comparing against
+ * `next_kickoff` closes that gap.
+ */
+function isLive(meta) {
+  if (!meta) return false;
+  if (meta.matches_live) return true;
+
+  const kickoff = meta.next_kickoff ? Date.parse(meta.next_kickoff) : NaN;
+  return Number.isFinite(kickoff) && Date.now() >= kickoff - KICKOFF_LEAD_MS;
+}
+
 function json(body, status = 200) {
   return new Response(typeof body === 'string' ? body : JSON.stringify(body), {
     status,
@@ -482,7 +518,7 @@ export default {
     const age = stored?.meta?.updated_at
       ? Date.now() - Date.parse(stored.meta.updated_at)
       : Infinity;
-    const staleAfter = stored?.meta?.matches_live ? STALE_LIVE_MS : STALE_IDLE_MS;
+    const staleAfter = isLive(stored?.meta) ? STALE_LIVE_MS : STALE_IDLE_MS;
 
     // Serve the stored payload while it is fresh enough; otherwise rebuild now.
     if (stored && age < staleAfter && url.searchParams.get('refresh') !== '1') {
