@@ -57,6 +57,16 @@ body {
   align-items: center;
 }
 
+/* When the data was last built, parked at the right end of the card title. */
+.updated-at {
+  margin-left: auto;
+  font-size: 0.85em;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
 .deadline-info .deadline-countdown {
   color: var(--green);
 }

@@ -59,6 +59,15 @@ function dash() {
   return `<span style="color:var(--muted)">–</span>`;
 }
 
+// Full stamp, seconds included, for the "data from" label in the transfers header.
+function fmtStamp(iso) {
+  if (!iso) return '';
+  return new Date(iso).toLocaleString('en-GB', {
+    day: 'numeric', month: 'short', year: 'numeric',
+    hour: '2-digit', minute: '2-digit', second: '2-digit',
+  }).toUpperCase();
+}
+
 function fmtDate(iso) {
   if (!iso) return '';
   const d = new Date(iso);
@@ -527,8 +536,15 @@ async function fetchAndRender() {
     FPL_DATA = data;
 
     const updatedEl = document.getElementById('last-updated');
-    if (data.meta?.updated_at) {
+    if (updatedEl && data.meta?.updated_at) {
       updatedEl.textContent = timeAgo(data.meta.updated_at);
+    }
+
+    const stampEl = document.getElementById('updated-at');
+    if (stampEl) {
+      stampEl.textContent = data.meta?.updated_at
+        ? `DATA FROM ${fmtStamp(data.meta.updated_at)}`
+        : '';
     }
 
     renderStandings(data.standings);
